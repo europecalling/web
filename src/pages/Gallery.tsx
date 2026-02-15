@@ -1,35 +1,16 @@
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
-import { PhotoFrame } from "@/components/admin/PhotoFrame";
-import { X, Loader2 } from "lucide-react";
-import { getGalleryItems, type GalleryItem } from "@/lib/gallery-api";
+import { X } from "lucide-react";
+import { galleryPreviewItems } from "@/data/gallery-preview";
 
-const categories = [
-  { id: "all", label: "All Photos" },
-  { id: "clients", label: "Happy Clients" },
-  { id: "tours", label: "On Tour" },
-  { id: "scenic", label: "Scenery" },
-];
-
-const aspectRatios = ["aspect-[4/3]", "aspect-[3/4]", "aspect-[16/9]", "aspect-[1/1]"];
+type DisplayItem = (typeof galleryPreviewItems)[number];
 
 const Gallery = () => {
-  const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
-  const [categoryFilter, setCategoryFilter] = useState("all");
-
-  const { data: items = [], isLoading, error } = useQuery({
-    queryKey: ["gallery"],
-    queryFn: getGalleryItems,
-  });
-
-  const filtered = categoryFilter === "all"
-    ? items
-    : items.filter((i) => i.category === categoryFilter);
+  const [selectedImage, setSelectedImage] = useState<DisplayItem | null>(null);
 
   return (
     <>
@@ -43,52 +24,23 @@ const Gallery = () => {
 
         <section className="section-padding pt-8 relative z-10 bg-[linear-gradient(180deg,#ffffff_0%,#faf4e5_150px,#faf4e5_100%)]">
           <div className="container-wide px-4">
-            {categories.length > 1 && (
-              <div className="flex flex-wrap gap-2 mb-8 justify-center">
-                {categories.map((cat) => (
-                  <button
-                    key={cat.id}
-                    onClick={() => setCategoryFilter(cat.id)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                      categoryFilter === cat.id
-                        ? "bg-black text-white"
-                        : "bg-white/80 text-gray-700 hover:bg-gray-100"
-                    }`}
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+              {galleryPreviewItems.map((image, index) => (
+                <RevealOnScroll key={image.id} delay={index * 80} className="break-inside-avoid">
+                  <div
+                    className="group relative rounded-2xl overflow-hidden cursor-zoom-in bg-white border border-white/80 shadow-[0_10px_20px_-5px_rgba(0,0,0,0.15)] hover:shadow-[0_20px_40px_-5px_rgba(0,0,0,0.2)] transition-all duration-300"
+                    onClick={() => setSelectedImage(image)}
                   >
-                    {cat.label}
-                  </button>
-                ))}
-              </div>
-            )}
-
-            {isLoading ? (
-              <div className="flex justify-center py-20">
-                <Loader2 className="w-10 h-10 animate-spin text-muted-foreground" />
-              </div>
-            ) : error ? (
-              <div className="text-center py-20 text-muted-foreground">
-                Unable to load gallery. Please try again later.
-              </div>
-            ) : filtered.length === 0 ? (
-              <div className="text-center py-20 text-muted-foreground">
-                No images in this category yet.
-              </div>
-            ) : (
-              <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-                {filtered.map((image, index) => (
-                  <RevealOnScroll key={image.id} delay={index * 100} className="break-inside-avoid">
-                    <PhotoFrame
+                    <img
                       src={image.image_url}
                       alt={image.title}
-                      title={image.title}
-                      location={image.location || undefined}
-                      aspect={aspectRatios[index % aspectRatios.length]}
-                      onClick={() => setSelectedImage(image)}
+                      className="w-full h-auto object-contain transform transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
                     />
-                  </RevealOnScroll>
-                ))}
-              </div>
-            )}
+                  </div>
+                </RevealOnScroll>
+              ))}
+            </div>
           </div>
         </section>
       </main>

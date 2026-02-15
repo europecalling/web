@@ -1,5 +1,7 @@
 import { cn } from "@/lib/utils";
 
+import photoTemplate from "@/assets/Photo template.png";
+
 interface PhotoFrameProps {
   src: string;
   alt?: string;
@@ -17,48 +19,51 @@ export function PhotoFrame({
   location,
   className,
   onClick,
-  aspect = "aspect-[4/3]",
 }: PhotoFrameProps) {
   return (
     <div
       className={cn(
-        "relative inline-block p-4 pb-8 pt-6 bg-[#f5f0e1] rounded-sm",
-        "shadow-[0_4px_12px_rgba(0,0,0,0.1),0_8px_24px_rgba(0,0,0,0.08)]",
-        "hover:shadow-[0_8px_20px_rgba(0,0,0,0.12),0_12px_32px_rgba(0,0,0,0.1)]",
-        "transition-shadow duration-300",
+        "relative inline-block w-full",
+        "transition-transform duration-300 hover:scale-[1.02]",
         onClick && "cursor-pointer",
         className
       )}
       onClick={onClick}
     >
-      {/* Tape strip - Polaroid style */}
+      {/* Template frame: full Polaroid-style background with tape and shadow */}
       <div
-        className="absolute top-2 right-4 w-16 h-6 -rotate-12 bg-[#e8e4d9] opacity-90 shadow-sm"
-        style={{
-          boxShadow: "0 1px 2px rgba(0,0,0,0.1)",
-        }}
-      />
-      {/* White photo border / frame */}
-      <div
-        className={cn(
-          "relative overflow-hidden bg-white p-2 shadow-inner",
-          "border border-white"
-        )}
+        className="relative w-full bg-[#f5f0e1]"
+        style={{ aspectRatio: "1" }}
       >
+        {/* Template layer - frame, tape, shadow (from Photo template.png) */}
         <img
-          src={src}
-          alt={alt}
-          className={cn(
-            "w-full h-auto object-cover block",
-            aspect
-          )}
-          loading="lazy"
+          src={photoTemplate}
+          alt=""
+          aria-hidden
+          className="absolute inset-0 w-full h-full object-contain select-none pointer-events-none"
         />
+        {/* Uploaded image: replaces the placeholder landscape in the template's inner window */}
+        <div
+          className="absolute overflow-hidden rounded-sm"
+          style={{
+            top: "11%",
+            left: "8%",
+            right: "8%",
+            bottom: "22%",
+          }}
+        >
+          <img
+            src={src}
+            alt={alt}
+            className="w-full h-full object-cover block"
+            loading="lazy"
+          />
+        </div>
       </div>
       {(title || location) && (
-        <div className="mt-2 px-1 text-center">
+        <div className="mt-3 px-2 text-center">
           {title && <p className="font-medium text-sm text-gray-800">{title}</p>}
-          {location && <p className="text-xs text-gray-500">{location}</p>}
+          {location && <p className="text-xs text-gray-500 mt-0.5">{location}</p>}
         </div>
       )}
     </div>

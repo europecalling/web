@@ -20,42 +20,43 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Plus, MoreVertical, Pencil, Trash2, Loader2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Plus, MoreVertical, Pencil, Trash2, Loader2, LogOut } from "lucide-react";
 import { toast } from "sonner";
-
-const CATEGORIES = [
-  { id: "all", label: "All Photos" },
-  { id: "clients", label: "Happy Clients" },
-  { id: "tours", label: "On Tour" },
-  { id: "scenic", label: "Scenery" },
-];
+import { useAdminAuth } from "@/contexts/AdminAuthContext";
 
 const emptyForm = {
   title: "",
   location: "",
-  category: "all",
   image_url: "",
 };
 
 export default function AdminGallery() {
   const queryClient = useQueryClient();
+  const { logout } = useAdminAuth();
+  const navigate = useNavigate();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [form, setForm] = useState(emptyForm);
   const [editing, setEditing] = useState<GalleryItem | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [uploading, setUploading] = useState(false);
+  const [itemToDelete, setItemToDelete] = useState<GalleryItem | null>(null);
+  const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
 
   const { data: items = [], isLoading } = useQuery({
     queryKey: ["admin-gallery"],
@@ -113,7 +114,6 @@ export default function AdminGallery() {
     setForm({
       title: item.title,
       location: item.location || "",
-      category: item.category || "all",
       image_url: item.image_url,
     });
     setIsDialogOpen(true);
@@ -146,7 +146,6 @@ export default function AdminGallery() {
         data: {
           title: form.title.trim(),
           location: form.location.trim() || undefined,
-          category: form.category,
           image_url: form.image_url,
         },
       });
@@ -154,42 +153,57 @@ export default function AdminGallery() {
       createMutation.mutate({
         title: form.title.trim(),
         location: form.location.trim() || undefined,
-        category: form.category,
         image_url: form.image_url,
       });
     }
   };
 
   const handleDelete = (item: GalleryItem) => {
-    if (confirm(`Delete "${item.title}"?`)) {
-      deleteMutation.mutate(item.id);
+    setItemToDelete(item);
+  };
+
+  const confirmDelete = () => {
+    if (itemToDelete) {
+      deleteMutation.mutate(itemToDelete.id);
+      setItemToDelete(null);
     }
   };
 
   const isSubmitting = createMutation.isPending || updateMutation.isPending;
 
   return (
-    <div>
-      <div className="flex items-center justify-between mb-8">
-        <h1 className="font-heading text-2xl font-bold">Gallery Management</h1>
-        <Button onClick={openAdd}>
-          <Plus className="w-4 h-4 mr-2" />
-          Add Image
-        </Button>
+    <div className="w-full max-w-7xl mx-auto">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-6 sm:mb-8">
+        <h1 className="font-heading text-xl sm:text-2xl font-bold">Gallery Management</h1>
+        <div className="flex flex-wrap gap-2">
+          <Button onClick={openAdd} size="sm" className="sm:h-10 sm:px-4 sm:py-2">
+            <Plus className="w-4 h-4 mr-1.5 sm:mr-2" />
+            Add Image
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            className="sm:h-10 sm:px-4 sm:py-2"
+            onClick={() => setShowLogoutConfirm(true)}
+          >
+            <LogOut className="w-4 h-4 mr-1.5 sm:mr-2" />
+            Logout
+          </Button>
+        </div>
       </div>
 
       {isLoading ? (
-        <div className="flex items-center justify-center py-16">
+        <div className="flex items-center justify-center py-16 sm:py-24">
           <Loader2 className="w-8 h-8 animate-spin text-muted-foreground" />
         </div>
       ) : items.length === 0 ? (
-        <div className="text-center py-16 text-muted-foreground">
-          No images yet. Click "Add Image" to get started.
+        <div className="text-center py-16 sm:py-24 text-muted-foreground text-sm sm:text-base">
+          No images yet. Click &quot;Add Image&quot; to get started.
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-6 lg:gap-8 justify-items-center">
           {items.map((item) => (
-            <div key={item.id} className="relative group">
+            <div key={item.id} className="relative group w-full max-w-[240px] sm:max-w-[260px] lg:max-w-[280px]">
               <PhotoFrame
                 src={item.image_url}
                 alt={item.title}
@@ -197,10 +211,10 @@ export default function AdminGallery() {
                 location={item.location || undefined}
                 aspect="aspect-[4/3]"
               />
-              <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="absolute top-2 right-2 sm:top-4 sm:right-4 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button size="icon" variant="secondary" className="h-8 w-8">
+                    <Button size="icon" variant="secondary" className="h-7 w-7 sm:h-8 sm:w-8 shadow-sm">
                       <MoreVertical className="w-4 h-4" />
                     </Button>
                   </DropdownMenuTrigger>
@@ -233,7 +247,7 @@ export default function AdminGallery() {
       />
 
       <Dialog open={isDialogOpen} onOpenChange={(open) => !open && resetAndClose()}>
-        <DialogContent className="max-w-md">
+        <DialogContent className="max-w-[95vw] sm:max-w-md mx-4 sm:mx-0">
           <DialogHeader>
             <DialogTitle>{editing ? "Edit Image" : "Add Image"}</DialogTitle>
           </DialogHeader>
@@ -286,24 +300,6 @@ export default function AdminGallery() {
                 placeholder="e.g. Paris, France"
               />
             </div>
-            <div>
-              <Label>Category</Label>
-              <Select
-                value={form.category}
-                onValueChange={(v) => setForm((f) => ({ ...f, category: v }))}
-              >
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  {CATEGORIES.map((c) => (
-                    <SelectItem key={c.id} value={c.id}>
-                      {c.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
             <DialogFooter>
               <Button type="button" variant="outline" onClick={resetAndClose}>
                 Cancel
@@ -321,6 +317,48 @@ export default function AdminGallery() {
           </form>
         </DialogContent>
       </Dialog>
+
+      <AlertDialog open={showLogoutConfirm} onOpenChange={setShowLogoutConfirm}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Log out</AlertDialogTitle>
+            <AlertDialogDescription>
+              Are you sure you want to log out?
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={() => {
+                logout();
+                navigate("/admin/login");
+              }}
+            >
+              Log out
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      <AlertDialog open={!!itemToDelete} onOpenChange={(open) => !open && setItemToDelete(null)}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Delete image</AlertDialogTitle>
+            <AlertDialogDescription>
+              Are you sure you want to delete &quot;{itemToDelete?.title}&quot;? This action cannot be undone.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={confirmDelete}
+              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+            >
+              Delete
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 }
