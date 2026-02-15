@@ -38,7 +38,19 @@ import romaniaImg from "@/assets/destination-romania.jpg";
 import azerbaijanImg from "@/assets/a3.png";
 import kazakhstanImg from "@/assets/a2 (1).png";
 import armeniaImg from "@/assets/a4.png";
-import netherlandsImg from "@/assets/destination-netherlands.png";
+import belgiumArrivalImg from "@/assets/belgium/arrival in brussels.jpeg";
+import belgiumBrusselsTourImg from "@/assets/belgium/brussels city tour.jpeg";
+import belgiumGhentBrugesImg from "@/assets/belgium/ghent & bruges (day trip).jpeg";
+import belgiumAntwerpImg from "@/assets/belgium/antwerp.jpeg";
+import belgiumDepartureImg from "@/assets/belgium/departure.jpeg";
+import netherlandsArrivalImg from "@/assets/netherland/Arrival – Amsterdam.jpeg";
+import netherlandsAmsterdamTourImg from "@/assets/netherland/Amsterdam City Tour.jpeg";
+import netherlandsZaanseImg from "@/assets/netherland/Zaanse Schans & Volendam.jpg";
+import netherlandsKeukenhofImg from "@/assets/netherland/Keukenhof : Haarlem (Seasonal).jpg";
+import netherlandsRotterdamImg from "@/assets/netherland/Rotterdam.jpeg";
+import netherlandsHagueImg from "@/assets/netherland/The Hague & Delft.jpg";
+import netherlandsGiethoornImg from "@/assets/netherland/Giethoorn Day Trip.jpg";
+import netherlandsDepartureImg from "@/assets/netherland/Departure.jpeg";
 import georgiaImg from "@/assets/destination-georgia.png";
 import kyrgyzstanImg from "@/assets/a1.png";
 import uzbekistanImg from "@/assets/uzbekistan.jpg";
@@ -156,7 +168,7 @@ const countryData: Record<string, CountryData> = {
         title: "Belgium - Heritage & Culture",
         name: "Belgium",
         tagline: "Brussels, Bruges & Beyond",
-        image: netherlandsImg,
+        image: belgiumArrivalImg,
         description: "Belgium is a historic crossroads of Europe, where medieval cities, world-famous chocolate, and EU institutions meet. From the Grand Place in Brussels to the canals of Bruges and Ghent, discover a land of rich heritage, art, and culinary excellence.",
         stats: { price: "€1,150", duration: "5 Days", visa: "Schengen Visa" },
         whyChoose: [
@@ -192,11 +204,11 @@ const countryData: Record<string, CountryData> = {
             { question: "Do you provide emergency support?", answer: "Yes, we offer 24/7 emergency assistance for all our travelers throughout their journey." }
         ],
         itinerary: [
-            { day: 1, title: "Arrival in Brussels", description: "Brussels, founded in the 10th century, grew as a major medieval trading center and is now the capital of Belgium and the European Union, known for its rich heritage and iconic Grand Place.", image: netherlandsImg },
-            { day: 2, title: "Brussels City Tour", description: "Brussels is a historic royal city that later became the political center of Europe, home to the Belgian monarchy and EU institutions.", image: netherlandsImg },
-            { day: 3, title: "Ghent & Bruges (Day Trip)", description: "Ghent and Bruges flourished as wealthy medieval trading cities, famous for their canals, castles, and well-preserved historic centers.", image: netherlandsImg },
-            { day: 4, title: "Antwerp", description: "Antwerp is a historic trading city, famous for its diamond trade, art heritage, and Gothic architecture.", image: netherlandsImg },
-            { day: 5, title: "Departure", description: "Belgium's central location has long made it a key gateway for travel, trade, and cultural exchange in Europe.", image: DepartureImg }
+            { day: 1, title: "Arrival in Brussels", description: "Brussels, founded in the 10th century, grew as a major medieval trading center and is now the capital of Belgium and the European Union, known for its rich heritage and iconic Grand Place.", image: belgiumArrivalImg },
+            { day: 2, title: "Brussels City Tour", description: "Brussels is a historic royal city that later became the political center of Europe, home to the Belgian monarchy and EU institutions.", image: belgiumBrusselsTourImg },
+            { day: 3, title: "Ghent & Bruges (Day Trip)", description: "Ghent and Bruges flourished as wealthy medieval trading cities, famous for their canals, castles, and well-preserved historic centers.", image: belgiumGhentBrugesImg },
+            { day: 4, title: "Antwerp", description: "Antwerp is a historic trading city, famous for its diamond trade, art heritage, and Gothic architecture.", image: belgiumAntwerpImg },
+            { day: 5, title: "Departure", description: "Belgium's central location has long made it a key gateway for travel, trade, and cultural exchange in Europe.", image: belgiumDepartureImg }
         ]
     },
     azerbaijan: {
@@ -406,7 +418,7 @@ const countryData: Record<string, CountryData> = {
         title: "Netherlands - Canals & Culture",
         name: "Netherlands",
         tagline: "Windmills, Art & Iconic Waterways",
-        image: netherlandsImg,
+        image: netherlandsArrivalImg,
         description: "Experience the Netherlands in its full glory from the UNESCO listed canals of Amsterdam to the historic windmills of Zaanse Schans. Immerse yourself in a land where artistic heritage meets modern innovation, featuring world-class museums, vibrant tulip fields, and a cycling culture that invites you to explore at your own pace.",
         stats: { price: "€1,250", duration: "8 Days", visa: "Schengen Visa" },
         whyChoose: [
@@ -444,14 +456,14 @@ const countryData: Record<string, CountryData> = {
             { question: "Do you provide emergency support?", answer: "Yes, we offer 24/7 emergency assistance for all our travelers throughout their journey." }
         ],
         itinerary: [
-            { day: 1, title: "Arrival – Amsterdam", description: "Arrive in the capital city, known for its 17th-century Golden Age canals and rich maritime history.", image: netherlandsImg },
-            { day: 2, title: "Amsterdam City Tour", description: "Explore Dam Square, Royal Palace, and historic canal houses. Visit world-famous museums reflecting Dutch art and history.", image: netherlandsImg },
-            { day: 3, title: "Zaanse Schans & Volendam", description: "Discover traditional windmills and wooden houses at Zaanse Schans. Visit Volendam, a historic fishing village preserving Dutch heritage.", image: netherlandsImg },
-            { day: 4, title: "Keukenhof / Haarlem (Seasonal)", description: "Spring visit to Keukenhof, showcasing the Netherlands' tulip-growing tradition, or explore Haarlem's medieval architecture and Grote Kerk.", image: netherlandsImg },
-            { day: 5, title: "Rotterdam", description: "Explore Rotterdam, rebuilt after WWII, known for its modern architecture and Europe's largest port.", image: netherlandsImg },
-            { day: 6, title: "The Hague & Delft", description: "Visit The Hague, the political center of the Netherlands and home to the International Court of Justice. Explore Delft, famous for blue pottery and its royal connections.", image: netherlandsImg },
-            { day: 7, title: "Giethoorn Day Trip", description: "Visit Giethoorn, a peaceful canal village known as the 'Dutch Venice,' reflecting traditional rural Dutch life.", image: netherlandsImg },
-            { day: 8, title: "Departure", description: "Airport transfer with memories of Dutch art, history, and cultural heritage.", image: DepartureImg }
+            { day: 1, title: "Arrival – Amsterdam", description: "Arrive in the capital city, known for its 17th-century Golden Age canals and rich maritime history.", image: netherlandsArrivalImg },
+            { day: 2, title: "Amsterdam City Tour", description: "Explore Dam Square, Royal Palace, and historic canal houses. Visit world-famous museums reflecting Dutch art and history.", image: netherlandsAmsterdamTourImg },
+            { day: 3, title: "Zaanse Schans & Volendam", description: "Discover traditional windmills and wooden houses at Zaanse Schans. Visit Volendam, a historic fishing village preserving Dutch heritage.", image: netherlandsZaanseImg },
+            { day: 4, title: "Keukenhof / Haarlem (Seasonal)", description: "Spring visit to Keukenhof, showcasing the Netherlands' tulip-growing tradition, or explore Haarlem's medieval architecture and Grote Kerk.", image: netherlandsKeukenhofImg },
+            { day: 5, title: "Rotterdam", description: "Explore Rotterdam, rebuilt after WWII, known for its modern architecture and Europe's largest port.", image: netherlandsRotterdamImg },
+            { day: 6, title: "The Hague & Delft", description: "Visit The Hague, the political center of the Netherlands and home to the International Court of Justice. Explore Delft, famous for blue pottery and its royal connections.", image: netherlandsHagueImg },
+            { day: 7, title: "Giethoorn Day Trip", description: "Visit Giethoorn, a peaceful canal village known as the 'Dutch Venice,' reflecting traditional rural Dutch life.", image: netherlandsGiethoornImg },
+            { day: 8, title: "Departure", description: "Airport transfer with memories of Dutch art, history, and cultural heritage.", image: netherlandsDepartureImg }
         ]
     },
     russia: {

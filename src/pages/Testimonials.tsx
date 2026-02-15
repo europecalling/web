@@ -8,15 +8,9 @@ import { StickyEnquireButton } from "@/components/ui/StickyEnquireButton";
 import { Star, Play, Quote, MapPin, Globe, User, ChevronLeft, ChevronRight, Pause, RotateCcw, Filter, X, ChevronDown, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-// Video Assets
-import video1 from "@/assets/video/WhatsApp Video 2025-12-15 at 1.17.04 PM.mp4";
-import video2 from "@/assets/video/WhatsApp Video 2025-12-15 at 1.17.14 PM.mp4";
-import video3 from "@/assets/video/WhatsApp Video 2025-12-15 at 1.17.16 PM (1).mp4";
-import video4 from "@/assets/video/WhatsApp Video 2025-12-15 at 1.17.16 PM (2).mp4";
-import video5 from "@/assets/video/WhatsApp Video 2025-12-15 at 1.17.16 PM.mp4";
-import video6 from "@/assets/video/WhatsApp Video 2025-12-15 at 1.17.17 PM (1).mp4";
-import video7 from "@/assets/video/WhatsApp Video 2025-12-15 at 1.17.17 PM (2).mp4";
-// Note: video8 (WhatsApp Video 2025-12-15 at 1.17.17 PM.mp4) is available if needed we can add another testimonial.
+// Video Assets - Journey stories
+import journey1 from "@/assets/video/journey1.mp4";
+import journey2 from "@/assets/video/journey2.mp4";
 
 const GoogleLogo = () => (
   <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +39,7 @@ const testimonials = [
     content: "Europe Calling made my dream of working in Germany a reality. Their professional team guided me through every step.",
     rating: 5,
     hasVideo: true,
-    videoSrc: video1,
+    videoSrc: journey1,
     thumbnail: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=800&h=800",
     videoDuration: "2:15"
   },
@@ -58,7 +52,7 @@ const testimonials = [
     content: "The entire process was seamless. I'm now happily settled in Warsaw with my family.",
     rating: 5,
     hasVideo: true,
-    videoSrc: video2,
+    videoSrc: journey2,
     thumbnail: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800&h=800",
     videoDuration: "1:45"
   },
@@ -70,8 +64,8 @@ const testimonials = [
     role: "Hospitality Manager",
     content: "They treat you like family, not just a client. Forever grateful for their support.",
     rating: 5,
-    hasVideo: true,
-    videoSrc: video3,
+    hasVideo: false,
+    videoSrc: null,
     thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800&h=800",
     videoDuration: "2:30"
   },
@@ -83,8 +77,8 @@ const testimonials = [
     role: "Architect",
     content: "Moving to France seemed impossible until I found Europe Calling. Thank you!",
     rating: 5,
-    hasVideo: true,
-    videoSrc: video4,
+    hasVideo: false,
+    videoSrc: null,
     thumbnail: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=800&h=800",
     videoDuration: "1:45"
   },
@@ -96,8 +90,8 @@ const testimonials = [
     role: "Mechanical Engineer",
     content: "From the first consultation to my arrival in Berlin, Europe Calling was with me every step.",
     rating: 5,
-    hasVideo: true,
-    videoSrc: video5,
+    hasVideo: false,
+    videoSrc: null,
     thumbnail: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&q=80&w=800&h=800",
     videoDuration: "3:10"
   },
@@ -109,8 +103,8 @@ const testimonials = [
     role: "Student",
     content: "Transparent process and regular updates made everything stress-free.",
     rating: 5,
-    hasVideo: true,
-    videoSrc: video6,
+    hasVideo: false,
+    videoSrc: null,
     thumbnail: "https://images.unsplash.com/photo-1645378999013-95abebf5f3c1?auto=format&fit=crop&q=80&w=800&h=800",
     videoDuration: "2:05"
   },
@@ -122,8 +116,8 @@ const testimonials = [
     role: "Nurse",
     content: "The team's cultural understanding made a huge difference.",
     rating: 5,
-    hasVideo: true,
-    videoSrc: video7,
+    hasVideo: false,
+    videoSrc: null,
     thumbnail: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800&h=800",
     videoDuration: "3:00"
   },
@@ -222,9 +216,8 @@ const filters = ["All", "India Clients", "Azerbaijan Clients", "Other Countries"
 
 const VideoCarousel = ({ items }: { items: typeof testimonials }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  // Removed isPaused state
   const [playingVideoId, setPlayingVideoId] = useState<number | null>(null);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const videoRefs = useRef<Map<number, HTMLVideoElement>>(new Map());
 
   // Auto-rotation logic
   // Auto-rotation logic
@@ -274,11 +267,23 @@ const VideoCarousel = ({ items }: { items: typeof testimonials }) => {
   };
 
   const handleVideoToggle = (id: number, e: React.MouseEvent) => {
-    e.stopPropagation(); // Prevent card click logic
+    e.stopPropagation();
     if (playingVideoId === id) {
-      setPlayingVideoId(null); // Stop playing
+      const vid = videoRefs.current.get(id);
+      if (vid) vid.pause();
+      setPlayingVideoId(null);
     } else {
-      setPlayingVideoId(id); // Start playing
+      // Call play() synchronously within the user gesture to avoid browser blocking
+      const vid = videoRefs.current.get(id);
+      if (vid) {
+        vid.muted = false;
+        vid.controls = true;
+        const playPromise = vid.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {}); // Ignore autoplay errors
+        }
+      }
+      setPlayingVideoId(id);
     }
   };
 
@@ -331,26 +336,23 @@ const VideoCarousel = ({ items }: { items: typeof testimonials }) => {
             >
               <div className={cn("w-full h-full relative transition-[filter] duration-500", brightness)}>
 
-                {isActive && isPlaying && item.videoSrc ? (
+                {item.videoSrc ? (
                   <video
+                    ref={(el) => {
+                      if (el) videoRefs.current.set(item.id, el);
+                      else videoRefs.current.delete(item.id);
+                    }}
                     src={item.videoSrc}
                     className="w-full h-full object-cover bg-black"
-                    controls
-                    autoPlay
-                    onEnded={() => setPlayingVideoId(null)}
-                  />
-                ) : item.videoSrc ? (
-                  <video
-                    src={item.videoSrc}
-                    className="w-full h-full object-cover"
-                    preload="metadata"
-                    muted
+                    controls={isPlaying}
+                    muted={!isPlaying}
                     playsInline
+                    preload="metadata"
                     onLoadedMetadata={(e) => {
-                      // Seek to first frame to ensure thumbnail shows
                       const video = e.target as HTMLVideoElement;
-                      video.currentTime = 0.1;
+                      if (!isPlaying) video.currentTime = 0.1;
                     }}
+                    onEnded={() => setPlayingVideoId(null)}
                   />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-primary via-primary/90 to-black" />
