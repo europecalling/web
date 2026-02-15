@@ -4,19 +4,19 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { StickyEnquireButton } from "@/components/ui/StickyEnquireButton";
-import { ArrowRight, Target, Eye, Heart, Quote, Instagram, Facebook, Volume2, VolumeX, Maximize, Play, Pause } from "lucide-react";
+import { ArrowRight, Target, Eye, Heart, Quote, Instagram, Facebook, Volume2, VolumeX, Maximize, Play, Pause, User } from "lucide-react";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { CTASection } from "@/components/home/CTASection";
 
-import poster1 from "@/assets/CODO 5 THEME POSTERS copy (1).png";
-import poster2 from "@/assets/CODO 5 THEME POSTERS 2 copy.png";
-import poster3 from "@/assets/CODO 5 THEME POSTERS 3 copy.png";
-import poster4 from "@/assets/CODO 5 THEME POSTERS 4 copy.png";
-import poster5 from "@/assets/CODO 5 THEME POSTERS 5 copy.png";
-import poster6 from "@/assets/CODO 5 THEME POSTERS 6 copy.png";
-import poster7 from "@/assets/CODO 5 THEME POSTERS 7 copy.png";
-import poster8 from "@/assets/CODO 5 THEME POSTERS 8 copy.png";
-import poster9 from "@/assets/CODO 5 THEME POSTERS 9 copy.png";
+import teamAyshaNasrin from "@/assets/team/aysha nasrin.jpeg";
+import teamMubarak from "@/assets/team/Mubarak.jpeg";
+import teamNavaf from "@/assets/team/navaf.jpeg";
+import teamNajiya from "@/assets/team/Najiya.jpeg";
+import teamSha from "@/assets/team/sha.jpeg";
+import teamNihala from "@/assets/team/nihala.jpeg";
+import teamAkhila from "@/assets/team/akhila.jpeg";
+import teamShammas from "@/assets/team/Shammas.jpeg";
+import teamJelsa from "@/assets/team/jelsa.jpeg";
 import founderImage from "@/assets/NJD.jpg";
 import officeImage from "@/assets/office.jpeg";
 import { ChevronRight } from "lucide-react";
@@ -30,16 +30,21 @@ const timeline = [
   { year: "2024", title: "Global Reach", description: "Now serving clients from 15+ countries with a team of 50+ experts." },
 ];
 
+const administrative = [
+  { name: "Najath Sharafudeen", role: "CEO & Founder", img: founderImage },
+  { name: "Jelsa M Reslin", role: "COO", img: teamJelsa },
+];
+
 const team = [
-  { name: "Aysha Nasrin P", role: "Sales Advisor ", location: "Mumbai", img: poster3 },
-  { name: "Muhsin Mubarak P", role: " Sales Advisor", location: "Delhi", img: poster2 },
-  { name: "Muhammed Navaf P", role: "Senior Travel Consultant", location: "Dubai", img: poster5 },
-  { name: "Aysha Thaslee E.C", role: "Travel Consultant ", location: "Berlin", img: poster7 },
-  { name: "Najiya binu", role: "Travel Consultant", location: "Paris", img: poster9 },
-  { name: "Muhammed Sha AP", role: "Travel Consultant", location: "Calicut, India", img: poster6 },
-  { name: "Nihala Sherin K", role: "Operations Department Head", location: "Dubai", img: poster1 },
-  { name: "Akhila", role: "Accounts", location: "London", img: poster8 },
-  { name: "Shammas K T", role: "Digital Marketing / Media ", location: "Berlin", img: poster4 },
+  { name: "Aysha Nasrin P", role: "Sales Advisor", location: "Mumbai", img: teamAyshaNasrin },
+  { name: "Muhsin Mubarak P", role: "Sales Advisor", location: "Delhi", img: teamMubarak },
+  { name: "Muhammed Navaf P", role: "Senior Travel Consultant", location: "Dubai", img: teamNavaf },
+  { name: "Aysha Thaslee E.C", role: "Travel Consultant", location: "Berlin", img: null },
+  { name: "Najiya binu", role: "Travel Consultant", location: "Paris", img: teamNajiya },
+  { name: "Muhammed Sha AP", role: "Travel Consultant", location: "Calicut, India", img: teamSha },
+  { name: "Nihala Sherin K", role: "Operations Department Head", location: "Dubai", img: teamNihala },
+  { name: "Akhila", role: "Accounts", location: "London", img: teamAkhila },
+  { name: "Shammas K T", role: "Digital Marketing / Media", location: "Berlin", img: teamShammas },
 ];
 
 const values = [
@@ -331,8 +336,7 @@ const About = () => {
                         </div>
                       </div>
                       <p className="text-xs text-gray-500 italic leading-relaxed font-medium">
-                        "Travel taught me that happiness grows when you open your world to others. Europe Calling was born from real journeys, real people, and real experiences."
-                      </p>
+                      "Europe Calling was built through years of travel, culture, and real hosting experiences across Europe. Guided by one simple belief “WHATS MAKE YOU HAPPY”                      </p>
                     </div>
                   </div>
                 </RevealOnScroll>
@@ -659,6 +663,44 @@ const About = () => {
           </div>
         </section >
 
+        {/* Administrative / Leadership Section */}
+        <section className="py-20 md:py-28 relative overflow-hidden bg-white border-y border-gray-100">
+          <div className="container px-4 sm:px-6 relative z-10">
+            <RevealOnScroll animation="fade-up">
+              <div className="text-center mb-16">
+                <span className="font-['Dancing_Script'] text-2xl text-[#FF7700] block mb-3">Leadership</span>
+                <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-primary tracking-tight mb-4">
+                  Administrative Team
+                </h2>
+                <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
+                  Leading Europe Calling with vision and dedication.
+                </p>
+                <div className="w-16 h-1 bg-[#FF7700] mx-auto mt-6 rounded-full" />
+              </div>
+            </RevealOnScroll>
+
+            <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-12 max-w-4xl mx-auto">
+              {administrative.map((exec, index) => (
+                <RevealOnScroll animation="fade-up" delay={index * 100} key={exec.name} className="flex-1">
+                  <div className="group bg-[#faf4e5]/60 rounded-2xl p-8 border border-gray-100 hover:border-[#FF7700]/30 transition-all duration-300 hover:shadow-xl">
+                    <div className="relative w-full aspect-square max-w-[280px] mx-auto rounded-xl overflow-hidden mb-6 bg-gray-100">
+                      <img
+                        src={exec.img}
+                        alt={exec.name}
+                        className="w-full h-full object-cover object-top"
+                      />
+                    </div>
+                    <div className="text-center">
+                      <h3 className="font-heading text-xl font-bold text-primary mb-1">{exec.name}</h3>
+                      <p className="text-sm font-semibold text-[#FF7700] uppercase tracking-wider">{exec.role}</p>
+                    </div>
+                  </div>
+                </RevealOnScroll>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Team Grid */}
         <section className="py-24 relative overflow-hidden bg-[#faf4e5]">
           {/* Dotted Grid Background Pattern */}
@@ -697,12 +739,18 @@ const About = () => {
                   <div className="group relative bg-white rounded-3xl p-6 border border-gray-100 hover:border-[#FF7700] transition-all duration-300 hover:shadow-2xl h-full flex flex-col justify-between">
 
                     {/* Image Area */}
-                    <div className="relative w-full aspect-[4/4.5] rounded-2xl mb-8 overflow-hidden shrink-0">
-                      <img
-                        src={member.img}
-                        alt={member.name}
-                        className="w-full h-full object-cover object-top transform transition-transform duration-500 scale-125 group-hover:scale-135"
-                      />
+                    <div className="relative w-full aspect-[4/4.5] rounded-2xl mb-8 overflow-hidden shrink-0 bg-[#FF7700]/10">
+                      {member.img ? (
+                        <img
+                          src={member.img}
+                          alt={member.name}
+                          className="w-full h-full object-cover object-top transform transition-transform duration-500 scale-125 group-hover:scale-135"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-primary/40">
+                          <User className="w-1/3 h-1/3" strokeWidth={1} />
+                        </div>
+                      )}
                     </div>
 
                     {/* Content Section */}

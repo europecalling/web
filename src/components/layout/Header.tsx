@@ -20,7 +20,7 @@ const navItems = [
     icon: Info,
     children: [
       { name: "Gallery", path: "/gallery", icon: ImageIcon },
-      { name: "Reviews", path: "/testimonials", icon: MessageSquare },
+      { name: "Reviews", path: "/reviews", icon: MessageSquare },
     ]
   },
   { name: "Destinations", path: "/destinations", icon: MapPin },
@@ -38,7 +38,7 @@ export function Header() {
 
   // Pages that have LIGHT background heroes (Transparent header, DARK text)
   // Pages that have LIGHT background heroes (Transparent header, DARK text)
-  const lightHeroPages = ["/about", "/newsroom", "/contact", "/destinations", "/gallery", "/privacy", "/terms", "/testimonials", "/refund"];
+  const lightHeroPages = ["/about", "/newsroom", "/contact", "/destinations", "/gallery", "/privacy", "/terms", "/reviews", "/refund"];
   const isLightHeroPage = lightHeroPages.includes(location.pathname);
 
   // Pages that have DARK background heroes (Transparent header, WHITE text)

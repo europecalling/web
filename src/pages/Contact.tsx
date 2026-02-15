@@ -18,10 +18,23 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const destinations = [
   "Azerbaijan", "Kazakhstan", "Uzbekistan", "Kyrgyzstan","Georgia", "Armenia","Russia","France"
-]
+];
+
+const contactFaqs = [
+  { question: "What documents are required for booking?", answer: "Passport copy, visa (if applicable), ID proof, and advance payment are required." },
+  { question: "How early should I book my trip?", answer: "We recommend booking at least 15–30 days in advance for better availability and price." },
+  { question: "How can I make payment?", answer: "You can pay via bank transfer, UPI, or cash (as per company policy)." },
+  { question: "Do you provide emergency support during travel?", answer: "Yes, we offer 24/7 emergency support during your travel." },
+];
 
 
 const Contact = () => {
@@ -304,11 +317,79 @@ const Contact = () => {
           < div className="absolute top-20 left-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
           <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
 
-          <div className="container-wide relative z-10">
-            <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="container-wide relative z-10 space-y-10 lg:space-y-12">
 
-              {/* Left Column: Form - Balanced Width (6 cols) */}
-              <RevealOnScroll className="lg:col-span-6" animation="slide-in-left" delay={300}>
+            {/* Row 1: Maps in one row */}
+            <div>
+              <h3 className="font-heading text-2xl font-bold text-primary mb-2">Visit Our Offices</h3>
+              <p className="text-muted-foreground text-sm mb-6">
+                We welcome clients for personal consultations. Please schedule an appointment in advance.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* India Office - Malappuram Map */}
+                <RevealOnScroll animation="fade-up" delay={100}>
+                  <div className="bg-primary text-primary-foreground p-6 sm:p-8 rounded-3xl shadow-xl relative overflow-hidden group h-full">
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-white/15 transition-colors" />
+                    <h4 className="font-heading text-lg font-bold mb-4 relative z-10 text-gold">India Office — Malappuram</h4>
+                    <div className="relative block h-56 sm:h-64 rounded-2xl overflow-hidden shadow-inner border border-white/10 hover:border-gold/50 transition-colors group/map">
+                      <iframe
+                        width="100%"
+                        height="100%"
+                        src="https://maps.google.com/maps?q=2nd+Floor,+Paravath+Arcade,+opp.+Budget+Hypermarket,+Varangode,+Down+Hill,+Malappuram,+Kerala+676519&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        frameBorder="0"
+                        scrolling="no"
+                        marginHeight={0}
+                        marginWidth={0}
+                        title="Europe Calling India Office - Malappuram"
+                        className="w-full h-full grayscale-[0.5] hover:grayscale-0 transition-all duration-500"
+                      />
+                    </div>
+                    <a
+                      href="https://maps.app.goo.gl/kDggstPX7apT1ZsB6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 items-center gap-2 text-sm text-gold font-medium cursor-pointer hover:underline inline-flex"
+                    >
+                      Get Directions <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                </RevealOnScroll>
+
+                {/* Azerbaijan Office - Baku Map */}
+                <RevealOnScroll animation="fade-up" delay={200}>
+                  <div className="bg-primary text-primary-foreground p-6 sm:p-8 rounded-3xl shadow-xl relative overflow-hidden group h-full">
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-white/15 transition-colors" />
+                    <h4 className="font-heading text-lg font-bold mb-4 relative z-10 text-gold">Azerbaijan Office — Baku</h4>
+                    <div className="relative block h-56 sm:h-64 rounded-2xl overflow-hidden shadow-inner border border-white/10 hover:border-gold/50 transition-colors group/map">
+                      <iframe
+                        width="100%"
+                        height="100%"
+                        src="https://maps.google.com/maps?q=Bashir+safar-oghlu,+Baku,+Azerbaijan&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        frameBorder="0"
+                        scrolling="no"
+                        marginHeight={0}
+                        marginWidth={0}
+                        title="Europe Calling Azerbaijan Office - Baku"
+                        className="w-full h-full grayscale-[0.5] hover:grayscale-0 transition-all duration-500"
+                      />
+                    </div>
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Bashir+safar-oghlu,+Baku,+Azerbaijan"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 items-center gap-2 text-sm text-gold font-medium cursor-pointer hover:underline inline-flex"
+                    >
+                      Get Directions <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                </RevealOnScroll>
+              </div>
+            </div>
+
+            {/* Row 2: Contact/Feedback Form + FAQ */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+              {/* Form - 7 cols */}
+              <RevealOnScroll className="lg:col-span-7" animation="slide-in-left" delay={300}>
                 <div className="bg-white rounded-3xl shadow-xl border border-border/50 overflow-hidden relative group">
                   <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#C6A87C] via-[#F3E7C9] to-[#C6A87C]" />
 
@@ -640,79 +721,34 @@ const Contact = () => {
                 </div>
               </RevealOnScroll>
 
-              {/* Right Column: Content/Maps - Balanced Width (6 cols) */}
-              <RevealOnScroll className="lg:col-span-6 flex flex-col gap-8" animation="slide-in-right" delay={500}>
-                <h3 className="font-heading text-2xl font-bold text-primary mb-2">Visit Our Offices</h3>
-                <p className="text-muted-foreground text-sm mb-4 -mt-2">
-                  We welcome clients for personal consultations. Please schedule an appointment in advance.
-                </p>
-
-                {/* India Office - Malappuram Map */}
-                <div className="bg-primary text-primary-foreground p-6 sm:p-8 rounded-3xl shadow-xl relative overflow-hidden group">
-                  <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-white/15 transition-colors" />
-                  <h4 className="font-heading text-lg font-bold mb-4 relative z-10 text-gold">India Office — Malappuram</h4>
-                  <div className="relative block h-56 sm:h-64 rounded-2xl overflow-hidden shadow-inner border border-white/10 hover:border-gold/50 transition-colors group/map">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://maps.google.com/maps?q=2nd+Floor,+Paravath+Arcade,+opp.+Budget+Hypermarket,+Varangode,+Down+Hill,+Malappuram,+Kerala+676519&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                      frameBorder="0"
-                      scrolling="no"
-                      marginHeight={0}
-                      marginWidth={0}
-                      title="Europe Calling India Office - Malappuram"
-                      className="w-full h-full grayscale-[0.5] hover:grayscale-0 transition-all duration-500"
-                    />
-                  </div>
-                  <a
-                    href="https://maps.app.goo.gl/kDggstPX7apT1ZsB6"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 items-center gap-2 text-sm text-gold font-medium cursor-pointer hover:underline inline-flex"
-                  >
-                    Get Directions <ArrowRight className="w-4 h-4" />
-                  </a>
-                </div>
-
-                {/* Azerbaijan Office - Baku Map */}
-                <div className="bg-primary text-primary-foreground p-6 sm:p-8 rounded-3xl shadow-xl relative overflow-hidden group">
-                  <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-white/15 transition-colors" />
-                  <h4 className="font-heading text-lg font-bold mb-4 relative z-10 text-gold">Azerbaijan Office — Baku</h4>
-                  <div className="relative block h-56 sm:h-64 rounded-2xl overflow-hidden shadow-inner border border-white/10 hover:border-gold/50 transition-colors group/map">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://maps.google.com/maps?q=Bashir+safar-oghlu,+Baku,+Azerbaijan&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                      frameBorder="0"
-                      scrolling="no"
-                      marginHeight={0}
-                      marginWidth={0}
-                      title="Europe Calling Azerbaijan Office - Baku"
-                      className="w-full h-full grayscale-[0.5] hover:grayscale-0 transition-all duration-500"
-                    />
-                  </div>
-                  <a
-                    href="https://www.google.com/maps/search/?api=1&query=Bashir+safar-oghlu,+Baku,+Azerbaijan"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 items-center gap-2 text-sm text-gold font-medium cursor-pointer hover:underline inline-flex"
-                  >
-                    Get Directions <ArrowRight className="w-4 h-4" />
-                  </a>
-                </div>
-
-                {/* FAQ Teaser */}
-                <div className="bg-muted/50 border border-border rounded-3xl p-8 hover:bg-muted transition-colors">
-                  <h3 className="font-heading text-xl font-bold text-foreground mb-4">Frequently Asked Questions</h3>
-                  <p className="text-muted-foreground mb-4 text-sm">
-                    Find quick answers to common questions about visas, processing times, and documents.
+              {/* FAQ - 3–4 items, fully responsive */}
+              <RevealOnScroll className="lg:col-span-5" animation="slide-in-right" delay={400}>
+                <div className="bg-muted/50 border border-border rounded-3xl p-6 sm:p-8 h-full flex flex-col">
+                  <h3 className="font-heading text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-4">Frequently Asked Questions</h3>
+                  <p className="text-muted-foreground text-sm mb-4 sm:mb-6 hidden sm:block">
+                    Find quick answers about visas, processing times, and documents.
                   </p>
-                  <Link to="/about" className="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
-                    Visit FAQ Page <ArrowRight className="w-3 h-3" />
+                  <Accordion type="single" collapsible className="w-full space-y-2 sm:space-y-3">
+                    {contactFaqs.map((faq, index) => (
+                      <AccordionItem
+                        key={index}
+                        value={`faq-${index}`}
+                        className="bg-white rounded-xl border border-border/60 px-4 sm:px-5 data-[state=open]:border-gold/40 data-[state=open]:ring-1 data-[state=open]:ring-gold/10"
+                      >
+                        <AccordionTrigger className="text-left py-3 sm:py-4 text-foreground hover:text-gold hover:no-underline text-sm sm:text-base font-medium [&[data-state=open]]:text-gold">
+                          <span className="pr-2">{faq.question}</span>
+                        </AccordionTrigger>
+                        <AccordionContent className="text-muted-foreground text-xs sm:text-sm leading-relaxed pb-3 sm:pb-4 pt-0">
+                          {faq.answer}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                  <Link to="/about" className="mt-4 sm:mt-6 text-primary font-bold text-xs sm:text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                    Visit FAQ Page <ArrowRight className="w-3 h-3 shrink-0" />
                   </Link>
                 </div>
               </RevealOnScroll>
-
             </div>
           </div>
         </section >

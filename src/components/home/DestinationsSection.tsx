@@ -10,7 +10,8 @@ import georgiaImg from "@/assets/1destination-georgia.jpg";
 import kyrgyzstanImg from "@/assets/a1.png";
 import uzbekistanImg from "@/assets/uzbekistan.jpg";
 import franceImg from "@/assets/france.jpg";
-import netherlandsImg from "@/assets/destination-netherlands.png";
+import belgiumImg from "@/assets/belgium/arrival in brussels.jpeg";
+import netherlandsImg from "@/assets/netherland/Arrival – Amsterdam.jpeg";
 
 const destinations = [
     {
@@ -72,7 +73,7 @@ const destinations = [
     {
         name: "Belgium",
         tagline: "HERITAGE & CULTURE",
-        image: netherlandsImg,
+        image: belgiumImg,
         tours: "5 DAYS",
         path: "/destinations/belgium",
     },
