@@ -8,9 +8,17 @@ import { StickyEnquireButton } from "@/components/ui/StickyEnquireButton";
 import { Star, Play, Quote, MapPin, Globe, User, ChevronLeft, ChevronRight, Pause, RotateCcw, Filter, X, ChevronDown, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-// Video Assets - Journey stories
+// Video Assets - Journey stories & client reviews
 import journey1 from "@/assets/video/journey1.mp4";
 import journey2 from "@/assets/video/journey2.mp4";
+import review1 from "@/assets/video/review1.mp4";
+import review2 from "@/assets/video/review2.mp4";
+import review3 from "@/assets/video/review3.mp4";
+import review4 from "@/assets/video/review4.mp4";
+import review5 from "@/assets/video/review5.mp4";
+import review6 from "@/assets/video/review6.mp4";
+import review7 from "@/assets/video/review7.mp4";
+import review8 from "@/assets/video/review8.mp4";
 
 const GoogleLogo = () => (
   <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
@@ -58,68 +66,107 @@ const testimonials = [
   },
   {
     id: 3,
-    name: "Raj Patel",
-    location: "India",
-    destination: "Czech Republic",
-    role: "Hospitality Manager",
-    content: "They treat you like family, not just a client. Forever grateful for their support.",
+    name: "Client Review 1",
+    location: "",
+    destination: "Europe",
+    role: "Client",
+    content: "Hear directly from our clients as they share their journey to success in Europe.",
     rating: 5,
-    hasVideo: false,
-    videoSrc: null,
+    hasVideo: true,
+    videoSrc: review1,
     thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800&h=800",
-    videoDuration: "2:30"
+    videoDuration: ""
   },
   {
     id: 4,
-    name: "Sofia Ionescu",
-    location: "Romania",
-    destination: "France",
-    role: "Architect",
-    content: "Moving to France seemed impossible until I found Europe Calling. Thank you!",
+    name: "Client Review 2",
+    location: "",
+    destination: "Europe",
+    role: "Client",
+    content: "Hear directly from our clients as they share their journey to success in Europe.",
     rating: 5,
-    hasVideo: false,
-    videoSrc: null,
-    thumbnail: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=800&h=800",
-    videoDuration: "1:45"
+    hasVideo: true,
+    videoSrc: review2,
+    thumbnail: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800&h=800",
+    videoDuration: ""
   },
   {
     id: 5,
-    name: "Vikram Singh",
-    location: "India",
-    destination: "Germany",
-    role: "Mechanical Engineer",
-    content: "From the first consultation to my arrival in Berlin, Europe Calling was with me every step.",
+    name: "Client Review 3",
+    location: "",
+    destination: "Europe",
+    role: "Client",
+    content: "Hear directly from our clients as they share their journey to success in Europe.",
     rating: 5,
-    hasVideo: false,
-    videoSrc: null,
-    thumbnail: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&q=80&w=800&h=800",
-    videoDuration: "3:10"
+    hasVideo: true,
+    videoSrc: review3,
+    thumbnail: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=800&h=800",
+    videoDuration: ""
   },
   {
     id: 6,
-    name: "Aysel Mammadova",
-    location: "Azerbaijan",
-    destination: "Romania",
-    role: "Student",
-    content: "Transparent process and regular updates made everything stress-free.",
+    name: "Client Review 4",
+    location: "",
+    destination: "Europe",
+    role: "Client",
+    content: "Hear directly from our clients as they share their journey to success in Europe.",
     rating: 5,
-    hasVideo: false,
-    videoSrc: null,
-    thumbnail: "https://images.unsplash.com/photo-1645378999013-95abebf5f3c1?auto=format&fit=crop&q=80&w=800&h=800",
-    videoDuration: "2:05"
+    hasVideo: true,
+    videoSrc: review4,
+    thumbnail: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&q=80&w=800&h=800",
+    videoDuration: ""
   },
   {
     id: 7,
-    name: "Priya Nair",
-    location: "India",
-    destination: "Poland",
-    role: "Nurse",
-    content: "The team's cultural understanding made a huge difference.",
+    name: "Client Review 5",
+    location: "",
+    destination: "Europe",
+    role: "Client",
+    content: "Hear directly from our clients as they share their journey to success in Europe.",
     rating: 5,
-    hasVideo: false,
-    videoSrc: null,
+    hasVideo: true,
+    videoSrc: review5,
+    thumbnail: "https://images.unsplash.com/photo-1645378999013-95abebf5f3c1?auto=format&fit=crop&q=80&w=800&h=800",
+    videoDuration: ""
+  },
+  {
+    id: 10,
+    name: "Client Review 6",
+    location: "",
+    destination: "Europe",
+    role: "Client",
+    content: "Hear directly from our clients as they share their journey to success in Europe.",
+    rating: 5,
+    hasVideo: true,
+    videoSrc: review6,
     thumbnail: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800&h=800",
-    videoDuration: "3:00"
+    videoDuration: ""
+  },
+  {
+    id: 11,
+    name: "Client Review 7",
+    location: "",
+    destination: "Europe",
+    role: "Client",
+    content: "Hear directly from our clients as they share their journey to success in Europe.",
+    rating: 5,
+    hasVideo: true,
+    videoSrc: review7,
+    thumbnail: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=800&h=800",
+    videoDuration: ""
+  },
+  {
+    id: 12,
+    name: "Client Review 8",
+    location: "",
+    destination: "Europe",
+    role: "Client",
+    content: "Hear directly from our clients as they share their journey to success in Europe.",
+    rating: 5,
+    hasVideo: true,
+    videoSrc: review8,
+    thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800&h=800",
+    videoDuration: ""
   },
   // Text only reviews
   {

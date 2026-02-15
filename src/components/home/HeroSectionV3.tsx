@@ -105,9 +105,11 @@ export const HeroSectionV3 = () => {
                             }`}
                         style={{ transitionDuration: '10000ms' }}
                     />
-                    {/* Cinematic Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/80 md:bg-gradient-to-r md:from-black/80 md:via-black/50 md:to-transparent" />
-                    <div className="absolute inset-0 bg-black/10 mix-blend-overlay" />
+                    {/* Brand kit gradient: deep black + subtle orange warmth for a professional, elegant overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/40 to-black/90 md:bg-gradient-to-r md:from-black/85 md:via-black/50 md:to-transparent" />
+                    {/* Subtle brand accent (brand orange) for warmth and cohesion */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FF7700]/[0.06] md:to-[#FF7700]/[0.05]" />
+                    <div className="absolute inset-0 bg-black/[0.04] mix-blend-overlay" />
                 </div>
             ))}
 
