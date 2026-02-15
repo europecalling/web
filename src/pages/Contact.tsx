@@ -34,6 +34,7 @@ const contactFaqs = [
   { question: "How early should I book my trip?", answer: "We recommend booking at least 15–30 days in advance for better availability and price." },
   { question: "How can I make payment?", answer: "You can pay via bank transfer, UPI, or cash (as per company policy)." },
   { question: "Do you provide emergency support during travel?", answer: "Yes, we offer 24/7 emergency support during your travel." },
+  { question: "What is the refund policy?", answer: "We have a refund policy in place to ensure that our clients are protected. Please refer to our refund policy page for more information." },
 ];
 
 
