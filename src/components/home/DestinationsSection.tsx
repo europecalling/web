@@ -10,6 +10,7 @@ import georgiaImg from "@/assets/1destination-georgia.jpg";
 import kyrgyzstanImg from "@/assets/a1.png";
 import uzbekistanImg from "@/assets/uzbekistan.jpg";
 import franceImg from "@/assets/france.jpg";
+import netherlandsImg from "@/assets/destination-netherlands.png";
 
 const destinations = [
     {
@@ -68,6 +69,20 @@ const destinations = [
         tours: "1 TOURS",
         path: "/destinations/france",
     },
+    {
+        name: "Belgium",
+        tagline: "HERITAGE & CULTURE",
+        image: netherlandsImg,
+        tours: "5 DAYS",
+        path: "/destinations/belgium",
+    },
+    {
+        name: "Netherlands",
+        tagline: "CANALS & CULTURE",
+        image: netherlandsImg,
+        tours: "8 DAYS",
+        path: "/destinations/netherlands",
+    },
 ];
 
 interface DestinationsSectionProps {
@@ -101,13 +116,13 @@ export function DestinationsSection({ className = "", showViewAll = true, showHe
                     </div>
                 )}
 
-                {/* Premium Grid Layout */}
-                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+                {/* Premium Grid Layout - Flex with justify-center so last row centers (no blank columns) */}
+                <div className="flex flex-wrap justify-center gap-3 sm:gap-6">
                     {destinations.map((dest, index) => (
                         <Link
                             key={index}
                             to={dest.path}
-                            className="group relative h-[240px] sm:h-[320px] w-full rounded-[24px] overflow-hidden cursor-pointer block transform-gpu bg-primary shadow-md hover:shadow-2xl transition-all duration-700 ease-out-expo hover:-translate-y-2"
+                            className="group relative h-[240px] sm:h-[320px] flex-[0_0_calc(50%-0.375rem)] sm:flex-[0_0_calc(50%-0.75rem)] lg:flex-[0_0_calc(25%-1.125rem)] rounded-[24px] overflow-hidden cursor-pointer block transform-gpu bg-primary shadow-md hover:shadow-2xl transition-all duration-700 ease-out-expo hover:-translate-y-2"
                         >
                             {/* Background Image with Slow Zoom */}
                             <img
@@ -120,15 +135,15 @@ export function DestinationsSection({ className = "", showViewAll = true, showHe
                             {/* Gradient Overlay - Cinematic Bottom Fade */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 transition-opacity duration-500 will-change-[opacity]" />
 
-                            {/* Top Badge (Tours Count) - Subtle Glass */}
-                            <div className="absolute top-3 right-3 sm:top-5 sm:right-5 z-20 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out translate-y-2 group-hover:translate-y-0">
+                            {/* Top Badge (Tours Count) - Center aligned */}
+                            <div className="absolute top-3 left-1/2 -translate-x-1/2 sm:top-5 z-20 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out translate-y-2 group-hover:translate-y-0">
                                 <span className="bg-black text-[#ff7700] text-[8px] sm:text-[10px] font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider shadow-lg border border-[#ff7700]/20">
                                     {dest.tours}
                                 </span>
                             </div>
 
-                            {/* Bottom Content */}
-                            <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 z-20 flex flex-col items-center text-center">
+                            {/* Bottom Content - Always center aligned */}
+                            <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 z-20 flex flex-col items-center justify-center text-center">
 
                                 <h3 className="font-heading text-lg sm:text-2xl font-bold text-white mb-1 sm:mb-1.5 drop-shadow-lg tracking-wide group-hover:text-gold transition-colors duration-300">
                                     {dest.name}

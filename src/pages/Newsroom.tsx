@@ -1,11 +1,11 @@
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Header } from "@/components/layout/Header";
-
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { StickyEnquireButton } from "@/components/ui/StickyEnquireButton";
+import { DestinationsSection } from "@/components/home/DestinationsSection";
 import { Link } from "react-router-dom";
-import { Calendar, Tag, ChevronRight } from "lucide-react";
+import { Calendar, Tag, ChevronRight, Mail, MapPin } from "lucide-react";
 import { useState } from "react";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 
@@ -77,6 +77,53 @@ const Newsroom = () => {
             {news.map((article, index) => (
               <NewsCard key={article.id} article={article} index={index} />
             ))}
+          </div>
+        </section>
+
+        {/* Explore Destinations - includes Belgium & Netherlands */}
+        <div className="border-t border-primary/5 pt-16 md:pt-24">
+          <DestinationsSection showViewAll={false} showHeader={true} className="py-12" />
+        </div>
+
+        {/* Contact Section - Email/Phone + Two Office Locations */}
+        <section className="border-t border-primary/5 py-16 md:py-24 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef]">
+          <div className="container-wide px-4 sm:px-6 max-w-3xl mx-auto">
+            <h3 className="text-lg sm:text-xl font-heading font-bold text-primary mb-6 text-center">Get In Touch</h3>
+            <div className="space-y-4 sm:space-y-5">
+              {/* Row 1: Email & Phone */}
+              <div className="group w-full bg-white p-5 sm:p-6 rounded-xl shadow-sm hover:shadow-md border border-gray-100 hover:border-gold/30 transition-all duration-300 flex items-start gap-3 sm:gap-4">
+                <div className="w-12 h-12 rounded-full bg-secondary group-hover:bg-gold flex items-center justify-center text-primary group-hover:text-white transition-colors duration-300 shrink-0">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-1">
+                  <p className="text-[10px] text-gray-500 font-semibold uppercase tracking-wider w-full mb-0.5">Contact</p>
+                  <a href="mailto:sales@europecalling.co" className="text-primary font-bold text-sm hover:text-gold transition-colors">sales@europecalling.co</a>
+                  <a href="https://wa.me/994555533744" target="_blank" rel="noopener noreferrer" className="text-primary font-bold text-sm hover:text-gold transition-colors">+994 55 553 37 44</a>
+                </div>
+              </div>
+
+              {/* Row 2: Two Office Locations */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+                <a href="https://www.google.com/maps/search/?api=1&query=Bashir+safar-oghlu,+Baku,+Azerbaijan" target="_blank" rel="noopener noreferrer" className="w-full bg-white p-5 sm:p-6 rounded-xl shadow-sm hover:shadow-md border border-gray-100 hover:border-gold/30 transition-all duration-300 flex items-start gap-3 sm:gap-4 group">
+                  <div className="w-12 h-12 rounded-full bg-secondary group-hover:bg-gold flex items-center justify-center text-primary group-hover:text-white transition-colors duration-300 shrink-0">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-bold text-primary text-sm mb-1 leading-tight">Baku Office</p>
+                    <p className="text-gray-600 text-xs sm:text-sm m-0 leading-relaxed">Bashir safar-oghlu, Baku, Azerbaijan</p>
+                  </div>
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=2nd+Floor,+Paravath+Arcade,+opp.+Budget+Hypermarket,+Varangode,+Down+Hill,+Malappuram,+Kerala+676519" target="_blank" rel="noopener noreferrer" className="w-full bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-gray-100 border-l-[4px] border-l-gold hover:border-gold/50 transition-all duration-300 flex items-start gap-3 sm:gap-4 group">
+                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary shrink-0">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-bold text-primary text-sm mb-1 leading-tight">India Office</p>
+                    <p className="text-gray-600 text-xs sm:text-sm m-0 leading-relaxed">2nd Floor, Paravath Arcade, Malappuram, Kerala 676519</p>
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
         </section>
       </main>

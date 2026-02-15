@@ -58,10 +58,8 @@ export function Footer() {
                 { name: 'Destinations', path: '/destinations' },
                 { name: 'Contact', path: '/contact' },
                 { name: 'Newsroom', path: '/newsroom' },
-                { name: 'Gallery', path: '/gallery' },
-                { name: 'Reviews', path: '/testimonials' }
-              ].map((item, index) => (
-                <div key={item.name} className={`flex justify-center md:justify-start ${index >= 4 ? 'md:hidden' : ''}`}>
+              ].map((item) => (
+                <div key={item.name} className="flex justify-center md:justify-start">
                   <Link
                     to={item.path}
                     className="relative text-slate-600 hover:text-gold text-sm font-medium transition-all duration-300 flex items-center gap-2.5 group py-1.5 px-2 -mx-2 rounded-md hover:bg-gold/5 whitespace-nowrap"
@@ -88,6 +86,8 @@ export function Footer() {
                 { name: 'Armenia', path: '/destinations/armenia' },
                 { name: 'Kyrgyzstan', path: '/destinations/kyrgyzstan' },
                 { name: 'France', path: '/destinations/france' },
+                { name: 'Belgium', path: '/destinations/belgium' },
+                { name: 'Netherlands', path: '/destinations/netherlands' },
               ].map((item) => (
                 <Link
                   key={item.name}

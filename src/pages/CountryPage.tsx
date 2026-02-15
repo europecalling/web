@@ -106,7 +106,7 @@ const countryData: Record<string, CountryData> = {
         tagline: "Art, Culture & Cuisine",
         image: franceImg,
         description: "France offers a perfect blend of romance, culture, and world class experiences from iconic landmarks in Paris to charming villages and stunning coastlines. With rich history, legendary cuisine, and timeless art, it’s a destination that never goes out of style.",
-        stats: { price: "€1,250", duration: "6 Days", visa: "Schengen Visa" },
+        stats: { price: "€1,250", duration: "8 Days", visa: "Schengen Visa" },
         whyChoose: [
             { title: "Eiffel Tower Visit", description: "Iconic landmark of Paris." },
             { title: "Louvre Museum", description: "Home to the Mona Lisa." },
@@ -133,42 +133,14 @@ const countryData: Record<string, CountryData> = {
             { step: 6, title: "Enjoy", description: "Bon voyage!" }
         ],
         itinerary: [
-            {
-                day: 1,
-                title: "Arrival in Paris",
-                description: "Touch down in the City of Light. Private transfer to your central hotel. Evening free to explore the Champs-Élysées.",
-                image: franceImg
-            },
-            {
-                day: 2,
-                title: "Classic Paris City Tour",
-                description: "Guided tour of the Eiffel Tower, Arc de Triomphe, and Notre Dame. Afternoon Seine River Cruise.",
-                image: franceImg
-            },
-            {
-                day: 3,
-                title: "Louvre & Culture",
-                description: "Skip-the-line access to the Louvre Museum to see the Mona Lisa. Afternoon walk through Montmartre.",
-                image: franceImg
-            },
-            {
-                day: 4,
-                title: "Royal Versailles",
-                description: "Half-day trip to the Palace of Versailles. Explore the Hall of Mirrors and the magnificent gardens.",
-                image: franceImg
-            },
-            {
-                day: 5,
-                title: "Shopping & Leisure",
-                description: "Free day for shopping at Galeries Lafayette or a food tour in Le Marais.",
-                image: franceImg
-            },
-            {
-                day: 6,
-                title: "Departure",
-                description: "Breakfast at the hotel. Transfer to Charles de Gaulle Airport for your flight home.",
-                image: franceImg
-            }
+            { day: 1, title: "Arrival – Paris", description: "Arrival in the historic capital of France, known for its rich heritage, art, and iconic landmarks.", image: franceImg },
+            { day: 2, title: "Paris City Tour", description: "Explore the Eiffel Tower, Arc de Triomphe, and Champs-Élysées — symbols of France's architectural and revolutionary history. Enjoy a Seine River Cruise past historic monuments.", image: franceImg },
+            { day: 3, title: "Louvre – Montmartre", description: "Visit the Louvre Museum, once a royal palace and now the world's largest art museum. Explore Montmartre, the historic artists' quarter, and Sacré-Cœur Basilica.", image: franceImg },
+            { day: 4, title: "Versailles Excursion", description: "Discover the Palace of Versailles, the grand residence of French kings and a key site of the French Revolution.", image: franceImg },
+            { day: 5, title: "Paris – Nice (French Riviera)", description: "Travel to Nice, a historic Mediterranean city known for its Italian influence and Belle Époque charm.", image: franceImg },
+            { day: 6, title: "Monaco – Cannes", description: "Visit Monaco, famous for its royal Grimaldi family and Monte Carlo Casino. Explore Cannes, home of the prestigious International Film Festival.", image: franceImg },
+            { day: 7, title: "Provence / Leisure", description: "Explore Provence's historic villages known for Roman ruins, lavender fields, and medieval architecture, or enjoy leisure time in Nice.", image: franceImg },
+            { day: 8, title: "Departure", description: "Airport transfer with memories of France's rich cultural and historical heritage.", image: DepartureImg }
         ],
         testimonials: [
             { name: "Sophie M.", role: "Couple", content: "Paris was a dream come true.", location: "Paris" },
@@ -180,13 +152,60 @@ const countryData: Record<string, CountryData> = {
             { question: "Do you provide emergency support?", answer: "Yes, we offer 24/7 emergency assistance for all our travelers throughout their journey." }
         ]
     },
+    belgium: {
+        title: "Belgium - Heritage & Culture",
+        name: "Belgium",
+        tagline: "Brussels, Bruges & Beyond",
+        image: netherlandsImg,
+        description: "Belgium is a historic crossroads of Europe, where medieval cities, world-famous chocolate, and EU institutions meet. From the Grand Place in Brussels to the canals of Bruges and Ghent, discover a land of rich heritage, art, and culinary excellence.",
+        stats: { price: "€1,150", duration: "5 Days", visa: "Schengen Visa" },
+        whyChoose: [
+            { title: "Grand Place Brussels", description: "UNESCO-listed medieval square." },
+            { title: "Bruges & Ghent", description: "Canals, castles, and historic centers." },
+            { title: "Antwerp", description: "Diamond trade and Gothic architecture." },
+            { title: "Belgian Chocolate", description: "World-renowned chocolate heritage." }
+        ],
+        eligibility: ["Valid Passport", "Schengen Visa", "Travel Insurance", "Return Ticket", "Hotel Booking", "Funds Proof"],
+        benefits: [
+            { title: "Central Hotels", description: "Stay in prime city locations." },
+            { title: "Daily Breakfast", description: "Start each day with a Belgian breakfast." },
+            { title: "Entry Tickets", description: "Access to major attractions included." },
+            { title: "Private Transfers", description: "Comfortable travel between cities." },
+            { title: "Visa Assistance", description: "Full support with visa applications and documentation." },
+            { title: "Value & Transparency", description: "No hidden costs—what you see is what you pay." }
+        ],
+        process: [
+            { step: 1, title: "Inquire", description: "Share your travel dates." },
+            { step: 2, title: "Customize", description: "Tailor your Belgian experience." },
+            { step: 3, title: "Book", description: "Secure your package." },
+            { step: 4, title: "Visa", description: "Schengen assistance." },
+            { step: 5, title: "Arrive", description: "Welcome to Brussels." },
+            { step: 6, title: "Discover", description: "Enjoy Belgian charm." }
+        ],
+        testimonials: [
+            { name: "Lisa M.", role: "Traveler", content: "Bruges is magical. Perfect trip.", location: "Bruges" },
+            { name: "Thomas K.", role: "Foodie", content: "Best chocolate and waffles ever.", location: "Brussels" }
+        ],
+        faqs: [
+            { question: "Do I need a visa for Belgium?", answer: "Travelers from non-visa-exempt countries need a Schengen Visa. We provide full assistance with your application documentation." },
+            { question: "Is Belgium safe for tourists?", answer: "Yes. Belgium is generally safe for visitors, especially in major tourist areas. Standard precautions apply." },
+            { question: "Do you provide emergency support?", answer: "Yes, we offer 24/7 emergency assistance for all our travelers throughout their journey." }
+        ],
+        itinerary: [
+            { day: 1, title: "Arrival in Brussels", description: "Brussels, founded in the 10th century, grew as a major medieval trading center and is now the capital of Belgium and the European Union, known for its rich heritage and iconic Grand Place.", image: netherlandsImg },
+            { day: 2, title: "Brussels City Tour", description: "Brussels is a historic royal city that later became the political center of Europe, home to the Belgian monarchy and EU institutions.", image: netherlandsImg },
+            { day: 3, title: "Ghent & Bruges (Day Trip)", description: "Ghent and Bruges flourished as wealthy medieval trading cities, famous for their canals, castles, and well-preserved historic centers.", image: netherlandsImg },
+            { day: 4, title: "Antwerp", description: "Antwerp is a historic trading city, famous for its diamond trade, art heritage, and Gothic architecture.", image: netherlandsImg },
+            { day: 5, title: "Departure", description: "Belgium's central location has long made it a key gateway for travel, trade, and cultural exchange in Europe.", image: DepartureImg }
+        ]
+    },
     azerbaijan: {
         title: "Azerbaijan - Land of Fire",
         name: "Azerbaijan",
         tagline: "Where East Meets West",
         image: azerbaijanImg,
         description: "Azerbaijan blends ancient heritage with modern flair where Silk Road history meets futuristic Baku. From dramatic Caucasus landscapes to warm hospitality, it offers rich culture, unique cuisine, and great value for unforgettable travel experiences.",
-        stats: { price: "$650", duration: "8 Days", visa: "E-Visa" },
+        stats: { price: "$650", duration: "9 Days", visa: "E-Visa" },
         whyChoose: [
             { title: "Expert Local Knowledge", description: "Deep insights into local culture and hidden gems." },
             { title: "Tailor-Made Itineraries", description: "Custom travel plans designed for your pace." },
@@ -211,14 +230,15 @@ const countryData: Record<string, CountryData> = {
             { step: 6, title: "Tour", description: "Airport pickup." }
         ],
         itinerary: [
-            { day: 1, title: "Transfer / Panoramic Tour", description: "", image: azerbaijanBakuImg },
-            { day: 2, title: "Baku to Gabala Tour", description: "", image: azerbaijanGabalaImg },
-            { day: 3, title: "Tufandag Mountain Tour", description: "", image: azerbaijanMountainImg },
-            { day: 4, title: "Sheki To Baku", description: "", image: azerbaijanShakiImg },
-            { day: 5, title: "Baku City Tour / Absheron Tour", description: "", image: azerbaijanAbsheronImg },
-            { day: 6, title: "Shahdag Tour", description: "", image: azerbaijanShahadagImg },
-            { day: 7, title: " Guba To Baku / Gobustan", description: "", image: azerbaijanQubaImg },
-            { day: 8, title: " Departure", description: "", image: DepartureImg },
+            { day: 1, title: "Arrival & Panoramic Tour", description: "Arrival at Baku Airport, hotel transfer, and panoramic city sightseeing.", image: azerbaijanBakuImg },
+            { day: 2, title: "Baku City Tour", description: "Explore Baku highlights including Old City (Icherisheher), Maiden Tower, Flame Towers area, and major landmarks.", image: azerbaijanBakuImg },
+            { day: 3, title: "Gabala Tour", description: "Travel to Gabala and visit scenic attractions and leisure spots.", image: azerbaijanGabalaImg },
+            { day: 4, title: "Sheki Tour", description: "Visit the historic city of Sheki, including Sheki Khan's Palace and the old town.", image: azerbaijanShakiImg },
+            { day: 5, title: "Tufandag & Shamakhi Tour", description: "Enjoy Tufandag Mountain Resort with cable car experience and visit Shamakhi attractions.", image: azerbaijanMountainImg },
+            { day: 6, title: "Shahdag Tour", description: "Explore Shahdag resort area, known for mountain scenery and activities.", image: azerbaijanShahadagImg },
+            { day: 7, title: "Quba Tour", description: "Visit Quba's countryside, mountains, and natural landscapes.", image: azerbaijanQubaImg },
+            { day: 8, title: "Absheron & Gobustan Tour", description: "Explore Absheron Peninsula and Gobustan National Park with mud volcanoes and ancient rock carvings.", image: azerbaijanAbsheronImg },
+            { day: 9, title: "Airport Transfer", description: "Hotel check-out and transfer to the airport for departure.", image: DepartureImg },
         ],
         testimonials: [
             { name: "Ahmed K.", role: "Tourist", content: "Baku is dazzling at night. Great service.", location: "Baku" },
@@ -270,13 +290,13 @@ const countryData: Record<string, CountryData> = {
             { question: "Do you provide emergency support?", answer: "Yes, we offer 24/7 emergency assistance for all our travelers throughout their journey." }
         ],
         itinerary: [
-            { day: 1, title: "Arrival in Almaty", description: "", image: kazakhstanAlmatyImg },
-            { day: 2, title: "Shymbulak & Arbat Street Tour", description: "", image: kazakhstanShymbulak },
-            { day: 3, title: "Charyn Canyon – Kolsai Lake – Black Canyon", description: "", image: kazakhstanCanyonImg },
-            { day: 4, title: "Moon canyon & kaindly lake", description: "", image: kazakhstanMoonCanyonImg },
-            { day: 5, title: "Almaty City Tour KoK-Tobe hill", description: "", image: kazakhstanKokImg },
-            { day: 6, title: "Almarasan & Ayusai", description: "", image: kazakhstanAlmarasanImg },
-            { day: 7, title: "Airport Transfer", description: "", image: DepartureImg }
+            { day: 1, title: "Arrival in Almaty", description: "Arrival at Almaty Airport and transfer to the hotel. Check-in and rest.", image: kazakhstanAlmatyImg },
+            { day: 2, title: "Shymbulak & Arbat Street Tour", description: "Visit Shymbulak Mountain Resort by cable car and enjoy leisure time. Evening walk at Arbat Street.", image: kazakhstanShymbulak },
+            { day: 3, title: "Charyn Canyon – Kolsai Lake – Black Canyon", description: "Full-day tour covering Charyn Canyon, scenic Kolsai Lake, and the unique Black Canyon.", image: kazakhstanCanyonImg },
+            { day: 4, title: "Moon Canyon & Kaindy Lake", description: "Explore the surreal Moon Canyon followed by a visit to the famous sunken Kaindy Lake.", image: kazakhstanMoonCanyonImg },
+            { day: 5, title: "Almaty City Tour & Kok-Tobe Hill", description: "City tour covering major attractions and cable car ride to Kok-Tobe Hill for panoramic views.", image: kazakhstanKokImg },
+            { day: 6, title: "Almarasan & Ayusai", description: "Visit Almarasan Gorge and Ayusai Waterfall, enjoying nature and mountain scenery.", image: kazakhstanAlmarasanImg },
+            { day: 7, title: "Airport Transfer", description: "Hotel check-out and transfer to the airport for departure.", image: DepartureImg }
         ]
     },
     armenia: {
@@ -388,7 +408,7 @@ const countryData: Record<string, CountryData> = {
         tagline: "Windmills, Art & Iconic Waterways",
         image: netherlandsImg,
         description: "Experience the Netherlands in its full glory from the UNESCO listed canals of Amsterdam to the historic windmills of Zaanse Schans. Immerse yourself in a land where artistic heritage meets modern innovation, featuring world-class museums, vibrant tulip fields, and a cycling culture that invites you to explore at your own pace.",
-        stats: { price: "€1,250", duration: "6 Days", visa: "Schengen Visa" },
+        stats: { price: "€1,250", duration: "8 Days", visa: "Schengen Visa" },
         whyChoose: [
             { title: "Canal Cruise Experience", description: "Navigate the iconic waterways of Amsterdam." },
             { title: "Zaanse Schans Windmills", description: "Step back in time to 18th-century Holland." },
@@ -424,12 +444,14 @@ const countryData: Record<string, CountryData> = {
             { question: "Do you provide emergency support?", answer: "Yes, we offer 24/7 emergency assistance for all our travelers throughout their journey." }
         ],
         itinerary: [
-            { day: 1, title: "Arrival in Amsterdam", description: "Welcome to the Dutch capital! Private transfer to your hotel. Evening canal cruise to see the city lights.", image: netherlandsImg },
-            { day: 2, title: "Amsterdam Highlights", description: "Guided walking tour of the historic center, Dam Square, and the Jordaan district. Visit the Anne Frank House.", image: netherlandsImg },
-            { day: 3, title: "Windmills & Countryside", description: "Half-day tour to Zaanse Schans to see working windmills, clog making, and cheese farms.", image: netherlandsImg },
-            { day: 4, title: "Art & Culture", description: "Priority access to the Rijksmuseum to see the Night Watch. Afternoon at leisure or Van Gogh Museum visit.", image: netherlandsImg },
-            { day: 5, title: "Giethoorn Day Trip", description: "Full day excursion to the fairytale village of Giethoorn with a boat ride on its peaceful canals.", image: netherlandsImg },
-            { day: 6, title: "Departure", description: "Breakfast at hotel. Private transfer to Schiphol Airport for your onward journey.", image: netherlandsImg }
+            { day: 1, title: "Arrival – Amsterdam", description: "Arrive in the capital city, known for its 17th-century Golden Age canals and rich maritime history.", image: netherlandsImg },
+            { day: 2, title: "Amsterdam City Tour", description: "Explore Dam Square, Royal Palace, and historic canal houses. Visit world-famous museums reflecting Dutch art and history.", image: netherlandsImg },
+            { day: 3, title: "Zaanse Schans & Volendam", description: "Discover traditional windmills and wooden houses at Zaanse Schans. Visit Volendam, a historic fishing village preserving Dutch heritage.", image: netherlandsImg },
+            { day: 4, title: "Keukenhof / Haarlem (Seasonal)", description: "Spring visit to Keukenhof, showcasing the Netherlands' tulip-growing tradition, or explore Haarlem's medieval architecture and Grote Kerk.", image: netherlandsImg },
+            { day: 5, title: "Rotterdam", description: "Explore Rotterdam, rebuilt after WWII, known for its modern architecture and Europe's largest port.", image: netherlandsImg },
+            { day: 6, title: "The Hague & Delft", description: "Visit The Hague, the political center of the Netherlands and home to the International Court of Justice. Explore Delft, famous for blue pottery and its royal connections.", image: netherlandsImg },
+            { day: 7, title: "Giethoorn Day Trip", description: "Visit Giethoorn, a peaceful canal village known as the 'Dutch Venice,' reflecting traditional rural Dutch life.", image: netherlandsImg },
+            { day: 8, title: "Departure", description: "Airport transfer with memories of Dutch art, history, and cultural heritage.", image: DepartureImg }
         ]
     },
     russia: {
@@ -438,7 +460,7 @@ const countryData: Record<string, CountryData> = {
         tagline: "History, Art & Grandeur",
         image: russiaImg,
         description: "Discover the vast beauty of Russia, from the colorful onion domes of St. Basil's in Moscow to the imperial canals of St. Petersburg. A land of deep history, world class ballet, and architectural marvels, Russia offers a journey through the grandeur of tsars and the soul of the Slavic world.",
-        stats: { price: "$1,150", duration: "7 Days", visa: "E-Visa/Consult" },
+        stats: { price: "$1,150", duration: "10 Days", visa: "E-Visa/Consult" },
         whyChoose: [
             { title: "Red Square & Kremlin", description: "The historic heart of Moscow." },
             { title: "Hermitage Museum", description: "One of the world's largest art collections." },
@@ -474,13 +496,16 @@ const countryData: Record<string, CountryData> = {
             { question: "Do you provide emergency support?", answer: "Yes, we offer 24/7 emergency assistance for all our travelers throughout their journey." }
         ],
         itinerary: [
-            { day: 1, title: "Arrival in St. Petersburg", description: "", image: russiaPetersburgImg },
-            { day: 2, title: "City Tour of St. Petersburg And Hermitage Museum", description: "", image: russiaHermitagemuseumImg },
-            { day: 3, title: "Excursion to Peterhof Grand Palace", description: "", image: russiaPeterhofGrandPalaceImg },
-            { day: 4, title: "Free Day in St. Petersburg", description: "", image: russiaPetersburgCityImg },
-            { day: 5, title: "Free Day in St. Petersburg", description: "", image: russiaPetersburgHiddenImg },
-            { day: 6, title: "Free Day in St. Petersburg", description: "", image: russiaPetersburgCapitalImg },
-            { day: 7, title: "Departure from St. Petersburg", description: "", image: DepartureImg }
+            { day: 1, title: "Arrival – Moscow", description: "Arrival at Moscow Airport, transfer to hotel, check-in, and rest.", image: russiaImg },
+            { day: 2, title: "Moscow City Tour", description: "Explore Red Square, Kremlin area, St. Basil's Cathedral, and major city landmarks.", image: russiaImg },
+            { day: 3, title: "Sergiev Posad Excursion", description: "Visit Sergiev Posad, a historic town known for its monasteries and cultural heritage.", image: russiaImg },
+            { day: 4, title: "Moscow → St. Petersburg", description: "Transfer from Moscow to St. Petersburg by train. Hotel check-in and leisure time.", image: russiaPetersburgImg },
+            { day: 5, title: "St. Petersburg – Hermitage & City Tour", description: "Visit the Hermitage Museum and explore major city attractions.", image: russiaHermitagemuseumImg },
+            { day: 6, title: "St. Petersburg City Tour (Part 2)", description: "Continue sightseeing, covering palaces, cathedrals, and scenic streets.", image: russiaPetersburgCityImg },
+            { day: 7, title: "Military Experience Tour", description: "Enjoy a unique military-themed experience and interactive activities.", image: russiaPetersburgImg },
+            { day: 8, title: "Vyborg Tour", description: "Visit Vyborg, known for its medieval castle and European-style architecture.", image: russiaPetersburgCapitalImg },
+            { day: 9, title: "Husky Park Tour", description: "Visit Husky Park to interact with huskies and enjoy nature activities.", image: russiaPetersburgHiddenImg },
+            { day: 10, title: "Airport Transfer", description: "Hotel check-out and transfer to the airport for departure.", image: DepartureImg }
         ]
     },
     georgia: {
@@ -523,13 +548,13 @@ const countryData: Record<string, CountryData> = {
             { question: "Do you provide emergency support?", answer: "Yes, we offer 24/7 emergency assistance for all our travelers throughout their journey." }
         ],
         itinerary: [
-            { day: 1, title: "TBILISI CITY TOUR", image: georgiaTbilisiImg },
-            { day: 2, title: "GUDAURI TOUR", image: georgiaGudauriImg },
-            { day: 3, title: "KAZBEGI TOUR", image: georgiaKazbegiImg },
-            { day: 4, title: "GORI TOUR", image: georgiaGoriImg },
-            { day: 5, title: "KUTAISI TOUR", image: georgiaKutaisiImg },
-            { day: 6, title: "BAKURIANI TOUR", image: georgiaBakurianiImg },
-            { day: 7, title: "ADIOS GEORGIA", image: DepartureImg }
+            { day: 1, title: "Tbilisi City Tour", description: "Explore key attractions including Old Tbilisi, Narikala Fortress, Peace Bridge, Metekhi Church, and local markets.", image: georgiaTbilisiImg },
+            { day: 2, title: "Gudauri Tour", description: "Travel to Gudauri via the scenic Georgian Military Highway, visiting Ananuri Fortress and enjoying mountain views.", image: georgiaGudauriImg },
+            { day: 3, title: "Kazbegi Tour", description: "Visit Kazbegi (Stepantsminda) and the iconic Gergeti Trinity Church with stunning Caucasus mountain scenery.", image: georgiaKazbegiImg },
+            { day: 4, title: "Gori Tour", description: "Explore Gori, including Gori Fortress and key historical landmarks; optional visit to nearby attractions.", image: georgiaGoriImg },
+            { day: 5, title: "Kutaisi Tour", description: "Discover Kutaisi highlights such as Bagrati Cathedral, Gelati Monastery, and local city sights.", image: georgiaKutaisiImg },
+            { day: 6, title: "Bakuriani Tour", description: "Enjoy Bakuriani, a popular mountain resort known for nature walks, leisure activities, and relaxation.", image: georgiaBakurianiImg },
+            { day: 7, title: "Airport Transfer", description: "Transfer to the airport for departure.", image: DepartureImg }
         ]
     },
     uzbekistan: {
@@ -538,7 +563,7 @@ const countryData: Record<string, CountryData> = {
         tagline: "Samarkand, Bukhara & Tashkent",
         image: uzbekistanImg,
         description: "Uzbekistan is the heart of the Silk Road, home to breathtaking cities like Samarkand and Bukhara filled with timeless architecture and rich history. With vibrant culture, warm hospitality, and unforgettable flavors, it offers a journey into the soul of Central Asia.",
-        stats: { price: "$900", duration: "6 Days", visa: "E-Visa" },
+        stats: { price: "$900", duration: "8 Days", visa: "E-Visa" },
         whyChoose: [
             { title: "All-Inclusive Transport", description: "Private cars and Samarkand train tickets provided." },
             { title: "Expert Local Guides", description: "Professional English-speaking guides for every tour." },
@@ -572,12 +597,14 @@ const countryData: Record<string, CountryData> = {
             { question: "Do you provide emergency support?", answer: "Yes, we offer 24/7 emergency assistance for all our travelers throughout their journey." }
         ],
         itinerary: [
-            { day: 1, title: "Airport Transfer + Panoramic City Tour", description: "", image: uzbekistanCityImg },
-            { day: 2, title: "Tashkent / Chimgan Mountains / Charvak Lake Excursion", description: "", image: kyrgyzstanImg },
-            { day: 3, title: "Tashkent / Samarkand (by Train)", description: "", image: uzbekistanSamarkandImg },
-            { day: 4, title: "Samarkand / Bukhara (by Bullet Train/Coach)", description: "", image: uzbekistanTrainImg },
-            { day: 5, title: "Bukhara / Tashkent", description: "", image: uzbekistanBukharaImg },
-            { day: 6, title: "Departure from Tashkent", description: "", image: DepartureImg }
+            { day: 1, title: "Arrival in Tashkent", description: "Arrival at Tashkent International Airport. Meet & greet by guide. Private transfer to hotel & early check-in (subject to availability). Rest time. Evening visit to Magic City Park or Tashkent City Park. Overnight in Tashkent.", image: uzbekistanCityImg },
+            { day: 2, title: "Tashkent City Tour", description: "Breakfast at hotel. Full-day city tour including Khast Imam Complex, Barak Khan Madrasa, Chorsu Bazaar, Independence Square, Amir Timur Square, and Tashkent Metro Tour. Free time for shopping at Samarkand Darvoza Mall. Overnight in Tashkent.", image: uzbekistanCityImg },
+            { day: 3, title: "Tashkent – Bukhara (By Train)", description: "Breakfast at hotel. Transfer to railway station. High-speed train to Bukhara (approx. 4 hrs). Arrival & hotel transfer. Evening walking tour at Lyabi-Hauz Complex and Old City area. Overnight in Bukhara.", image: uzbekistanTrainImg },
+            { day: 4, title: "Bukhara City Tour", description: "Breakfast at hotel. Full-day sightseeing: Ark Fortress, Bolo Hauz Mosque, Poi Kalon Complex (Kalon Minaret & Mosque), Miri Arab Madrasa, Trading Domes, and Chor Minor. Free time for shopping traditional handicrafts. Overnight in Bukhara.", image: uzbekistanBukharaImg },
+            { day: 5, title: "Bukhara – Samarkand (By Train)", description: "Breakfast at hotel. Transfer to railway station. Train to Samarkand (approx. 2 hrs). Arrival & hotel transfer. Evening visit to Registan Square (illuminated view). Overnight in Samarkand.", image: uzbekistanTrainImg },
+            { day: 6, title: "Samarkand City Tour", description: "Breakfast at hotel. Full-day sightseeing: Registan Square, Gur-e-Amir Mausoleum, Bibi Khanum Mosque, Siab Bazaar, Shah-i-Zinda Complex, and Ulugh Beg Observatory. Overnight in Samarkand.", image: uzbekistanSamarkandImg },
+            { day: 7, title: "Samarkand – Tashkent (By Train)", description: "Breakfast at hotel. Free morning for leisure. Transfer to railway station. High-speed train to Tashkent. Arrival & hotel transfer. Overnight in Tashkent.", image: uzbekistanTrainImg },
+            { day: 8, title: "Departure", description: "Breakfast at hotel. Check-out. Transfer to airport for departure.", image: DepartureImg }
         ]
     }
 }
@@ -952,8 +979,7 @@ const CountryPage = () => {
                                             </li>
                                             <li className="flex items-center gap-3">
                                                 <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-gold"><CheckCircle2 className="w-4 h-4" /></div>
-                                                <span className="text-sm text-white/80">Azerbaijan Welcome to
-                                                    Europe Callingbased</span>
+                                                <span className="text-sm text-white/80">Europe Calling based in Azerbaijan</span>
                                             </li>
                                             <li className="flex items-center gap-3">
                                                 <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-gold"><CheckCircle2 className="w-4 h-4" /></div>

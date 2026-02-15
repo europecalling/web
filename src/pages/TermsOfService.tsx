@@ -8,7 +8,7 @@ import { StickyEnquireButton } from "@/components/ui/StickyEnquireButton";
 import { Scale, FileCheck, Layers, AlertCircle, Ban, HelpCircle, CheckCircle, Globe, Plane, Mail, MapPin } from "lucide-react";
 
 export default function TermsOfService() {
-    const lastUpdated = "December 19, 2025";
+    const lastUpdated = "February 15, 2026";
 
     return (
         <div className="min-h-screen bg-background flex flex-col overflow-x-hidden w-full max-w-full">
@@ -37,19 +37,19 @@ export default function TermsOfService() {
                                 </div>
 
                                 <div className="space-y-12">
-                                    {/* 1. Service Information */}
+                                    {/* 1. Service Information & Quotations */}
                                     <div className="group">
                                         <div className="flex items-center gap-3 mb-4">
                                             <div className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                                                 <FileCheck className="w-5 h-5" />
                                             </div>
-                                            <h2 className="text-2xl md:text-3xl font-bold m-0 text-primary">1. Service Information</h2>
+                                            <h2 className="text-2xl md:text-3xl font-bold m-0 text-primary">1. Service Information & Quotations</h2>
                                         </div>
                                         <ul className="list-disc pl-6 space-y-2 mt-4 text-muted-foreground">
-                                            <li>All quotations, packages, and services displayed are offers only. No reservation is made unless explicitly confirmed in writing.</li>
-                                            <li>All rates are subject to availability at the time of confirmation.</li>
-                                            <li>Quotations are valid for 3 days from the date of issue unless stated otherwise.</li>
-                                            <li>Europe Calling reserves the right to revise quotations if there are changes in availability, hotel selection, client requests, trade fairs, festivals, exhibitions, or seasonal peak periods.</li>
+                                            <li>All the above is just an offer; no reservation has been made. Rates are subject to availability.</li>
+                                            <li>This quotation is valid only for 3 days from the sent date. No bookings will be made until confirmed.</li>
+                                            <li>If hotels change due to availability or client request, the quotation is subject to change. Rooms are subject to availability at the time of confirmation.</li>
+                                            <li>Rates might change due to Major Trade Fairs, New Year, and any Exhibition or Festivals.</li>
                                         </ul>
                                     </div>
 
@@ -62,10 +62,11 @@ export default function TermsOfService() {
                                             <h2 className="text-2xl md:text-3xl font-bold m-0 text-primary">2. Booking & Confirmation</h2>
                                         </div>
                                         <ul className="list-disc pl-6 space-y-2 mt-4 text-muted-foreground">
-                                            <li>Bookings will be confirmed only upon receipt of full or partial payment as per the agreed booking terms.</li>
-                                            <li>Written confirmation is mandatory for all bookings.</li>
-                                            <li>Booking confirmations will be issued via vouchers or written reconfirmations.</li>
-                                            <li>Early check-in, late check-out, bed type, or adjoining rooms are subject to availability and may incur additional charges.</li>
+                                            <li>Bookings will be confirmed only upon receipt of payment as per the booking terms.</li>
+                                            <li>Booking will be confirmed upon written request only; bookings will be reconfirmed by vouchers or by written reconfirmations.</li>
+                                            <li>Early check-in, late check-out, bed type, or adjoining room is subject to availability and extra charges if any.</li>
+                                            <li>Advance payment must be settled before 14 days of the arrival date. If not, bookings will be canceled without further notice.</li>
+                                            <li><strong>Cancellation Policy:</strong> All bookings and reconfirmations made are treated as guaranteed bookings. Cancellation notice must be received in writing before 15 days of the check-in date to avoid 100% cancellation charges.</li>
                                         </ul>
                                     </div>
 
@@ -78,8 +79,8 @@ export default function TermsOfService() {
                                             <h2 className="text-2xl md:text-3xl font-bold m-0 text-primary">3. Travel Documents</h2>
                                         </div>
                                         <ul className="list-disc pl-6 space-y-2 mt-4 text-muted-foreground">
-                                            <li>Passports must be valid for at least six (6) months from the date of departure and must contain two blank pages.</li>
-                                            <li>Europe Calling is not responsible if a traveler is unable to travel due to passport, visa, or immigration issues.</li>
+                                            <li>Passport must be valid for at least 6 months from the date of departure and must hold 2 blank pages.</li>
+                                            <li>Europe Calling does not accept any responsibility if the passenger cannot travel because of any passport or visa issue. Cancellation policy will be applicable as per the booking terms.</li>
                                         </ul>
                                     </div>
 
@@ -92,9 +93,10 @@ export default function TermsOfService() {
                                             <h2 className="text-2xl md:text-3xl font-bold m-0 text-primary">4. Liability Disclaimer</h2>
                                         </div>
                                         <ul className="list-disc pl-6 space-y-2 mt-4 text-muted-foreground">
-                                            <li>Europe Calling shall not be liable for loss, injury, accident, death, baggage loss, theft, breakdowns, delays, weather conditions, strikes, war, quarantine, government actions, or any unforeseen circumstances.</li>
-                                            <li>Travelers are responsible for expenses arising from flight cancellations, rescheduling, or delays during the travel period.</li>
-                                            <li>Changes in government rules, travel regulations, or policies of destination countries are beyond our control.</li>
+                                            <li>In case of any cancellation or reschedule of Domestic or International flights during the travel period, travelers are advised to bear the expenses during that time on their own.</li>
+                                            <li>Please take extra care of your personal belongings while on the tour. Europe Calling shall not accept any liability or responsibility for any damages, loss, baggage loss, theft, injury, accident, death, breakdown, currency fluctuation, taxes, or irregularity that may occur in carrying out the tour arrangement due to weather conditions, strikes, war, quarantine, and any other cause whatsoever. All such loss or expense must be borne by the passengers.</li>
+                                            <li>Europe Calling will not be responsible for the change in travel regulations which may interrupt or cause change in the travel plan at any point post confirmation of services.</li>
+                                            <li>Europe Calling will not be responsible for the cancellation of this package due to any changes in the Govt. rules and regulations of respective countries.</li>
                                         </ul>
                                     </div>
 
@@ -107,7 +109,7 @@ export default function TermsOfService() {
                                             <h2 className="text-2xl md:text-3xl font-bold m-0 text-primary">5. Third-Party Services</h2>
                                         </div>
                                         <ul className="list-disc pl-6 space-y-2 mt-4 text-muted-foreground">
-                                            <li>Europe Calling acts as a global tour operator and does not control airlines, railways, shipping companies, hotels, or other third-party service providers.</li>
+                                            <li>As a global tour operator, Europe Calling does not have any control over Airline, Railways, Coach, Shipping companies, or any other facilities provided by third parties.</li>
                                             <li>Any disputes or service failures by third parties are subject to their respective terms and conditions.</li>
                                         </ul>
                                     </div>
@@ -120,8 +122,8 @@ export default function TermsOfService() {
                                             </div>
                                             <h2 className="text-2xl md:text-3xl font-bold m-0 text-primary">6. Unused Services</h2>
                                         </div>
-                                        <p>
-                                            Any services not utilized during the tour will not be refunded or adjusted.
+                                        <p className="text-muted-foreground m-0">
+                                            Any services not utilized on time will not be refunded or adjusted.
                                         </p>
                                     </div>
 
