@@ -72,6 +72,7 @@ export function Footer() {
               ))}
             </div>
           </div>
+          
 
           {/* Column 3: Top Destinations */}
           <div className="col-span-2 md:col-span-1 order-3 md:order-3">
