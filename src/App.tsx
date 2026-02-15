@@ -2,9 +2,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { PageSkeleton } from "@/components/ui/PageSkeleton";
+import { AdminAuthProvider } from "@/contexts/AdminAuthContext";
+import { AdminRoute } from "@/components/admin/AdminRoute";
 
 const Index = lazy(() => import("./pages/Index"));
 const About = lazy(() => import("./pages/About"));
@@ -20,6 +22,10 @@ const Gallery = lazy(() => import("./pages/Gallery"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const RefundPolicy = lazy(() => import("./pages/RefundPolicy"));
+const AdminLogin = lazy(() => import("./pages/admin/AdminLogin"));
+const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard"));
+const AdminGallery = lazy(() => import("./pages/admin/AdminGallery"));
+const AdminIndex = lazy(() => import("./pages/admin/AdminIndex"));
 
 const queryClient = new QueryClient();
 
@@ -31,10 +37,11 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-        <ScrollToTop />
-        <Suspense fallback={<PageSkeleton />}>
-          <Routes>
-            <Route path="/" element={<Index />} />
+        <AdminAuthProvider>
+          <ScrollToTop />
+          <Suspense fallback={<PageSkeleton />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/destinations" element={<Destinations />} />
 
@@ -46,10 +53,18 @@ const App = () => (
             <Route path="/destinations/:country" element={<CountryPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
-            <Route path="/refund" element={<RefundPolicy />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
+              <Route path="/refund" element={<RefundPolicy />} />
+              <Route path="/admin" element={<Outlet />}>
+                <Route index element={<AdminIndex />} />
+                <Route path="login" element={<AdminLogin />} />
+                <Route path="gallery" element={<AdminRoute><AdminDashboard /></AdminRoute>}>
+                  <Route index element={<AdminGallery />} />
+                </Route>
+              </Route>
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </AdminAuthProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
