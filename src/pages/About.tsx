@@ -37,12 +37,12 @@ const administrative = [
 ];
 
 const team = [
-  { name: "Aysha Nasrin P", role: "Sales Advisor", location: "Mumbai", img: teamAyshaNasrin },
+  { name: "Nihala Sherin K", role: "Manager", location: "Dubai", img: teamNihala },
+  { name: "Aysha Nasrin P", role: "Assistant Manager", location: "Mumbai", img: teamAyshaNasrin },
   { name: "Muhammed Navaf P", role: "Senior Travel Consultant", location: "Dubai", img: teamNavaf },
   { name: "Aysha Thaslee E.C", role: "Travel Consultant", location: "Berlin", img: teamAyshaThaslee },
   { name: "Najiya binu", role: "Travel Consultant", location: "Paris", img: teamNajiya },
   { name: "Muhammed Sha AP", role: "Travel Consultant", location: "Calicut, India", img: teamSha },
-  { name: "Nihala Sherin K", role: "Operations Department Head", location: "Dubai", img: teamNihala },
   { name: "Akhila", role: "Accounts", location: "London", img: teamAkhila },
   { name: "Shammas K T", role: "Digital Marketing / Media", location: "Berlin", img: teamShammas },
 ];
