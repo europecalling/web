@@ -728,16 +728,16 @@ const About = () => {
               </div>
             </RevealOnScroll>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
               {team.map((member, index) => (
                 <RevealOnScroll
                   animation="fade-up"
                   delay={index * 100}
                   key={member.name}
-                  className="w-full h-full"
+                  className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)] h-full"
                 >
                   {/* Card Main Container */}
-                  <div className="group relative bg-white rounded-3xl p-6 border border-gray-100 hover:border-[#FF7700] transition-all duration-300 hover:shadow-2xl h-full flex flex-col justify-between">
+                  <div className="group relative bg-white rounded-3xl p-6 border border-gray-100 hover:border-[#FF7700] transition-all duration-300 hover:shadow-2xl h-full flex flex-col justify-between shadow-sm">
 
                     {/* Image Area */}
                     <div className="relative w-full aspect-[4/4.5] rounded-2xl mb-8 overflow-hidden shrink-0 bg-[#FF7700]/10">
