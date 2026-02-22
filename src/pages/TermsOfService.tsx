@@ -66,7 +66,9 @@ export default function TermsOfService() {
                                             <li>Booking will be confirmed upon written request only; bookings will be reconfirmed by vouchers or by written reconfirmations.</li>
                                             <li>Early check-in, late check-out, bed type, or adjoining room is subject to availability and extra charges if any.</li>
                                             <li>Advance payment must be settled before 14 days of the arrival date. If not, bookings will be canceled without further notice.</li>
-                                            <li><strong>Cancellation Policy:</strong> All bookings and reconfirmations made are treated as guaranteed bookings. Cancellation notice must be received in writing before 15 days of the check-in date to avoid 100% cancellation charges.</li>
+                                            <li><strong>Cancellation Policy:</strong></li>
+                                            <li>If cancelled before 14 days of the check-in date, only 35% of the advance amount will be refunded due to hotel and vehicle cancellation charges.</li>
+                                            <li>If cancelled within 14 days of the check-in date or in case of no-show, 100% cancellation charges will apply.</li>
                                         </ul>
                                     </div>
 

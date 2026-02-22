@@ -9,8 +9,8 @@ import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { CTASection } from "@/components/home/CTASection";
 
 import teamAyshaNasrin from "@/assets/team/aysha nasrin.jpeg";
-import teamMubarak from "@/assets/team/Mubarak.jpeg";
 import teamNavaf from "@/assets/team/navaf.jpeg";
+import teamAyshaThaslee from "@/assets/team/aysha thaslee.jpeg";
 import teamNajiya from "@/assets/team/Najiya.jpeg";
 import teamSha from "@/assets/team/sha.jpeg";
 import teamNihala from "@/assets/team/nihala.jpeg";
@@ -22,12 +22,12 @@ import officeImage from "@/assets/office.jpeg";
 import { ChevronRight } from "lucide-react";
 
 const timeline = [
-  { year: "2014", title: "Foundation", description: "Europe Calling was founded in Berlin with a vision to simplify European migration." },
-  { year: "2016", title: "Expansion", description: "Extended services to Poland, France, and Netherlands." },
-  { year: "2018", title: "1000 Clients", description: "Reached milestone of helping 1000+ clients successfully relocate." },
-  { year: "2020", title: "Digital First", description: "Launched full digital consultation and online documentation tracking." },
-  { year: "2022", title: "Industry Award", description: "Recognized as 'Best Emerging Immigration Consultancy' by EuroTravel Board." },
-  { year: "2024", title: "Global Reach", description: "Now serving clients from 15+ countries with a team of 50+ experts." },
+  { year: "2020", title: "Digital First", description: "Launched full digital consultation and online documentation tracking to serve clients safely and remotely." },
+  { year: "2021", title: "Growing Reach", description: "Expanded services and support to more travellers across Europe, building on our digital-first approach." },
+  { year: "2022", title: "Industry Recognition", description: "Recognized as 'Best Emerging Travel Consultancy' by EuroTravel Board." },
+  { year: "2024", title: "Global Reach", description: "Now serving clients from 15+ countries with a team of 50+ experts—your trusted partner for European journeys." },
+  { year: "2025", title: "New Horizons", description: "Continuing to expand our services and destinations while keeping the same commitment to personalised, trusted support." },
+  { year: "2026", title: "With You Today", description: "Your trusted partner for European travel and migration—here to guide your journey every step of the way." },
 ];
 
 const administrative = [
@@ -37,9 +37,8 @@ const administrative = [
 
 const team = [
   { name: "Aysha Nasrin P", role: "Sales Advisor", location: "Mumbai", img: teamAyshaNasrin },
-  { name: "Muhsin Mubarak P", role: "Sales Advisor", location: "Delhi", img: teamMubarak },
   { name: "Muhammed Navaf P", role: "Senior Travel Consultant", location: "Dubai", img: teamNavaf },
-  { name: "Aysha Thaslee E.C", role: "Travel Consultant", location: "Berlin", img: null },
+  { name: "Aysha Thaslee E.C", role: "Travel Consultant", location: "Berlin", img: teamAyshaThaslee },
   { name: "Najiya binu", role: "Travel Consultant", location: "Paris", img: teamNajiya },
   { name: "Muhammed Sha AP", role: "Travel Consultant", location: "Calicut, India", img: teamSha },
   { name: "Nihala Sherin K", role: "Operations Department Head", location: "Dubai", img: teamNihala },
@@ -479,8 +478,9 @@ const About = () => {
                   <RevealOnScroll animation="fade-up" delay={index * 100} key={item.year}>
                     <div className={`relative flex flex-col md:flex-row gap-8 items-center ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
                       <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-background border-4 border-gold shadow-lg z-10" />
-                      <div className={`flex-1 pl-12 md:pl-0 ${index % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16'}`}>
-                        <span className="text-gold font-bold text-5xl opacity-40 absolute -top-4 md:-top-6 z-0 select-none transform transition-transform hover:scale-110 duration-500 origin-center md:origin-[inherit]" style={{ [index % 2 === 0 ? 'right' : 'left']: '20px' }}>{item.year}</span>
+                      <div className={`flex-1 w-full pl-12 md:pl-0 ${index % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16'}`}>
+                        <span className="text-gold font-bold text-xl md:hidden block mb-2 tracking-tight">{item.year}</span>
+                        <span className="text-gold font-bold text-5xl opacity-40 absolute -top-4 md:-top-6 z-0 select-none transform transition-transform hover:scale-110 duration-500 origin-center md:origin-[inherit] hidden md:block" style={{ [index % 2 === 0 ? 'right' : 'left']: '20px' }}>{item.year}</span>
                         <div className="relative z-10 bg-white p-6 rounded-xl shadow-sm border border-border/50 hover:shadow-md transition-shadow">
                           <h3 className="font-heading text-xl font-bold text-primary mb-2">{item.title}</h3>
                           <p className="text-muted-foreground">{item.description}</p>
@@ -526,7 +526,7 @@ const About = () => {
                   </h2>
 
                   <p className="text-lg text-muted-foreground leading-relaxed max-w-md mx-auto lg:mx-0 text-center lg:text-left">
-                    Watch unscripted conversations with immigration experts, successful expats, and legal minds. Your visual guide to making Europe home.
+                    Watch unscripted conversations with travel experts, successful expats, and legal minds. Your visual guide to making Europe home.
                   </p>
 
                   <div className="flex gap-4 pt-4 justify-center lg:justify-start">

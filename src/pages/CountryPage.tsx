@@ -146,12 +146,12 @@ const countryData: Record<string, CountryData> = {
         ],
         itinerary: [
             { day: 1, title: "Arrival – Paris", description: "Arrival in the historic capital of France, known for its rich heritage, art, and iconic landmarks.", image: franceImg },
-            { day: 2, title: "Paris City Tour", description: "Explore the Eiffel Tower, Arc de Triomphe, and Champs-Élysées — symbols of France's architectural and revolutionary history. Enjoy a Seine River Cruise past historic monuments.", image: franceImg },
-            { day: 3, title: "Louvre – Montmartre", description: "Visit the Louvre Museum, once a royal palace and now the world's largest art museum. Explore Montmartre, the historic artists' quarter, and Sacré-Cœur Basilica.", image: franceImg },
-            { day: 4, title: "Versailles Excursion", description: "Discover the Palace of Versailles, the grand residence of French kings and a key site of the French Revolution.", image: franceImg },
-            { day: 5, title: "Paris – Nice (French Riviera)", description: "Travel to Nice, a historic Mediterranean city known for its Italian influence and Belle Époque charm.", image: franceImg },
+            { day: 2, title: "Paris City Tour", description: "Explore the Eiffel Tower, Arc de Triomphe, and Champs-Élysées — symbols of France's architectural and revolutionary history. Enjoy a Seine River Cruise past historic monuments.", image: czechImg },
+            { day: 3, title: "Louvre – Montmartre", description: "Visit the Louvre Museum, once a royal palace and now the world's largest art museum. Explore Montmartre, the historic artists' quarter, and Sacré-Cœur Basilica.", image: polandImg },
+            { day: 4, title: "Versailles Excursion", description: "Discover the Palace of Versailles, the grand residence of French kings and a key site of the French Revolution.", image: germanyImg },
+            { day: 5, title: "Paris – Nice (French Riviera)", description: "Travel to Nice, a historic Mediterranean city known for its Italian influence and Belle Époque charm.", image: romaniaImg },
             { day: 6, title: "Monaco – Cannes", description: "Visit Monaco, famous for its royal Grimaldi family and Monte Carlo Casino. Explore Cannes, home of the prestigious International Film Festival.", image: franceImg },
-            { day: 7, title: "Provence / Leisure", description: "Explore Provence's historic villages known for Roman ruins, lavender fields, and medieval architecture, or enjoy leisure time in Nice.", image: franceImg },
+            { day: 7, title: "Provence / Leisure", description: "Explore Provence's historic villages known for Roman ruins, lavender fields, and medieval architecture, or enjoy leisure time in Nice.", image: czechImg },
             { day: 8, title: "Departure", description: "Airport transfer with memories of France's rich cultural and historical heritage.", image: DepartureImg }
         ],
         testimonials: [
@@ -243,7 +243,7 @@ const countryData: Record<string, CountryData> = {
         ],
         itinerary: [
             { day: 1, title: "Arrival & Panoramic Tour", description: "Arrival at Baku Airport, hotel transfer, and panoramic city sightseeing.", image: azerbaijanBakuImg },
-            { day: 2, title: "Baku City Tour", description: "Explore Baku highlights including Old City (Icherisheher), Maiden Tower, Flame Towers area, and major landmarks.", image: azerbaijanBakuImg },
+            { day: 2, title: "Baku City Tour", description: "Explore Baku highlights including Old City (Icherisheher), Maiden Tower, Flame Towers area, and major landmarks.", image: azerbaijanAbsheronImg },
             { day: 3, title: "Gabala Tour", description: "Travel to Gabala and visit scenic attractions and leisure spots.", image: azerbaijanGabalaImg },
             { day: 4, title: "Sheki Tour", description: "Visit the historic city of Sheki, including Sheki Khan's Palace and the old town.", image: azerbaijanShakiImg },
             { day: 5, title: "Tufandag & Shamakhi Tour", description: "Enjoy Tufandag Mountain Resort with cable car experience and visit Shamakhi attractions.", image: azerbaijanMountainImg },
@@ -509,14 +509,14 @@ const countryData: Record<string, CountryData> = {
         ],
         itinerary: [
             { day: 1, title: "Arrival – Moscow", description: "Arrival at Moscow Airport, transfer to hotel, check-in, and rest.", image: russiaImg },
-            { day: 2, title: "Moscow City Tour", description: "Explore Red Square, Kremlin area, St. Basil's Cathedral, and major city landmarks.", image: russiaImg },
-            { day: 3, title: "Sergiev Posad Excursion", description: "Visit Sergiev Posad, a historic town known for its monasteries and cultural heritage.", image: russiaImg },
+            { day: 2, title: "Moscow City Tour", description: "Explore Red Square, Kremlin area, St. Basil's Cathedral, and major city landmarks.", image: russiaPeterhofGrandPalaceImg },
+            { day: 3, title: "Sergiev Posad Excursion", description: "Visit Sergiev Posad, a historic town known for its monasteries and cultural heritage.", image: russiaPetersburgImg },
             { day: 4, title: "Moscow → St. Petersburg", description: "Transfer from Moscow to St. Petersburg by train. Hotel check-in and leisure time.", image: russiaPetersburgImg },
             { day: 5, title: "St. Petersburg – Hermitage & City Tour", description: "Visit the Hermitage Museum and explore major city attractions.", image: russiaHermitagemuseumImg },
             { day: 6, title: "St. Petersburg City Tour (Part 2)", description: "Continue sightseeing, covering palaces, cathedrals, and scenic streets.", image: russiaPetersburgCityImg },
-            { day: 7, title: "Military Experience Tour", description: "Enjoy a unique military-themed experience and interactive activities.", image: russiaPetersburgImg },
+            { day: 7, title: "Military Experience Tour", description: "Enjoy a unique military-themed experience and interactive activities.", image: russiaPetersburgHiddenImg },
             { day: 8, title: "Vyborg Tour", description: "Visit Vyborg, known for its medieval castle and European-style architecture.", image: russiaPetersburgCapitalImg },
-            { day: 9, title: "Husky Park Tour", description: "Visit Husky Park to interact with huskies and enjoy nature activities.", image: russiaPetersburgHiddenImg },
+            { day: 9, title: "Husky Park Tour", description: "Visit Husky Park to interact with huskies and enjoy nature activities.", image: russiaPeterhofGrandPalaceImg },
             { day: 10, title: "Airport Transfer", description: "Hotel check-out and transfer to the airport for departure.", image: DepartureImg }
         ]
     },
@@ -547,7 +547,7 @@ const countryData: Record<string, CountryData> = {
             { step: 2, title: "Confirm", description: "Dates & Pax." },
             { step: 3, title: "Book", description: "Advance payment." },
             { step: 4, title: "Fly", description: "Tbilisi arrival." },
-            { step: 5, title: "Visa", description: "Immigration check." },
+            { step: 5, title: "Visa", description: "Document check." },
             { step: 6, title: "Enjoy", description: "Start exploring." }
         ],
         testimonials: [
@@ -610,12 +610,12 @@ const countryData: Record<string, CountryData> = {
         ],
         itinerary: [
             { day: 1, title: "Arrival in Tashkent", description: "Arrival at Tashkent International Airport. Meet & greet by guide. Private transfer to hotel & early check-in (subject to availability). Rest time. Evening visit to Magic City Park or Tashkent City Park. Overnight in Tashkent.", image: uzbekistanCityImg },
-            { day: 2, title: "Tashkent City Tour", description: "Breakfast at hotel. Full-day city tour including Khast Imam Complex, Barak Khan Madrasa, Chorsu Bazaar, Independence Square, Amir Timur Square, and Tashkent Metro Tour. Free time for shopping at Samarkand Darvoza Mall. Overnight in Tashkent.", image: uzbekistanCityImg },
+            { day: 2, title: "Tashkent City Tour", description: "Breakfast at hotel. Full-day city tour including Khast Imam Complex, Barak Khan Madrasa, Chorsu Bazaar, Independence Square, Amir Timur Square, and Tashkent Metro Tour. Free time for shopping at Samarkand Darvoza Mall. Overnight in Tashkent.", image: uzbekistanSamarkandImg },
             { day: 3, title: "Tashkent – Bukhara (By Train)", description: "Breakfast at hotel. Transfer to railway station. High-speed train to Bukhara (approx. 4 hrs). Arrival & hotel transfer. Evening walking tour at Lyabi-Hauz Complex and Old City area. Overnight in Bukhara.", image: uzbekistanTrainImg },
             { day: 4, title: "Bukhara City Tour", description: "Breakfast at hotel. Full-day sightseeing: Ark Fortress, Bolo Hauz Mosque, Poi Kalon Complex (Kalon Minaret & Mosque), Miri Arab Madrasa, Trading Domes, and Chor Minor. Free time for shopping traditional handicrafts. Overnight in Bukhara.", image: uzbekistanBukharaImg },
-            { day: 5, title: "Bukhara – Samarkand (By Train)", description: "Breakfast at hotel. Transfer to railway station. Train to Samarkand (approx. 2 hrs). Arrival & hotel transfer. Evening visit to Registan Square (illuminated view). Overnight in Samarkand.", image: uzbekistanTrainImg },
+            { day: 5, title: "Bukhara – Samarkand (By Train)", description: "Breakfast at hotel. Transfer to railway station. Train to Samarkand (approx. 2 hrs). Arrival & hotel transfer. Evening visit to Registan Square (illuminated view). Overnight in Samarkand.", image: uzbekistanBukharaImg },
             { day: 6, title: "Samarkand City Tour", description: "Breakfast at hotel. Full-day sightseeing: Registan Square, Gur-e-Amir Mausoleum, Bibi Khanum Mosque, Siab Bazaar, Shah-i-Zinda Complex, and Ulugh Beg Observatory. Overnight in Samarkand.", image: uzbekistanSamarkandImg },
-            { day: 7, title: "Samarkand – Tashkent (By Train)", description: "Breakfast at hotel. Free morning for leisure. Transfer to railway station. High-speed train to Tashkent. Arrival & hotel transfer. Overnight in Tashkent.", image: uzbekistanTrainImg },
+            { day: 7, title: "Samarkand – Tashkent (By Train)", description: "Breakfast at hotel. Free morning for leisure. Transfer to railway station. High-speed train to Tashkent. Arrival & hotel transfer. Overnight in Tashkent.", image: uzbekistanCityImg },
             { day: 8, title: "Departure", description: "Breakfast at hotel. Check-out. Transfer to airport for departure.", image: DepartureImg }
         ]
     }

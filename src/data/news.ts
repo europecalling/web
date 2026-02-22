@@ -19,6 +19,13 @@ import craftingImg from "@/assets/crafting.jpeg";
 import diversImg from "@/assets/divers.jpeg";
 import dailyImg from "@/assets/daily.jpeg";
 
+/**
+ * Blog / Newsroom articles. Display order = array order (first item = top of page).
+ * To REMOVE an article: delete its entire object from the array (the one with that id/title).
+ * To EDIT: change title, excerpt, content, date, or category on the article object.
+ * To HIDE temporarily: you can filter in Newsroom.tsx (e.g. by id or slug) until content is confirmed.
+ */
+
 export const news = [
   {
     id: 15,
@@ -150,7 +157,7 @@ export const news = [
         <li><strong>Future Requirements:</strong> Once active, ETIAS will require a quick online application and a small fee (approx. €7) valid for three years.</li>
       </ul>
 
-      <p>"While the delay provides a breather, we advise all our clients to stay updated," says our Head of Immigration. Europe Calling will continue to monitor these developments closely to keep you prepared.</p>
+      <p>"While the delay provides a breather, we advise all our clients to stay updated," says our Head of Travel. Europe Calling will continue to monitor these developments closely to keep you prepared.</p>
     `,
     date: "January 15, 2026",
     image: etisImg,
