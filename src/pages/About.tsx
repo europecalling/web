@@ -25,6 +25,7 @@ const timeline = [
   { year: "2020", title: "Digital First", description: "Launched full digital consultation and online documentation tracking to serve clients safely and remotely." },
   { year: "2021", title: "Growing Reach", description: "Expanded services and support to more travellers across Europe, building on our digital-first approach." },
   { year: "2022", title: "Industry Recognition", description: "Recognized as 'Best Emerging Travel Consultancy' by EuroTravel Board." },
+  { year: "2023", title: "Stronger Foundations", description: "Strengthened our team and expanded destination expertise to deliver even more personalised European travel experiences." },
   { year: "2024", title: "Global Reach", description: "Now serving clients from 15+ countries with a team of 50+ experts—your trusted partner for European journeys." },
   { year: "2025", title: "New Horizons", description: "Continuing to expand our services and destinations while keeping the same commitment to personalised, trusted support." },
   { year: "2026", title: "With You Today", description: "Your trusted partner for European travel and migration—here to guide your journey every step of the way." },
@@ -344,7 +345,7 @@ const About = () => {
               {/* Right: Content (Swapped to Left on Desktop, Last on Mobile) */}
               <div className="order-3 lg:order-1 relative z-10">
                 <RevealOnScroll animation="fade-up">
-                  <div className="mb-8 text-left">
+                  <div className="mb-8 text-center md:text-left">
                     {/* Eyebrow */}
                     <div className="hidden lg:flex items-center gap-3 mb-6">
                       <div className="w-2.5 h-2.5 rounded-full border-[3px] border-[#FF7700]"></div>
@@ -360,15 +361,15 @@ const About = () => {
                     </h2>
 
                     {/* Description */}
-                    <p className="text-lg text-gray-500 leading-[1.8] mb-8 lg:mb-12 font-light max-w-lg">
+                    <p className="text-lg text-gray-500 leading-[1.8] mb-8 lg:mb-12 font-light max-w-lg mx-auto md:mx-0">
                       It began with a realization. In 2020, the European dream was alive for millions, yet the path to achieving it was obscured by a fog of fragmented information, changing regulations, and impersonal bureaucracy. Europe Calling was born to bridge this gap.
                     </p>
 
                     <div className="w-full h-px bg-gray-100 mb-8 lg:mb-12"></div>
 
                     {/* Stats Row */}
-                    <div ref={statsRef} className="flex flex-row items-center justify-start gap-8 md:gap-12">
-                      <div className="space-y-1 md:space-y-2 text-left">
+                    <div ref={statsRef} className="flex flex-row items-center justify-center md:justify-start gap-8 md:gap-12">
+                      <div className="space-y-1 md:space-y-2 text-center md:text-left">
                         <AnimatedCounter
                           value={10}
                           suffix="K+"
@@ -376,7 +377,7 @@ const About = () => {
                           isVisible={statsVisible}
                           className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-gold leading-tight"
                         />
-                        <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-wider md:tracking-[0.2em]">SATISFIED USERS</p>
+                        <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-wider md:tracking-[0.2em]">Happy Travelers</p>
                       </div>
                     </div>
 
@@ -718,10 +719,10 @@ const About = () => {
                 {/* Decorative Element */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#FF6B00]/10 rounded-full blur-3xl -z-10" />
 
-                <h2 className="font-heading text-5xl md:text-7xl font-bold text-primary mb-6 tracking-tight drop-shadow-sm">
+                <h2 className="font-heading text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-primary mb-6 tracking-tight drop-shadow-sm">
                   A wholesome team that <br className="hidden md:block" /> stands for success!
                 </h2>
-                <p className="font-serif text-xl md:text-2xl italic text-gray-500 max-w-2xl mx-auto">
+                <p className="font-serif text-base sm:text-lg md:text-xl lg:text-2xl italic text-gray-500 max-w-2xl mx-auto">
                   Meet the experts guiding your European journeys.
                 </p>
               </div>
