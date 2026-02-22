@@ -10,7 +10,7 @@ import { CTASection } from "@/components/home/CTASection";
 
 import teamAyshaNasrin from "@/assets/team/aysha nasrin.jpeg";
 import teamNavaf from "@/assets/team/navaf.jpeg";
-import teamAyshaThaslee from "@/assets/team/aysha thaslee.jpeg";
+import teamAyshaThaslee from "@/assets/team/Aysha Thaslee.jpeg";
 import teamNajiya from "@/assets/team/Najiya.jpeg";
 import teamSha from "@/assets/team/sha.jpeg";
 import teamNihala from "@/assets/team/nihala.jpeg";
