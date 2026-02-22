@@ -210,7 +210,7 @@ const Contact = () => {
             rel="noopener noreferrer"
             className="group/link"
           >
-            <span className="flex items-center justify-center gap-1.5 font-semibold text-gold mb-1 group-hover/link:text-amber-600 transition-colors">
+            <span className="flex items-center justify-center gap-1.5 font-semibold text-gold mb-1 group-hover/link:text-gold/80 transition-colors">
               <MapPin className="w-3.5 h-3.5 shrink-0" /> Kerala, India
             </span>
             <span className="block text-foreground/80 leading-snug text-[13px]">Calicut rd, opposite Budget hyper market, Varangod, Down Hill, Malappuram, Kerala</span>
@@ -236,7 +236,7 @@ const Contact = () => {
             rel="noopener noreferrer"
             className="group/link"
           >
-            <span className="flex items-center justify-center gap-1.5 font-semibold text-gold mb-1 group-hover/link:text-amber-600 transition-colors">
+            <span className="flex items-center justify-center gap-1.5 font-semibold text-gold mb-1 group-hover/link:text-gold/80 transition-colors">
               <MapPin className="w-3.5 h-3.5 shrink-0" /> Baku, Azerbaijan
             </span>
             <span className="block text-foreground/80 leading-snug text-[13px]">Bashir safar-oghlu, Baku, Azerbaijan</span>
@@ -289,7 +289,7 @@ const Contact = () => {
                         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-[1.5rem]" />
 
                         <div className="relative z-10 flex flex-col items-center flex-1 w-full">
-                          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold/90 to-amber-600/90 text-white flex items-center justify-center mb-4 transition-all duration-500 group-hover:scale-110 group-hover:shadow-[0_8px_24px_-4px_rgba(255,119,0,0.4)] shadow-md">
+                          <div className="w-14 h-14 rounded-2xl bg-gold text-gold-foreground flex items-center justify-center mb-4 transition-all duration-500 group-hover:scale-110 group-hover:shadow-[0_8px_24px_-4px_hsl(var(--gold)/0.4)] shadow-md">
                             <info.icon className="w-6 h-6" strokeWidth={2} />
                           </div>
                           <h3 className="font-heading text-base sm:text-lg font-bold mb-2 text-primary tracking-tight">{info.title}</h3>
@@ -418,7 +418,7 @@ const Contact = () => {
                       {/* Sliding Bg */}
                       <div
                         className={cn(
-                          "absolute top-1 bottom-1 w-[calc(50%-4px)] bg-[#FF7700] rounded-lg transition-all duration-300 ease-out shadow-sm",
+                          "absolute top-1 bottom-1 w-[calc(50%-4px)] bg-gold rounded-lg transition-all duration-300 ease-out shadow-sm",
                           activeTab === 'feedback' ? "left-[calc(50%)]" : "left-1"
                         )}
                       />
@@ -539,14 +539,14 @@ const Contact = () => {
                                     <SelectItem
                                       key={country}
                                       value={country.toLowerCase()}
-                                      className="rounded-lg py-2.5 px-4 mb-0.5 cursor-pointer focus:bg-[#FF7700] focus:text-white data-[state=checked]:bg-[#FF7700] data-[state=checked]:text-white transition-colors font-medium text-sm"
+                                      className="rounded-lg py-2.5 px-4 mb-0.5 cursor-pointer focus:bg-gold focus:text-gold-foreground data-[state=checked]:bg-gold data-[state=checked]:text-gold-foreground transition-colors font-medium text-sm"
                                     >
                                       {country}
                                     </SelectItem>
                                   ))}
                                   <SelectItem
                                     value="other"
-                                    className="rounded-lg py-2.5 px-4 cursor-pointer focus:bg-[#FF7700] focus:text-white data-[state=checked]:bg-[#FF7700] data-[state=checked]:text-white transition-colors font-medium text-sm"
+                                    className="rounded-lg py-2.5 px-4 cursor-pointer focus:bg-gold focus:text-gold-foreground data-[state=checked]:bg-gold data-[state=checked]:text-gold-foreground transition-colors font-medium text-sm"
                                   >
                                     Other
                                   </SelectItem>
@@ -662,8 +662,8 @@ const Contact = () => {
                                       className={cn(
                                         "w-8 h-8 sm:w-9 sm:h-9 transition-all duration-300 ease-out",
                                         formData.rating >= star
-                                          ? "fill-[#FF7700] text-[#FF7700] drop-shadow-[0_0_8px_rgba(255,119,0,0.4)]"
-                                          : "text-gray-300 hover:text-[#FF7700]/60 hover:scale-105"
+                                          ? "fill-gold text-gold drop-shadow-[0_0_8px_hsl(var(--gold)/0.4)]"
+                                          : "text-gray-300 hover:text-gold/60 hover:scale-105"
                                       )}
                                     />
                                   </button>
@@ -703,7 +703,7 @@ const Contact = () => {
                         type="submit"
                         disabled={isSubmitting}
                         className={cn(
-                          "w-full bg-[#FF7700] hover:bg-[#e66b00] text-white font-bold py-3.5 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_40px_-15px_rgba(255,119,0,0.4)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 group text-sm",
+                          "w-full bg-gold hover:bg-gold/90 text-gold-foreground font-bold py-3.5 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_40px_-15px_hsl(var(--gold)/0.4)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 group text-sm",
                           isSubmitting && "opacity-70 cursor-not-allowed"
                         )}
 

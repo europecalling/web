@@ -68,7 +68,7 @@ const Newsroom = () => {
         <PageHeader
           eyebrow="Insights & Updates"
           title="Newsroom"
-          description="Stay up to date with the latest immigration policies, success stories, and company announcements."
+          description="Stay up to date with the latest travel and visa updates, success stories, and company announcements."
         />
 
         <section className="container-wide px-4 sm:px-6 lg:px-8 py-16 md:py-24">
