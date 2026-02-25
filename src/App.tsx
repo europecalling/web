@@ -22,6 +22,7 @@ const Gallery = lazy(() => import("./pages/Gallery"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const RefundPolicy = lazy(() => import("./pages/RefundPolicy"));
+const MentorInsightsDocs = lazy(() => import("./pages/MentorInsightsDocs"));
 const AdminLogin = lazy(() => import("./pages/admin/AdminLogin"));
 const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard"));
 const AdminGallery = lazy(() => import("./pages/admin/AdminGallery"));
@@ -54,6 +55,7 @@ const App = () => (
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
               <Route path="/refund" element={<RefundPolicy />} />
+              <Route path="/docs/mentor-insights" element={<MentorInsightsDocs />} />
               <Route path="/admin" element={<Outlet />}>
                 <Route index element={<AdminIndex />} />
                 <Route path="login" element={<AdminLogin />} />
