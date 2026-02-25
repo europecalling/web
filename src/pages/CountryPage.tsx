@@ -67,6 +67,9 @@ import azerbaijanShakiImg from "@/assets/shaki (1).jpg";
 import azerbaijanAbsheronImg from "@/assets/towers-apsheron (1).jpg";
 import azerbaijanGabalaImg from "@/assets/gabala (1).jpg";
 import azerbaijanMountainImg from "@/assets/mountain.jpg";
+import bakuCityTourImg from "@/assets/Baku city tour.jpg";
+import panoramicTourImg from "@/assets/Panoramic tour.jpg";
+import qubaTourImg from "@/assets/Quba tour.avif";
 import kazakhstanAlmatyImg from "@/assets/beautiful-view-rice-fields-lush-green-leepa-valley-kashmir-pakistan (1).jpg";
 import kazakhstanShymbulak from "@/assets/b5 (1).jpg";
 import kazakhstanCanyonImg from "@/assets/image1 (1).jpg";
@@ -242,13 +245,13 @@ const countryData: Record<string, CountryData> = {
             { step: 6, title: "Tour", description: "Airport pickup." }
         ],
         itinerary: [
-            { day: 1, title: "Arrival & Panoramic Tour", description: "Arrival at Baku Airport, hotel transfer, and panoramic city sightseeing.", image: azerbaijanBakuImg },
-            { day: 2, title: "Baku City Tour", description: "Explore Baku highlights including Old City (Icherisheher), Maiden Tower, Flame Towers area, and major landmarks.", image: azerbaijanAbsheronImg },
+            { day: 1, title: "Arrival & Panoramic Tour", description: "Arrival at Baku Airport, hotel transfer, and panoramic city sightseeing.", image: panoramicTourImg },
+            { day: 2, title: "Baku City Tour", description: "Explore Baku highlights including Old City (Icherisheher), Maiden Tower, Flame Towers area, and major landmarks.", image: bakuCityTourImg },
             { day: 3, title: "Gabala Tour", description: "Travel to Gabala and visit scenic attractions and leisure spots.", image: azerbaijanGabalaImg },
             { day: 4, title: "Sheki Tour", description: "Visit the historic city of Sheki, including Sheki Khan's Palace and the old town.", image: azerbaijanShakiImg },
             { day: 5, title: "Tufandag & Shamakhi Tour", description: "Enjoy Tufandag Mountain Resort with cable car experience and visit Shamakhi attractions.", image: azerbaijanMountainImg },
             { day: 6, title: "Shahdag Tour", description: "Explore Shahdag resort area, known for mountain scenery and activities.", image: azerbaijanShahadagImg },
-            { day: 7, title: "Quba Tour", description: "Visit Quba's countryside, mountains, and natural landscapes.", image: azerbaijanQubaImg },
+            { day: 7, title: "Quba Tour", description: "Visit Quba's countryside, mountains, and natural landscapes.", image: qubaTourImg },
             { day: 8, title: "Absheron & Gobustan Tour", description: "Explore Absheron Peninsula and Gobustan National Park with mud volcanoes and ancient rock carvings.", image: azerbaijanAbsheronImg },
             { day: 9, title: "Airport Transfer", description: "Hotel check-out and transfer to the airport for departure.", image: DepartureImg },
         ],

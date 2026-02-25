@@ -1,23 +1,14 @@
-import eesImg from "@/assets/EES.jpg";
-import russiaImg from "@/assets/russia.jpg";
-import nomadImg from "@/assets/nomed.jpg";
-import kazakhstanImg from "@/assets/a2 (1).png";
-import armeniaImg from "@/assets/a4.png";
 import etisImg from "@/assets/ETIS.jpg";
-import trainImg from "@/assets/h2 (1).jpg";
-import startupImg from "@/assets/startup.jpg";
-import winterImg from "@/assets/mountain.jpg";
-import flightImg from "@/assets/flight.jpg";
-import visaImg from "@/assets/schgean.jpg";
-import cardImg from "@/assets/germenCard.jpg";
-import ouluImg from "@/assets/images.jpg";
-import aivisaImg from "@/assets/aivisa.jpg";
-import coolcationImg from "@/assets/coolcations.jpg";
-import monocoImg from "@/assets/monoco.jpg";
 import blogTopImg from "@/assets/blog-top.jpeg";
 import craftingImg from "@/assets/crafting.jpeg";
 import diversImg from "@/assets/divers.jpeg";
 import dailyImg from "@/assets/daily.jpeg";
+import azerbaijanGrowthImg from "@/assets/blogs/azerbaijan-travel-tourism-growth-2025.jpeg";
+import kazakhstanTopCentralAsiaImg from "@/assets/blogs/kazakhstan-tops-central-asia-azerbaijan.jpeg";
+import kazakhstan75MillionImg from "@/assets/blogs/kazakhstan-7-5-million-tourists-2025.jpeg";
+import visaFree2026Img from "@/assets/blogs/visa-free-travel-2026.jpeg";
+import georgiaInsuranceImg from "@/assets/blogs/georgia-mandatory-insurance.jpeg";
+import georgiaGccImg from "@/assets/blogs/georgia-visa-free-world-class-venues.jpeg";
 
 /**
  * Blog / Newsroom articles. Display order = array order (first item = top of page).
@@ -141,254 +132,137 @@ export const news = [
     slug: "shocking-news-azerbaijan-indians",
   },
   {
-    id: 1,
-    category: "Travel Policy",
-    title: "ETIAS Launch Pushed to Late 2026: What You Need to Know",
-    excerpt: "The European Travel Information and Authorisation System (ETIAS) has been rescheduled for late 2026. Here's how this impacts your upcoming travel plans.",
+    id: 18,
+    category: "Industry News",
+    title: "Azerbaijan’s Travel & Tourism Sector Set for Strong Growth in 2025",
+    excerpt: "WTTC projects ₼10.3BN contribution to the national economy and 472,000 jobs supported this year, with domestic visitor spending set to reach a new record.",
     content: `
-      <p>The European Union has officially announced a updated timeline for the European Travel Information and Authorisation System (ETIAS). Originally slated for an earlier release, the full implementation is now expected in late 2026.</p>
-      
-      <h3>Why the Delay?</h3>
-      <p>The postponement allows member states more time to integrate their national border systems with the central ETIAS database. This ensures a smoother rollout and minimizes disruptions for millions of travelers.</p>
-
-      <h3>What This Means for Travelers:</h3>
-      <ul>
-        <li><strong>Visa-Free Travel Continues:</strong> Travelers from visa-exempt countries (like the US, UK, and Canada) can continue entering the EU with just their passports until the system goes live.</li>
-        <li><strong>Future Requirements:</strong> Once active, ETIAS will require a quick online application and a small fee (approx. €7) valid for three years.</li>
-      </ul>
-
-      <p>"While the delay provides a breather, we advise all our clients to stay updated," says our Head of Travel. Europe Calling will continue to monitor these developments closely to keep you prepared.</p>
+      <h3>WTTC Forecast: Record Year Ahead</h3>
+      <p><strong>London, UK</strong> — Azerbaijan’s Travel & Tourism sector is set for a year of significant growth in 2025, with new data from the World Travel & Tourism Council (WTTC) forecasting a contribution of ₼10.3BN to the national economy — a 32% year-on-year rise, representing 8.2% of total GDP.</p>
+      <p>This year, the sector is also expected to support <strong>472,000 jobs</strong>, representing nearly 10% of total national employment.</p>
+      <h3>Visitor Spending Highlights</h3>
+      <p>International visitor spending in 2025 is projected to reach ₼5.5BN, marking a full post-pandemic recovery, while domestic visitor spending is forecast to reach a record new milestone at ₼3.8BN. The sharp growth in both domestic and international visitor spending signals renewed strength in the country’s tourism economy.</p>
+      <blockquote><p>Julia Simpson, WTTC President &amp; CEO: “Azerbaijan is turning heads in the global Travel &amp; Tourism sector. With visitor spending rising and employment accelerating, 2025 is shaping up to be a breakthrough year. These figures reflect growing international appeal and the success of Azerbaijan’s long-term focus on diversification, cultural promotion, and sustainable tourism development. WTTC is proud to support the country’s journey.”</p></blockquote>
+      <h3>Looking Back at 2024</h3>
+      <p>In 2024, Azerbaijan’s Travel &amp; Tourism sector contributed ₼7.8BN to the economy, 10% behind 2019 levels, and supported 423,700 jobs. International visitor spending reached ₼3.4BN, a 29% increase year-on-year. Domestic visitor spending totalled ₼3.5BN, nearly 10% above 2023 levels. The upward trend across all indicators sets the stage for Azerbaijan to continue rising as a global tourism destination.</p>
+      <h3>Vision 2035: Long-Term Promise</h3>
+      <p>Looking ahead, WTTC forecasts that by 2035, Azerbaijan’s Travel &amp; Tourism sector will contribute over ₼17BN to the economy, almost 11% of GDP, and support almost 670,000 jobs — representing the creation of nearly 200,000 new jobs over the next decade. International visitor spending is expected to reach just under ₼9.5BN, while domestic visitor spending is forecast at ₼6.3BN, reflecting balanced and sustained sector growth.</p>
+      <p>For more information and to access the full factsheet, including WTTC’s latest Environmental Social Research (ESR), please visit <a href="https://wttc.org" target="_blank" rel="noopener noreferrer">WTTC's Research Hub</a>.</p>
     `,
-    date: "January 15, 2026",
-    image: etisImg,
-    slug: "etias-launch-delayed-late-2026",
+    date: "June 10, 2025",
+    image: azerbaijanGrowthImg,
+    slug: "azerbaijan-travel-tourism-strong-growth-2025",
   },
   {
-    id: 2,
-    category: "Digital Borders",
-    title: "The New EES System: A New Era for European Borders",
-    excerpt: "Since its launch in late 2025, the Entry/Exit System (EES) has transformed border control. We analyze its impact on processing times and traveler experience.",
+    id: 19,
+    category: "Destination News",
+    title: "Kazakhstan Tops Central Asia in Tourism Growth to Azerbaijan",
+    excerpt: "More than 181,000 foreign nationals visited Azerbaijan in January 2026, with significant growth from Kazakhstan and Uzbekistan, according to the State Tourism Agency.",
     content: `
-      <p>The EU's Entry/Exit System (EES), fully operational since October 2025, has successfully replaced traditional passport stamping with biometric digital registration. This monumental shift aims to tighten security while streamlining legitimate travel.</p>
-
-      <h3>Early Impacts Observed:</h3>
-      <ul>
-        <li><strong>Initial Queues:</strong> While the first few months saw longer wait times at major airports like Frankfurt and Paris CDG, processing speeds have stabilized as travelers adapt to the self-service kiosks.</li>
-        <li><strong>Data Security:</strong> The system collects fingerprints and facial images, storing them securely to prevent overstays and irregular migration.</li>
-      </ul>
-
-      <p>For our clients, this means arriving at the airport a bit earlier is the new norm. "Digital borders are the future," notes our travel analyst. "They offer a layer of security and efficiency that manual stamps never could."</p>
+      <h3>January 2026 Arrivals</h3>
+      <p>More than 181,000 foreign nationals visited Azerbaijan in January 2026, according to the State Tourism Agency of Azerbaijan — <strong>5% (8,984 people) more</strong> compared to the same period in 2025. Growth is particularly strong among tourists from Central Asia, led by Kazakhstan and Uzbekistan.</p>
+      <h3>Key Source Markets</h3>
+      <p>Arrivals from <strong>Kazakhstan</strong> reached 5,676, up 2.5% year-on-year, underscoring sustained interest in Azerbaijan as a tourist and business destination. Tourist flow from <strong>Uzbekistan</strong> increased to 5,130 visitors.</p>
+      <p>Among other key markets: Russia (42,342 visitors), Türkiye (36,536), Iran (15,399), India (9,070), and Saudi Arabia (8,976 — 44.9% more than the previous year). The top 10 also include Georgia (8,734), Pakistan (6,758), and Israel (4,972).</p>
+      <h3>2026 Promotion Strategy</h3>
+      <p>Starting in 2026, Azerbaijan plans to intensify the use of both digital and traditional promotion channels to boost travel, raise awareness of the country, and strengthen its position in the international tourism market.</p>
     `,
-    date: "December 12, 2025",
-    image: eesImg,
-    slug: "ees-system-impact-report",
+    date: "February 1, 2026",
+    image: kazakhstanTopCentralAsiaImg,
+    slug: "kazakhstan-tops-central-asia-tourism-growth-azerbaijan",
   },
   {
-    id: 3,
-    category: "Nomad Visas",
-    title: "2026 Outlook: Spain & Italy Expand Digital Nomad Quotas",
-    excerpt: "Great news for remote workers! Southern Europe is opening its doors wider in 2026 with expanded visa quotas and simplified tax regimes.",
+    id: 20,
+    category: "Industry News",
+    title: "Kazakhstan Draws 7.5 Million Foreign Tourists in First Half of 2025",
+    excerpt: "Kazakhstan recorded 7.5 million foreign tourist arrivals in the first half of 2025, with strong domestic accommodation use and continued sector investment.",
     content: `
-      <p>As remote work becomes a permanent fixture of the global economy, Spain and Italy are vying for the top spot as Europe's premier digital nomad destinations. For 2026, both nations have announced significant expansions to their visa programs.</p>
-
-      <h3>Key Updates for 2026:</h3>
-      <ul>
-        <li><strong>Spain:</strong> Has introduced a 'fast-track' renewal process for existing nomads and reduced specific income tax rates for the first four years of residency.</li>
-        <li><strong>Italy:</strong> The long-awaited implementation decrees are fully active, with a specific focus on attracting tech talent and creatives to rural 'borghi' (villages).</li>
-      </ul>
-
-      <p>Europe Calling has already helped over 200 freelancers secure these visas in the last quarter alone. If you're ready to move your office to a sunny piazza, now is the time to apply.</p>
+      <h3>First Half 2025 Results</h3>
+      <p>Kazakhstan recorded <strong>7.5 million foreign tourist arrivals</strong> in the first half of 2025, according to the Ministry of Tourism and Sports, which released the results of the summer season.</p>
+      <h3>Domestic Tourism</h3>
+      <p>During the same period, 3.9 million Kazakhstani citizens used domestic accommodation facilities — half a million more than in the first half of 2024.</p>
+      <h3>Investment &amp; Revenue</h3>
+      <p>Investment in the tourism sector’s fixed assets reached <strong>592 billion tenge</strong>. Revenues from accommodation facilities totalled <strong>151 billion tenge</strong>.</p>
+      <p>Currently, Kazakhstan operates 4,442 accommodation facilities with a combined capacity of over 232,000 beds, supporting the country’s position as a growing regional tourism hub.</p>
     `,
-    date: "January 20, 2026",
-    image: nomadImg,
-    slug: "digital-nomad-visa-updates-2026",
+    date: "August 15, 2025",
+    image: kazakhstan75MillionImg,
+    slug: "kazakhstan-7-5-million-foreign-tourists-first-half-2025",
   },
   {
-    id: 4,
-    category: "New Launch",
-    title: "Alpine Elegance: Luxury Winter Retreats 2026",
-    excerpt: "Discover our new collection of exclusive winter escapes in the Swiss and French Alps, featuring private chalets and world-class skiing.",
-    content: `
-      <p>We are proud to unveil our most ambitious winter collection yet. Alpine Elegance 2026 brings you the peak of luxury in Europe's most prestigious mountain destinations.</p>
-      
-      <h3>Premium Features:</h3>
-      <ul>
-        <li><strong>Private Chalets:</strong> Handpicked properties with ski-in/ski-out access and personal butler service.</li>
-        <li><strong>Exclusive Experiences:</strong> Private heli-skiing tours and sunset fondue on the glacier.</li>
-        <li><strong>Wellness & Spa:</strong> Access to world-renowned thermal baths and in-house spa treatments.</li>
-      </ul>
-
-      <p>"Our goal is to provide more than just a holiday; we offer an immersion into the sublime," says our Senior Travel Curator. Bookings are now open for the 2026 season.</p>
-    `,
-    date: "February 5, 2026",
-    image: winterImg,
-    slug: "alpine-elegance-luxury-winter-retreats-2026",
-  },
-  {
-    id: 5,
-    category: "Travel Trends",
-    title: "Sustainable Travel: The 'Train First' Initiative",
-    excerpt: "France and Germany's push for rail travel is reshaping tourism. Short-haul flights are out; high-speed trains are in.",
-    content: `
-      <p>In a bold move to combat climate change, 2026 has seen a ban on several short-haul domestic flights where train alternatives exist, particularly in France and Spain. This 'Train First' policy is reshaping how tourists explore the continent.</p>
-
-      <p>Travelers are now enjoying:</p>
-      <ul>
-        <li><strong>unified Rail Passes:</strong> New cross-border passes making multi-country train travel cheaper than flying.</li>
-        <li><strong>Night Trains Renaissance:</strong> New sleeper routes connecting Berlin to Paris and Vienna to Brussels have launched this winter.</li>
-      </ul>
-
-      <p>At Europe Calling, we are now curating 'Slow Travel' itineraries that celebrate the journey as much as the destination.</p>
-    `,
-    date: "December 28, 2025",
-    image: trainImg,
-    slug: "sustainable-travel-train-initiative",
-  },
-  {
-    id: 6,
-    category: "Success Stories",
-    title: "From Student to Startup Founder: Elena's Story",
-    excerpt: "How a student visa paved the way for a successful fintech startup in Berlin. Meet Elena, one of our star alumni.",
-    content: `
-      <p>Elena, originally from Brazil, came to Germany on a student visa we helped process back in 2022. Fast forward to 2026, and she is now the founder of 'GreenPay,' a sustainable fintech startup based in Berlin.</p>
-
-      <p>"The transition from student to entrepreneur visa was daunting," Elena shares. "But the legal team at Europe Calling knew exactly which loopholes to avoid and how to present my business plan."</p>
-
-      <p>Elena's company recently raised Series A funding. Her story is a powerful reminder that a visa is just the beginning of what's possible in Europe.</p>
-    `,
-    date: "November 15, 2025",
-    image: startupImg,
-    slug: "elena-startup-success-story",
-  },
-  {
-    id: 7,
-    category: "Aviation",
-    title: "Direct Flights: Delhi to Rome & Athens in 2026",
-    excerpt: "Air India and IndiGo announce major European expansion with direct routes to Italy and Greece starting early 2026.",
-    content: `
-      <p>Great news for Indian travelers! 2026 is set to be the year of direct connectivity. Air India has confirmed the resumption of its non-stop Delhi-Rome service, operating four times a week starting March 25, 2026.</p>
-
-      <p>Meanwhile, low-cost carrier IndiGo is making history by launching the first direct flights between India and Greece. New routes from Delhi and Mumbai to Athens will commence in January 2026.</p>
-
-      <h3>What This Means:</h3>
-      <ul>
-        <li><strong>Shorter Travel Times:</strong> No more long layovers in the Gulf or Europe.</li>
-        <li><strong>Competitive Pricing:</strong> More carriers mean better deals for tourists.</li>
-      </ul>
-
-      <p>Europe Calling is already offering exclusive package deals for these new routes. Contact us to be among the first to fly direct.</p>
-    `,
-    date: "January 12, 2026",
-    image: flightImg,
-    slug: "direct-flights-delhi-rome-athens-2026",
-  },
-  {
-    id: 8,
+    id: 21,
     category: "Visa Updates",
-    title: "Schengen Visa Fees to Increase in 2026",
-    excerpt: "The European Commission has proposed a revised fee structure for Schengen visas. Here is what you need to budget for your next trip.",
+    title: "Visa-Free Travel 2026: Two New Destinations for Indian Passport Holders",
+    excerpt: "The Indian passport gains visa-free access to Malaysia and Kazakhstan in 2026, opening new routes for leisure and short business trips.",
     content: `
-      <p>Travelers planning a European summer in 2026 should prepare for slightly higher costs. The European Commission has proposed an increase in the standard Schengen visa fee, citing inflation and the need to upgrade consular services.</p>
-
-      <p>The new fee structure is expected to be:</p>
+      <h3>Passport Index Update</h3>
+      <p>The Indian passport has climbed five spots to <strong>80th</strong> in the 2026 Henley Passport Index, reflecting growing diplomatic influence. While the total number of visa-free destinations has slightly dipped to 55, India has gained fresh access to <strong>Malaysia</strong> and <strong>Kazakhstan</strong>, marking a strategic win for tourism and business mobility in Southeast and Central Asia.</p>
+      <h3>Strategic Wins: Malaysia and Kazakhstan</h3>
+      <p>Through a mix of diplomacy and digital-visa arrangements, India has secured expanded access to two major hubs:</p>
       <ul>
-        <li><strong>Adults:</strong> €90 (up from €80)</li>
-        <li><strong>Children (6-12 years):</strong> €45 (up from €40)</li>
+        <li><strong>Malaysia:</strong> A key partner in the “Visit Malaysia Year 2026” campaign, focusing on tourism and business ties.</li>
+        <li><strong>Kazakhstan:</strong> A central pillar of India’s strategic outreach in Central Asia, facilitating short-term professional and leisure travel.</li>
       </ul>
-
-      <p>While the increase is modest, we advise applying early to avoid the peak season rush which often comes with additional expedited service fees.</p>
-    `,
-    date: "January 8, 2026",
-    image: visaImg,
-    slug: "schengen-visa-fee-increase-2026",
-  },
-  {
-    id: 9,
-    category: "Student Visas",
-    title: "Germany's 'Opportunity Card' for Students",
-    excerpt: "New amendments allow international students to switch to the Opportunity Card job-seeker visa more easily post-graduation.",
-    content: `
-      <p>Germany continues to be a top destination for students, and new rules for 2026 make staying after graduation even easier. The 'Chancenkarte' (Opportunity Card) is now accessible to recent graduates from recognized German universities without the need for a prior job offer.</p>
-
-      <p>This provides a 12-month window to find qualified employment, during which candidates can work part-time to support themselves. It's a game-changer for non-EU students looking to build a career in Europe largest economy.</p>
-    `,
-    date: "December 20, 2025",
-    image: cardImg,
-    slug: "germany-opportunity-card-students",
-  },
-  {
-    id: 10,
-    category: "Cultural Events",
-    title: "Oulu, Finland: European Capital of Culture 2026",
-    excerpt: "Discover the Arctic magic! Oulu takes the stage as the European Capital of Culture 2026 with a year-long festival of lights and tech.",
-    content: `
-      <p>Pack your warmest coats! Oulu, Finland, has been crowned the European Capital of Culture for 2026. This northern tech hub is planning a spectacular localized program themed 'Cultural Climate Change'.</p>
-
-      <p>Highlights include:</p>
+      <p>These additions open new routes beyond traditional destinations like Dubai and Singapore, giving Indian travellers more flexibility for leisure and business trips.</p>
+      <h3>Visa-Free Stays</h3>
+      <p>Indian citizens can enjoy visa-free stays — <strong>30 days in Malaysia</strong> and <strong>14 days in Kazakhstan</strong>. Travellers must keep documents ready and submit required digital forms. Entry is for tourism and short visits; employment or extended stays require a visa.</p>
+      <h3>Malaysia: Requirements</h3>
       <ul>
-        <li><strong>Arctic Light Festival:</strong> Large-scale light installations across the snowy landscape.</li>
-        <li><strong>Air Guitar World Championships:</strong> The famous event gets a special cultural edition.</li>
-        <li><strong>Tech & Art:</strong> Exhibitions blending Oulu's tech heritage with contemporary art.</li>
+        <li><strong>Purpose:</strong> Tourism, social visits, leisure only.</li>
+        <li><strong>Mandatory:</strong> Submit the Malaysia Digital Arrival Card (MDAC) online at least 3 days before travel.</li>
+        <li><strong>Documents:</strong> Passport valid for 6+ months, return/onward ticket, hotel proof or host address, proof of funds (approx. $50/day).</li>
       </ul>
-
-      <p>Europe Calling is engaging with local partners to offer exclusive 'Northern Lights & Culture' tour packages for winter 2026.</p>
+      <p>Malaysia has extended 30-day visa-free entry for Indian citizens through December 31, 2026, as part of its “Visit Malaysia Year 2026” tourism push.</p>
+      <h3>Important Note</h3>
+      <p>Visa-free entry does not guarantee admission. Indian tourists must meet all immigration requirements. Entry is strictly for leisure — employment, internships, or extended stays require the appropriate visa.</p>
     `,
-    date: "January 2, 2026",
-    image: ouluImg,
-    slug: "oulu-capital-of-culture-2026",
+    date: "January 10, 2026",
+    image: visaFree2026Img,
+    slug: "visa-free-travel-2026-india-malaysia-kazakhstan",
   },
   {
-    id: 11,
-    category: "Tech & Work",
-    title: "France's 'Tech Visa' Expanded to AI Specialists",
-    excerpt: "In a bid to become a global AI hub, France expands its Tech Visa program to fast-track artificial intelligence researchers and engineers.",
+    id: 22,
+    category: "Travel Policy",
+    title: "Georgia Introduces Mandatory Health and Accident Insurance for Tourists (January 2026)",
+    excerpt: "From 1 January 2026, all foreign tourists visiting Georgia must hold valid health and accident insurance with minimum coverage of 30,000 GEL.",
     content: `
-      <p>President Macron's vision of France as an AI superpower gets a boost with the expansion of the 'Passeport Talent' status. Effective 2026, AI specialists and data scientists get priority processing and a 4-year renewable residence permit.</p>
-
-      <p>This applies to both employees joining French tech companies and founders launching AI startups. Family members also receive a multi-year permit automatically.</p>
-    `,
-    date: "December 15, 2025",
-    image: aivisaImg,
-    slug: "france-tech-visa-ai-expansion",
-  },
-  {
-    id: 12,
-    category: "Travel Trends",
-    title: "The Rise of 'Coolcationing' in 2026",
-    excerpt: "With rising summer temperatures in the south, travelers are heading north. Scandinavia and the Baltics see record booking numbers.",
-    content: `
-      <p>'Coolcationing'—vacationing in cooler climates—is the hottest travel trend of 2026. As heatwaves become more frequent in Southern Europe, tourists are trading Mediterranean beaches for Baltic fjords and Alpine lakes.</p>
-
-      <p>Top trending destinations for Summer 2026 include:</p>
+      <h3>New Regulation Effective January 2026</h3>
+      <p>Beginning <strong>1 January 2026</strong>, all foreign tourists visiting Georgia must hold valid <strong>health and accident insurance</strong> with a minimum coverage of <strong>30,000 GEL</strong>, as per the new national regulation under the Law of Georgia “On Tourism.”</p>
+      <h3>Policy Requirements</h3>
       <ul>
-        <li><strong>Bergen, Norway:</strong> For fjord cruises and mountain hikes.</li>
-        <li><strong>Tallinn, Estonia:</strong> For medieval charm without the sweltering heat.</li>
-        <li><strong>High Tatras, Slovakia:</strong> For affordable alpine luxury.</li>
+        <li>The policy must cover the <strong>full duration of stay</strong>.</li>
+        <li>The policy must be available in <strong>Georgian or English</strong>.</li>
       </ul>
+      <p>Travelers planning a trip to Georgia from 2026 onward should arrange compliant insurance before departure to ensure a smooth entry and stay.</p>
     `,
-    date: "January 22, 2026",
-    image: coolcationImg,
-    slug: "coolcationing-travel-trend-2026",
+    date: "January 1, 2026",
+    image: georgiaInsuranceImg,
+    slug: "georgia-mandatory-health-accident-insurance-tourists-2026",
   },
   {
-    id: 13,
-    category: "Success Story",
-    title: "A Royal Welcome: Our Clients' Journey to Monaco",
-    excerpt: "Meet the family who experienced the ultimate Mediterranean luxury tour with Europe Calling this summer.",
+    id: 23,
+    category: "Destination News",
+    title: "Visa-Free Entry and World-Class Venues Make Georgia a Magnet for GCC Tourists",
+    excerpt: "Georgia is emerging as a leading destination for GCC travelers, combining accessibility, affordability, and world-class MICE and leisure infrastructure.",
     content: `
-      <p>This month, we are celebrating a truly unique success story. We had the honor of organizing a bespoke 14-day tour for the Robertson family, taking them from the hills of Tuscany to the glitz of Monaco.</p>
-      
-      <h3>Highlights of the Journey:</h3>
-      <ul>
-        <li><strong>Monaco Dream:</strong> A private yacht tour of the French Riviera followed by a gala dinner at the Monte Carlo Casino.</li>
-        <li><strong>Tuscan Retreat:</strong> A private villa stay with olive oil tasting and vintage car tours.</li>
-        <li><strong>Parisian Finale:</strong> Exclusive after-hours access to the Louvre.</li>
-      </ul>
-
-      <p>"It wasn't just a trip; it was a series of perfect moments," the Robertsons shared. At Europe Calling, we turn itineraries into legacies.</p>
+      <h3>A Sought-After Destination</h3>
+      <p>Georgia is fast emerging as one of the most sought-after destinations for travelers from the Gulf Cooperation Council (GCC) region. Blending rich history, diverse culture, and breathtaking natural landscapes, the country offers a unique mix of leisure and business experiences. Just a short flight from cities like Dubai, Doha, and Muscat, Georgia’s growing appeal lies in its <strong>accessibility</strong>, <strong>affordability</strong>, and <strong>world-class infrastructure</strong> — making it an ideal getaway for both tourists and corporate travelers.</p>
+      <h3>Seamless Access for GCC Travelers</h3>
+      <p>Georgia’s proximity and travel-friendly policies have been key to its rising popularity. With direct flights averaging just four hours, GCC nationals enjoy visa-free entry, while GCC residents benefit from quick and easy e-visa processes. These simplified arrangements have opened the door to more frequent visits and a steady influx of travelers from across the Gulf.</p>
+      <h3>A Thriving MICE Destination</h3>
+      <p>Beyond leisure, Georgia is positioning itself as a dynamic <strong>MICE</strong> (Meetings, Incentives, Conferences, and Exhibitions) hub. With premium venues such as Expo Georgia in Tbilisi and the Batumi Convention Center, the country offers modern facilities for international business events. Leading global hotel chains including Hilton, Marriott, and Radisson Blu strengthen the hospitality offering with state-of-the-art infrastructure and services.</p>
+      <h3>Culture, Heritage, and Hospitality</h3>
+      <p>Georgia’s cultural depth adds to its charm. Renowned for its ancient winemaking tradition in Kakheti, the country invites visitors to explore vineyards, taste authentic wines, and experience UNESCO World Heritage sites. Traditional dance, art galleries, and culinary workshops allow travelers to immerse themselves in Georgian culture and hospitality.</p>
+      <h3>Adventure and Natural Beauty</h3>
+      <p>From the snow-covered peaks of the Caucasus Mountains to the shores of the Black Sea, Georgia’s diverse landscapes cater to every type of traveler. Adventure enthusiasts can enjoy skiing, paragliding, and mountain trekking, while those seeking relaxation can unwind in coastal resorts or countryside retreats.</p>
+      <h3>Affordability with Quality</h3>
+      <p>Georgia stands out as an affordable yet high-quality destination. From boutique stays to luxury hotels, travelers can enjoy strong hospitality without overspending. With reasonably priced dining, transport, and activities, it appeals to both budget-conscious and premium travelers.</p>
+      <h3>Strategic Location and Connectivity</h3>
+      <p>Situated at the crossroads of Europe and Asia, Georgia serves as a convenient gateway between East and West. International airports in Tbilisi, Batumi, and Kutaisi offer smooth connections to key GCC hubs, reinforcing its appeal as both a travel destination and a regional meeting point.</p>
+      <p>With 7.4 million international arrivals projected in 2024 and a significant share from the GCC, Georgia continues to attract growing interest from Gulf nations. As partnerships deepen and infrastructure expands, the country is well on its way to becoming a leading travel and MICE hub in the region.</p>
     `,
-    date: "February 15, 2026",
-    image: monocoImg,
-    slug: "royal-welcome-clients-journey-monaco",
+    date: "February 20, 2026",
+    image: georgiaGccImg,
+    slug: "visa-free-georgia-world-class-venues-gcc-tourists",
   },
 ];
