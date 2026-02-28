@@ -8,7 +8,7 @@ import {
   uploadImage,
   type GalleryItem,
 } from "@/lib/admin-api";
-import { PhotoFrame } from "@/components/admin/PhotoFrame";
+import { GalleryCard } from "@/components/ui/GalleryCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -17,6 +17,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
   DialogFooter,
 } from "@/components/ui/dialog";
 import {
@@ -204,14 +205,14 @@ export default function AdminGallery() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-6 lg:gap-8 justify-items-center">
           {items.map((item) => (
             <div key={item.id} className="relative group w-full max-w-[240px] sm:max-w-[260px] lg:max-w-[280px]">
-              <PhotoFrame
+              <GalleryCard
                 src={item.image_url}
                 alt={item.title}
                 title={item.title}
                 location={item.location || undefined}
-                aspect="aspect-[4/3]"
+                showViewAction
               />
-              <div className="absolute top-2 right-2 sm:top-4 sm:right-4 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
+              <div className="absolute top-2 right-2 sm:top-4 sm:right-4 z-30 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button size="icon" variant="secondary" className="h-7 w-7 sm:h-8 sm:w-8 shadow-sm">
@@ -247,9 +248,12 @@ export default function AdminGallery() {
       />
 
       <Dialog open={isDialogOpen} onOpenChange={(open) => !open && resetAndClose()}>
-        <DialogContent className="max-w-[95vw] sm:max-w-md mx-4 sm:mx-0">
+        <DialogContent className="max-w-[95vw] sm:max-w-md mx-4 sm:mx-0" aria-describedby={editing ? "edit-image-desc" : "add-image-desc"}>
           <DialogHeader>
             <DialogTitle>{editing ? "Edit Image" : "Add Image"}</DialogTitle>
+            <DialogDescription id={editing ? "edit-image-desc" : "add-image-desc"}>
+              {editing ? "Update the image details below." : "Upload an image and add a title and optional location."}
+            </DialogDescription>
           </DialogHeader>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>

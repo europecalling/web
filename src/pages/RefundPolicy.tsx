@@ -61,8 +61,8 @@ export default function RefundPolicy() {
                                         </div>
                                         <ul className="list-disc pl-6 space-y-2 mt-4 text-muted-foreground">
                                             <li>All confirmed bookings are treated as guaranteed bookings.</li>
-                                            <li>Cancellation requests must be received in writing at least 14 days before the check-in date to avoid 100% cancellation charges.</li>
-                                            <li>Any cancellation made after this period will incur full cancellation charges.</li>
+                                            <li>If cancelled before 14 days of the check-in date, only 35% of the advance amount will be refunded due to hotel and vehicle cancellation charges.</li>
+                                            <li>If cancelled within 14 days of the check-in date or in case of no-show, 100% cancellation charges will apply.</li>
                                         </ul>
                                     </div>
 
