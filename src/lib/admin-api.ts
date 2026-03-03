@@ -98,23 +98,14 @@ export async function uploadImage(file: File): Promise<string> {
   const form = new FormData();
   form.append("image", file);
   const token = getToken();
-  if (!token) {
-    throw new Error("Not logged in. Please log in again to upload images.");
-  }
-  const headers: HeadersInit = {
-    Authorization: `Bearer ${token}`,
-  };
+  const headers: HeadersInit = {};
+  if (token) headers["Authorization"] = `Bearer ${token}`;
 
   const res = await fetch(`${API_BASE}/upload.php`, {
     method: "POST",
     headers,
     body: form,
   });
-
-  if (res.status === 401) {
-    throw new Error("Session expired or invalid. Please log in again.");
-  }
-
   const json = await res.json();
   if (!json.success || !json.url) throw new Error(json.message || "Upload failed");
   return json.url;
