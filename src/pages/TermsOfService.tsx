@@ -66,12 +66,11 @@ export default function TermsOfService() {
                                             <li>Booking will be confirmed upon written request only; bookings will be reconfirmed by vouchers or by written reconfirmations.</li>
                                             <li>Early check-in, late check-out, bed type, or adjoining room is subject to availability and extra charges if any.</li>
                                             <li>Advance payment must be settled before 14 days of the arrival date. If not, bookings will be canceled without further notice.</li>
-                                            <li><strong>Cancellation Policy:</strong></li>
                                             <li>
-                                                Booking Confirmation: 35% of the total package cost will be treated as a non-refundable confirmation fee, as hotel reservations and vehicle arrangements are secured in advance.
+                                                35% of the total package cost will be treated as a non-refundable confirmation fee, as hotel reservations and vehicle arrangements are secured in advance.
                                             </li>
                                             <li>
-                                                Cancellation Policy: In case of cancellation, the remaining 65% of the package amount will be refunded, while 35% will be retained to cover hotel reservation and vehicle arrangement expenses already confirmed.
+                                                In case of cancellation, the remaining 65% of the package amount will be refunded, while 35% will be retained to cover hotel reservation and vehicle arrangement expenses already confirmed.
                                             </li>
                                         </ul>
                                     </div>
