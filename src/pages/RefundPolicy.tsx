@@ -62,10 +62,10 @@ export default function RefundPolicy() {
                                         <ul className="list-disc pl-6 space-y-2 mt-4 text-muted-foreground">
                                             <li>All confirmed bookings are treated as guaranteed bookings.</li>
                                             <li>
-                                                Booking Confirmation: 35% of the total package cost will be treated as a non-refundable confirmation fee, as hotel reservations and vehicle arrangements are secured in advance.
+                                                35% of the total package cost will be treated as a non-refundable confirmation fee, as hotel reservations and vehicle arrangements are secured in advance.
                                             </li>
                                             <li>
-                                                Cancellation Policy: In case of cancellation, the remaining 65% of the package amount will be refunded, while 35% will be retained to cover hotel reservation and vehicle arrangement expenses already confirmed.
+                                                In case of cancellation, the remaining 65% of the package amount will be refunded, while 35% will be retained to cover hotel reservation and vehicle arrangement expenses already confirmed.
                                             </li>
                                         </ul>
                                     </div>
