@@ -73,6 +73,7 @@ export default function TermsOfService() {
                                             <li>
                                                 In case of cancellation, the remaining 65% of the package amount will be refunded, while 35% will be retained to cover hotel reservation and vehicle arrangement expenses already confirmed.
                                             </li>
+                                            <li>If cancelled within 14 days of the check-in date or in case of no-show, 100% cancellation charges will apply.</li>
                                         </ul>
                                     </div>
 
@@ -100,7 +101,7 @@ export default function TermsOfService() {
                                         </div>
                                         <ul className="list-disc pl-6 space-y-2 mt-4 text-muted-foreground">
                                             <li>In case of any cancellation or reschedule of Domestic or International flights during the travel period, travelers are advised to bear the expenses during that time on their own.</li>
-                                            <li>Please take extra care of your personal belongings while on the tour. Europe Calling shall not accept any liability or responsibility for any damages, loss, baggage loss, theft, injury, accident, death, breakdown, currency fluctuation, taxes, or irregularity that may occur in carrying out the tour arrangement due to weather conditions, strikes, war, quarantine, and any other cause whatsoever. All such loss or expense must be borne by the passengers.</li>
+                                            <li>Please take extra care of your personal belongings while on the tour. Europe Calling shall not accept any liability or responsibility for any damages, loss, baggage loss, theft, injury, accident, death, breakdown, currency fluctuation, taxes, or irregularity that may occur in carrying out the tour arrangement due to weather conditions, strikes, war, civil unrest, quarantine, and any other cause whatsoever. All such loss or expense must be borne by the passengers.</li>
                                             <li>Europe Calling will not be responsible for the change in travel regulations which may interrupt or cause change in the travel plan at any point post confirmation of services.</li>
                                             <li>Europe Calling will not be responsible for the cancellation of this package due to any changes in the Govt. rules and regulations of respective countries.</li>
                                         </ul>
