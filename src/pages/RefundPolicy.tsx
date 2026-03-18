@@ -60,13 +60,14 @@ export default function RefundPolicy() {
                                             <h2 className="text-2xl md:text-3xl font-bold m-0 text-primary">2. Cancellation Policy</h2>
                                         </div>
                                         <ul className="list-disc pl-6 space-y-2 mt-4 text-muted-foreground">
-                                            <li>All confirmed bookings are treated as guaranteed bookings.</li>
+                                            <li>Advance payment must be settled before 14 days of the arrival date. If not, bookings will be canceled without further notice.</li>
                                             <li>
                                                 35% of the total package cost will be treated as a non-refundable confirmation fee, as hotel reservations and vehicle arrangements are secured in advance.
                                             </li>
                                             <li>
                                                 In case of cancellation, the remaining 65% of the package amount will be refunded, while 35% will be retained to cover hotel reservation and vehicle arrangement expenses already confirmed.
                                             </li>
+                                            <li>If cancelled within 14 days of the check-in date or in case of no-show, 100% cancellation charges will apply.</li>
                                         </ul>
                                     </div>
 
@@ -86,7 +87,7 @@ export default function RefundPolicy() {
                                             <li>Visa rejection</li>
                                             <li>Flight delays or cancellations by airlines</li>
                                             <li>Government regulation changes</li>
-                                            <li>Force majeure events</li>
+                                            <li>Events beyond our control (e.g., natural disasters, war, civil unrest, strikes)</li>
                                         </ul>
                                     </div>
 
