@@ -32,10 +32,14 @@ export const submitLead = async (data: LeadSubmissionData): Promise<APIResponse>
     }
 
     try {
+        const payload = Object.fromEntries(
+            Object.entries(data).filter(([, value]) => value !== undefined)
+        );
+
         const response = await fetch(FORM_API_URL, {
             method: "POST",
             headers,
-            body: JSON.stringify(data),
+            body: JSON.stringify(payload),
         });
 
         const text = await response.text();

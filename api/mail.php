@@ -53,6 +53,166 @@ function mailConfig(string $key, ?string $default = null): ?string
     return $default;
 }
 
+function formatFormFieldLabel(string $key): string
+{
+    static $labels = [
+        'whatsapp_number' => 'WhatsApp Number',
+        'travel_date' => 'Travel Dates',
+        'budget_range' => 'Budget Range',
+        'package_type' => 'Package Type',
+        'special_requests' => 'Special Requests',
+        'hotel_category' => 'Hotel Category',
+        'is_whatsapp_same' => 'WhatsApp Same as Phone',
+        'destination' => 'Destination',
+        'country' => 'Country of Interest',
+        'adults' => 'Adults',
+        'kids' => 'Kids',
+        'source' => 'Source',
+        'rating' => 'Rating',
+        'message' => 'Message',
+    ];
+
+    return $labels[$key] ?? ucwords(str_replace(['_', '-'], ' ', $key));
+}
+
+function formatFormFieldValue(string $key, mixed $value): string
+{
+    if (is_bool($value)) {
+        return $value ? 'Yes' : 'No';
+    }
+
+    $str = trim((string) $value);
+    if ($str === '') {
+        return '';
+    }
+
+    static $budgetLabels = [
+        'under-1000' => 'Under $1,000',
+        '1000-2500' => '$1,000 – $2,500',
+        '2500-5000' => '$2,500 – $5,000',
+        '5000-10000' => '$5,000 – $10,000',
+        'over-10000' => 'Over $10,000',
+    ];
+
+    static $requestLabels = [
+        'honeymoon' => 'Honeymoon',
+        'family' => 'Family Trip',
+        'visa-help' => 'Visa Help',
+    ];
+
+    if ($key === 'budget_range') {
+        return $budgetLabels[$str] ?? $str;
+    }
+
+    if ($key === 'special_requests') {
+        $parts = array_map('trim', explode(',', $str));
+        $formatted = [];
+        foreach ($parts as $part) {
+            $formatted[] = $requestLabels[$part] ?? ucwords(str_replace('-', ' ', $part));
+        }
+        return implode(', ', $formatted);
+    }
+
+    if ($key === 'destination' || $key === 'country') {
+        return ucwords(str_replace(['-', '_'], ' ', $str));
+    }
+
+    if ($key === 'package_type') {
+        return ucwords(str_replace(['-', '_'], ' ', $str));
+    }
+
+    if ($key === 'travel_date' && preg_match('/^\d{4}-\d{2}-\d{2}$/', $str)) {
+        $dt = DateTime::createFromFormat('Y-m-d', $str);
+        return $dt ? $dt->format('d M Y') : $str;
+    }
+
+    return $str;
+}
+
+/**
+ * @param array<string, mixed> $data
+ * @return array<string, string>
+ */
+function buildFormEmailRows(array $data): array
+{
+    $formType = (string) ($data['form_type'] ?? 'Website Form');
+    $name = (string) ($data['name'] ?? '');
+    $email = (string) ($data['email'] ?? '');
+    $phone = (string) ($data['phone'] ?? '');
+    $message = (string) ($data['message'] ?? '');
+    $country = (string) ($data['country'] ?? '');
+    $rating = isset($data['rating']) ? (int) $data['rating'] : null;
+
+    $tz = new DateTimeZone('Asia/Kolkata');
+    $submittedAt = (new DateTime('now', $tz))->format('d M Y, h:i A T');
+
+    $rows = [
+        'Form Type' => $formType,
+        'Name' => $name,
+        'Email' => $email ?: '(not provided)',
+        'Phone' => $phone,
+        'Submitted At' => $submittedAt,
+    ];
+
+    $orderedKeys = [
+        'whatsapp_number',
+        'is_whatsapp_same',
+        'destination',
+        'country',
+        'package_type',
+        'travel_date',
+        'adults',
+        'kids',
+        'budget_range',
+        'hotel_category',
+        'special_requests',
+        'source',
+    ];
+
+    $handledKeys = array_merge(
+        ['form_type', 'name', 'email', 'phone', 'message', 'country', 'rating'],
+        $orderedKeys
+    );
+
+    if ($country !== '') {
+        $rows['Country of Interest'] = formatFormFieldValue('country', $country);
+    }
+    if ($rating !== null && $rating > 0) {
+        $rows['Rating'] = $rating . ' / 5';
+    }
+    if ($message !== '') {
+        $rows['Message'] = $message;
+    }
+
+    foreach ($orderedKeys as $key) {
+        if (!array_key_exists($key, $data)) {
+            continue;
+        }
+        $formatted = formatFormFieldValue($key, $data[$key]);
+        if ($formatted === '') {
+            continue;
+        }
+        if ($key === 'country' && $country !== '') {
+            continue;
+        }
+        $rows[formatFormFieldLabel($key)] = $formatted;
+    }
+
+    foreach ($data as $key => $value) {
+        if (in_array($key, $handledKeys, true) || $value === null || $value === '') {
+            continue;
+        }
+        if (is_scalar($value)) {
+            $formatted = formatFormFieldValue($key, $value);
+            if ($formatted !== '') {
+                $rows[formatFormFieldLabel($key)] = $formatted;
+            }
+        }
+    }
+
+    return $rows;
+}
+
 /**
  * @param array<string, mixed> $data
  * @return array{ok: bool, message: string}
@@ -70,13 +230,9 @@ function sendFormNotificationEmail(array $data): array
     $formType = (string) ($data['form_type'] ?? 'Website Form');
     $name = (string) ($data['name'] ?? '');
     $email = (string) ($data['email'] ?? '');
-    $phone = (string) ($data['phone'] ?? '');
-    $message = (string) ($data['message'] ?? '');
-    $country = (string) ($data['country'] ?? '');
     $rating = isset($data['rating']) ? (int) $data['rating'] : null;
 
     $isFeedback = stripos($formType, 'feedback') !== false;
-    $prefix = $isFeedback ? 'Feedback' : (stripos($formType, 'contact') !== false ? 'Contact' : 'Form');
     $subject = "[{$formType}] New submission from {$name}";
 
     if ($isFeedback && $rating !== null && $rating > 0) {
@@ -84,37 +240,7 @@ function sendFormNotificationEmail(array $data): array
         $subject = "[Feedback] {$rating}/5 ({$stars}) from {$name}";
     }
 
-    $tz = new DateTimeZone('Asia/Kolkata');
-    $submittedAt = (new DateTime('now', $tz))->format('d M Y, h:i A T');
-
-    $rows = [
-        'Form Type' => $formType,
-        'Name' => $name,
-        'Email' => $email ?: '(not provided)',
-        'Phone' => $phone,
-        'Submitted At' => $submittedAt,
-    ];
-
-    if ($country !== '') {
-        $rows['Country of Interest'] = $country;
-    }
-    if ($rating !== null && $rating > 0) {
-        $rows['Rating'] = (string) $rating . ' / 5';
-    }
-    if ($message !== '') {
-        $rows['Message'] = $message;
-    }
-
-    $handledKeys = ['form_type', 'name', 'email', 'phone', 'message', 'country', 'rating'];
-    foreach ($data as $key => $value) {
-        if (in_array($key, $handledKeys, true) || $value === null || $value === '') {
-            continue;
-        }
-        if (is_scalar($value)) {
-            $label = ucwords(str_replace(['_', '-'], ' ', (string) $key));
-            $rows[$label] = (string) $value;
-        }
-    }
+    $rows = buildFormEmailRows($data);
 
     $plainLines = ["New website form submission on europecalling.co", ''];
     $htmlRows = '';

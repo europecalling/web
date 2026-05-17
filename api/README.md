@@ -4,7 +4,7 @@ PHP backend for website form submissions. Deploy to `web.europecalling.co`.
 
 ## What it does
 
-All contact, feedback, and enquiry forms POST to **`https://web.europecalling.co/submit-form.php`**. Submissions are emailed to `mail.europecalling@gmail.com` via Gmail SMTP.
+All website forms (contact, feedback, trip planner, enquiry popups, country page) POST to **`https://web.europecalling.co/submit-form.php`**. Every field in the submission is included in the notification email to `mail.europecalling@gmail.com` via Gmail SMTP.
 
 ## Deploy on Hostinger (`public_html/web/`)
 

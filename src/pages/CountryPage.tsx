@@ -657,6 +657,7 @@ const CountryPage = () => {
         const result = await submitLead({
             name: formData.name,
             phone: formData.phone,
+            whatsapp_number: formData.phone,
             is_whatsapp_same: isWhatsAppSame,
             adults: formData.adults,
             kids: formData.kids,
