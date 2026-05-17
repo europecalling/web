@@ -44,9 +44,15 @@ chmod 755 uploads
 
 ## Form submissions (all website forms)
 
-All lead/contact/enquiry forms POST to `/api/submit-form` on the main site (same origin — no CORS). Vercel rewrites that path to `https://web.europecalling.co/api/send-form-email.php`. Submissions are emailed to `mail.europecalling@gmail.com` via Gmail SMTP.
+All lead/contact/enquiry forms POST to **`https://web.europecalling.co/submit-form.php`**. Submissions are emailed to `mail.europecalling@gmail.com` via Gmail SMTP.
 
-**Deploy location:** upload the entire `api/` folder to `public_html/web/api/` on Hostinger (so `send-form-email.php` is at `https://web.europecalling.co/api/send-form-email.php`). Include `.htaccess` for CORS if anything calls the PHP URL directly. Put `mail.local.php` or `mail.env` in either `api/` or the parent `web/` folder.
+**Deploy on Hostinger (`public_html/web/`):**
+
+1. Upload `submit-form.php` (from repo root) to `web/submit-form.php`
+2. Upload the entire `api/` folder to `web/api/` (includes `send-form-email.php`, `mail.php`, `vendor/` after `composer install`)
+3. Put `mail.local.php` or `mail.env` in `web/` or `web/api/`
+
+Optional: Vercel can proxy `/api/submit-form` → `submit-form.php` if you set `VITE_FORM_API_URL=/api/submit-form`.
 
 ### Security
 

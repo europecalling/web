@@ -18,8 +18,8 @@ export interface APIResponse {
     lead_id?: number;
 }
 
-/** Same-origin path; Vercel rewrites to web.europecalling.co (see vercel.json). */
-const FORM_API_URL = import.meta.env.VITE_FORM_API_URL ?? "/api/submit-form";
+const FORM_API_URL =
+    import.meta.env.VITE_FORM_API_URL ?? "https://web.europecalling.co/submit-form.php";
 
 export const submitLead = async (data: LeadSubmissionData): Promise<APIResponse> => {
     const headers: Record<string, string> = {
@@ -47,7 +47,7 @@ export const submitLead = async (data: LeadSubmissionData): Promise<APIResponse>
                 status: "error",
                 message: response.ok
                     ? "Invalid response from server"
-                    : "Form service unavailable. Ensure api/ is deployed to web.europecalling.co/api/",
+                    : "Form service unavailable. Check https://web.europecalling.co/submit-form.php",
             };
         }
 

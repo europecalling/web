@@ -10,7 +10,7 @@
         },
         {
             "source": "/api/submit-form",
-            "destination": "https://web.europecalling.co/api/send-form-email.php"
+            "destination": "https://web.europecalling.co/submit-form.php"
         },
         {
             "source": "/(.*)",
