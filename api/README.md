@@ -39,6 +39,48 @@ chmod 755 uploads
 | PUT | /api/gallery.php?id=X | Yes | Update item |
 | DELETE | /api/gallery.php?id=X | Yes | Delete item |
 | POST | /api/upload.php | Yes | Upload image |
+| POST | /api/send-form-email.php | Optional secret | Contact / Feedback form email notifications |
+
+## Form email notifications (Contact & Feedback)
+
+Sends submissions to `mail.europecalling@gmail.com` via Gmail SMTP when users submit the Contact page forms.
+
+### Security
+
+If a Gmail app password was ever shared in chat or committed to git, **revoke it** in [Google Account → App passwords](https://myaccount.google.com/apppasswords) and create a new one. Store credentials only on the server in `mail.local.php` or host environment variables—never in the frontend build.
+
+### Setup
+
+1. Install PHPMailer:
+
+```bash
+cd api
+composer install --no-dev
+```
+
+2. Configure mail (choose one):
+
+- Copy `mail.local.php.example` to `mail.local.php` and set `GMAIL_USER`, `GMAIL_APP_PASSWORD`, and `NOTIFY_TO`, or
+- Set the same keys as environment variables on the host (see `mail.env.example`).
+
+3. Optional: set `FORM_NOTIFY_SECRET` on the server and `VITE_FORM_NOTIFY_SECRET` in the frontend `.env` so only your site can call the endpoint.
+
+### Test
+
+```bash
+curl -X POST https://web.europecalling.co/api/send-form-email.php \
+  -H "Content-Type: application/json" \
+  -d '{"form_type":"Contact Us Form","name":"Test User","phone":"+1234567890","email":"test@example.com","message":"Hello","country":"Georgia"}'
+```
+
+Expected response: `{"status":"success","message":"Email sent"}`
+
+### Frontend env (optional)
+
+```env
+VITE_FORM_EMAIL_API_URL=https://web.europecalling.co/api/send-form-email.php
+VITE_FORM_NOTIFY_SECRET=your-random-secret
+```
 
 ## Frontend
 

@@ -11,6 +11,11 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
+.env.*
+
+api/vendor/
+api/mail.local.php
 
 # Editor directories and files
 .vscode/*

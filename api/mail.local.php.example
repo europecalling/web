@@ -1,0 +1,9 @@
+<?php
+/**
+ * Copy to mail.local.php and fill in values. mail.local.php is gitignored.
+ * Revoke any app password that was shared publicly and create a new one.
+ */
+putenv('GMAIL_USER=mail.europecalling@gmail.com');
+putenv('GMAIL_APP_PASSWORD=your-new-app-password-without-spaces');
+putenv('NOTIFY_TO=mail.europecalling@gmail.com');
+// putenv('FORM_NOTIFY_SECRET=your-random-secret');
