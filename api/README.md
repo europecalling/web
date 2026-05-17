@@ -27,6 +27,7 @@ mkdir -p uploads
 chmod 755 uploads
 ```
 
+
 4. **Config**: Edit `config.php` if needed. For production, use environment variables for DB credentials.
 
 ## Endpoints
