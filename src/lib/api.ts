@@ -18,9 +18,8 @@ export interface APIResponse {
     lead_id?: number;
 }
 
-const FORM_API_URL =
-    import.meta.env.VITE_FORM_API_URL ??
-    "https://web.europecalling.co/api/send-form-email.php";
+/** Same-origin path; Vercel rewrites to web.europecalling.co (see vercel.json). */
+const FORM_API_URL = import.meta.env.VITE_FORM_API_URL ?? "/api/submit-form";
 
 export const submitLead = async (data: LeadSubmissionData): Promise<APIResponse> => {
     const headers: Record<string, string> = {

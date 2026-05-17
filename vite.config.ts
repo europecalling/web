@@ -15,6 +15,12 @@ export default defineConfig(({ mode }) => ({
         secure: false,
         rewrite: (path) => path.replace(/^\/api\/proxy/, '/api'),
       },
+      '/api/submit-form': {
+        target: 'https://web.europecalling.co',
+        changeOrigin: true,
+        secure: true,
+        rewrite: () => '/api/send-form-email.php',
+      },
     },
   },
   preview: {
@@ -26,6 +32,12 @@ export default defineConfig(({ mode }) => ({
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api\/proxy/, '/api'),
+      },
+      '/api/submit-form': {
+        target: 'https://web.europecalling.co',
+        changeOrigin: true,
+        secure: true,
+        rewrite: () => '/api/send-form-email.php',
       },
     },
   },
