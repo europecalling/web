@@ -16,6 +16,8 @@ dist-ssr
 
 api/vendor/
 api/mail.local.php
+mail.local.php
+mail.env
 
 # Editor directories and files
 .vscode/*

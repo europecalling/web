@@ -42,9 +42,11 @@ chmod 755 uploads
 | POST | /api/upload.php | Yes | Upload image |
 | POST | /api/send-form-email.php | Optional secret | Contact / Feedback form email notifications |
 
-## Form email notifications (Contact & Feedback)
+## Form submissions (all website forms)
 
-Sends submissions to `mail.europecalling@gmail.com` via Gmail SMTP when users submit the Contact page forms.
+All lead/contact/enquiry forms POST to `https://web.europecalling.co/api/send-form-email.php` (not the CRM). Submissions are emailed to `mail.europecalling@gmail.com` via Gmail SMTP.
+
+**Deploy location:** upload the entire `api/` folder to `public_html/web/api/` on Hostinger (so `send-form-email.php` is at `https://web.europecalling.co/api/send-form-email.php`). Put `mail.local.php` or `mail.env` in either `api/` or the parent `web/` folder.
 
 ### Security
 
@@ -79,7 +81,7 @@ Expected response: `{"status":"success","message":"Email sent"}`
 ### Frontend env (optional)
 
 ```env
-VITE_FORM_EMAIL_API_URL=https://web.europecalling.co/api/send-form-email.php
+VITE_FORM_API_URL=https://web.europecalling.co/api/send-form-email.php
 VITE_FORM_NOTIFY_SECRET=your-random-secret
 ```
 

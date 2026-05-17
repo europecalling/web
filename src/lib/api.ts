@@ -18,17 +18,39 @@ export interface APIResponse {
     lead_id?: number;
 }
 
+const FORM_API_URL =
+    import.meta.env.VITE_FORM_API_URL ??
+    "https://web.europecalling.co/api/send-form-email.php";
+
 export const submitLead = async (data: LeadSubmissionData): Promise<APIResponse> => {
+    const headers: Record<string, string> = {
+        "Content-Type": "application/json",
+    };
+
+    const secret = import.meta.env.VITE_FORM_NOTIFY_SECRET;
+    if (secret) {
+        headers["X-Form-Secret"] = secret;
+    }
+
     try {
-        const response = await fetch("https://api.europecalling.co/api/leads/public/submit/", {
+        const response = await fetch(FORM_API_URL, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
+            headers,
             body: JSON.stringify(data),
         });
 
-        const result = await response.json();
+        const text = await response.text();
+        let result: APIResponse;
+        try {
+            result = JSON.parse(text) as APIResponse;
+        } catch {
+            return {
+                status: "error",
+                message: response.ok
+                    ? "Invalid response from server"
+                    : "Form service unavailable. Ensure api/ is deployed to web.europecalling.co/api/",
+            };
+        }
 
         if (!response.ok) {
             return {
@@ -37,7 +59,7 @@ export const submitLead = async (data: LeadSubmissionData): Promise<APIResponse>
             };
         }
 
-        return result as APIResponse;
+        return result;
     } catch (error) {
         console.error("Submission failed", error);
         return {

@@ -75,22 +75,24 @@ if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-$allowedTypes = ['Contact Us Form', 'Feedback Form'];
-if (!in_array($formType, $allowedTypes, true)) {
+if ($formType === '' || mb_strlen($formType) > 120) {
     http_response_code(400);
     echo json_encode(['status' => 'error', 'message' => 'Invalid form type']);
     exit;
 }
 
-$result = sendFormNotificationEmail([
-    'form_type' => $formType,
-    'name' => $name,
-    'phone' => $phone,
-    'email' => $email,
-    'message' => $message,
-    'country' => $country,
-    'rating' => $rating,
-]);
+$payload = is_array($input) ? $input : [];
+$payload['form_type'] = $formType;
+$payload['name'] = $name;
+$payload['phone'] = $phone;
+$payload['email'] = $email;
+$payload['message'] = $message;
+$payload['country'] = $country;
+if ($rating !== null) {
+    $payload['rating'] = $rating;
+}
+
+$result = sendFormNotificationEmail($payload);
 
 if (!$result['ok']) {
     http_response_code(500);

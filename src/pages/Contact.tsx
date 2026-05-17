@@ -11,7 +11,6 @@ import { cn } from "@/lib/utils";
 import contactBanner from "@/assets/destination-czech.jpg";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { submitLead } from "@/lib/api";
-import { notifyFormSubmission } from "@/lib/form-email";
 import {
   Select,
   SelectContent,
@@ -111,14 +110,6 @@ const Contact = () => {
         });
 
         if (result.status === "success") {
-          void notifyFormSubmission({
-            form_type: "Feedback Form",
-            name: formData.name,
-            phone: formData.phone,
-            email: formData.email,
-            message: formData.message,
-            rating: formData.rating === 0 ? 5 : formData.rating,
-          });
           toast({
             title: "Thank You!",
             description: "Your feedback has been successfully submitted.",
@@ -144,14 +135,6 @@ const Contact = () => {
         });
 
         if (result.status === "success") {
-          void notifyFormSubmission({
-            form_type: "Contact Us Form",
-            name: formData.name,
-            phone: formData.phone,
-            email: formData.email,
-            message: formData.message,
-            country: formData.country,
-          });
           toast({
             title: "Message Sent Successfully!",
             description: "Our team will review your inquiry and respond within 24 hours.",
