@@ -216,7 +216,7 @@ export function buildRowsHtml(rows: Record<string, string>): string {
   return html;
 }
 
-export interface EmailJsTemplateParams {
+export interface EmailJsTemplateParams extends Record<string, unknown> {
   subject: string;
   form_type: string;
   rows_html: string;
