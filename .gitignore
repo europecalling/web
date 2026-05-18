@@ -13,11 +13,7 @@ dist-ssr
 *.local
 .env
 .env.*
-
-api/vendor/
-api/mail.local.php
-mail.local.php
-mail.env
+!.env.example
 
 # Editor directories and files
 .vscode/*

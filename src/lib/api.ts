@@ -1,73 +1,56 @@
+import emailjs from "@emailjs/browser";
+import {
+  buildEmailJsParams,
+  validateLeadSubmission,
+} from "@/lib/form-email-builder";
+
 export interface LeadSubmissionData {
-    // Required Fields
-    name: string;
-    phone: string;
-
-    // Optional Standard Fields
-    email?: string;
-    message?: string;
-    form_type?: string;
-
-    // Dynamic Fields
-    [key: string]: any;
+  name: string;
+  phone: string;
+  email?: string;
+  message?: string;
+  form_type?: string;
+  [key: string]: unknown;
 }
 
 export interface APIResponse {
-    status: "success" | "error";
-    message: string;
-    lead_id?: number;
+  status: "success" | "error";
+  message: string;
 }
 
-const FORM_API_URL =
-    import.meta.env.VITE_FORM_API_URL ?? "https://web.europecalling.co/submit-form.php";
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export const submitLead = async (data: LeadSubmissionData): Promise<APIResponse> => {
-    const headers: Record<string, string> = {
-        "Content-Type": "application/json",
+  const validationError = validateLeadSubmission(data);
+  if (validationError) {
+    return { status: "error", message: validationError };
+  }
+
+  if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+    return {
+      status: "error",
+      message: "Email service is not configured",
     };
+  }
 
-    const secret = import.meta.env.VITE_FORM_NOTIFY_SECRET;
-    if (secret) {
-        headers["X-Form-Secret"] = secret;
-    }
+  const payload = Object.fromEntries(
+    Object.entries(data).filter(([, value]) => value !== undefined)
+  ) as LeadSubmissionData;
 
-    try {
-        const payload = Object.fromEntries(
-            Object.entries(data).filter(([, value]) => value !== undefined)
-        );
+  const templateParams = buildEmailJsParams(payload);
 
-        const response = await fetch(FORM_API_URL, {
-            method: "POST",
-            headers,
-            body: JSON.stringify(payload),
-        });
-
-        const text = await response.text();
-        let result: APIResponse;
-        try {
-            result = JSON.parse(text) as APIResponse;
-        } catch {
-            return {
-                status: "error",
-                message: response.ok
-                    ? "Invalid response from server"
-                    : "Form service unavailable. Check https://web.europecalling.co/submit-form.php",
-            };
-        }
-
-        if (!response.ok) {
-            return {
-                status: "error",
-                message: result.message || "An error occurred during submission",
-            };
-        }
-
-        return result;
-    } catch (error) {
-        console.error("Submission failed", error);
-        return {
-            status: "error",
-            message: "Network error or server is unreachable",
-        };
-    }
+  try {
+    await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, {
+      publicKey: PUBLIC_KEY,
+    });
+    return { status: "success", message: "Email sent" };
+  } catch (error) {
+    console.error("EmailJS submission failed", error);
+    return {
+      status: "error",
+      message: "Failed to send email. Please try again or contact us directly.",
+    };
+  }
 };

@@ -9,10 +9,6 @@
             "destination": "https://crm.europecalling.co/api/feedbacks/"
         },
         {
-            "source": "/api/submit-form",
-            "destination": "https://web.europecalling.co/submit-form.php"
-        },
-        {
             "source": "/(.*)",
             "destination": "/index.html"
         }

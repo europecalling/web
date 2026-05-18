@@ -7,38 +7,10 @@ export default defineConfig(() => ({
   server: {
     host: "::",
     port: 8080,
-    proxy: {
-      '/api/proxy': {
-        target: 'https://crm.europecalling.co',
-        changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path.replace(/^\/api\/proxy/, '/api'),
-      },
-      '/api/submit-form': {
-        target: 'https://web.europecalling.co',
-        changeOrigin: true,
-        secure: true,
-        rewrite: () => '/submit-form.php',
-      },
-    },
   },
   preview: {
     host: "::",
     port: 8080,
-    proxy: {
-      '/api/proxy': {
-        target: 'https://crm.europecalling.co',
-        changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path.replace(/^\/api\/proxy/, '/api'),
-      },
-      '/api/submit-form': {
-        target: 'https://web.europecalling.co',
-        changeOrigin: true,
-        secure: true,
-        rewrite: () => '/submit-form.php',
-      },
-    },
   },
   plugins: [react()],
   resolve: {
@@ -50,8 +22,8 @@ export default defineConfig(() => ({
     rollupOptions: {
       output: {
         manualChunks(id) {
-          if (id.includes('node_modules')) {
-            return 'vendor';
+          if (id.includes("node_modules")) {
+            return "vendor";
           }
         },
       },

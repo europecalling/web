@@ -1,9 +1,9 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-  readonly VITE_FORM_API_URL?: string;
-  readonly VITE_FORM_EMAIL_API_URL?: string;
-  readonly VITE_FORM_NOTIFY_SECRET?: string;
+  readonly VITE_EMAILJS_SERVICE_ID?: string;
+  readonly VITE_EMAILJS_TEMPLATE_ID?: string;
+  readonly VITE_EMAILJS_PUBLIC_KEY?: string;
 }
 
 interface ImportMeta {
@@ -11,6 +11,6 @@ interface ImportMeta {
 }
 
 declare module "*.mov" {
-    const src: string;
-    export default src;
+  const src: string;
+  export default src;
 }
