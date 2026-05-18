@@ -1,5 +1,10 @@
 import emailjs from "@emailjs/browser";
 import {
+  emailJsConfig,
+  getEmailJsConfigError,
+  getEmailJsErrorMessage,
+} from "@/lib/emailjs-config";
+import {
   buildEmailJsParams,
   validateLeadSubmission,
 } from "@/lib/form-email-builder";
@@ -18,21 +23,15 @@ export interface APIResponse {
   message: string;
 }
 
-const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
 export const submitLead = async (data: LeadSubmissionData): Promise<APIResponse> => {
   const validationError = validateLeadSubmission(data);
   if (validationError) {
     return { status: "error", message: validationError };
   }
 
-  if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
-    return {
-      status: "error",
-      message: "Email service is not configured",
-    };
+  const configError = getEmailJsConfigError();
+  if (configError) {
+    return { status: "error", message: configError };
   }
 
   const payload = Object.fromEntries(
@@ -42,15 +41,31 @@ export const submitLead = async (data: LeadSubmissionData): Promise<APIResponse>
   const templateParams = buildEmailJsParams(payload);
 
   try {
-    await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, {
-      publicKey: PUBLIC_KEY,
+    await emailjs.send(emailJsConfig.serviceId, emailJsConfig.templateId, templateParams, {
+      publicKey: emailJsConfig.publicKey,
     });
     return { status: "success", message: "Email sent" };
   } catch (error) {
-    console.error("EmailJS submission failed", error);
+    const detail = getEmailJsErrorMessage(error);
+    console.error("EmailJS submission failed", {
+      error,
+      serviceId: emailJsConfig.serviceId,
+      templateId: emailJsConfig.templateId,
+    });
+
+    if (detail.toLowerCase().includes("template id not found")) {
+      return {
+        status: "error",
+        message:
+          "Email template is missing in EmailJS. Create or restore template_7umuavj in your EmailJS dashboard, then redeploy.",
+      };
+    }
+
     return {
       status: "error",
-      message: "Failed to send email. Please try again or contact us directly.",
+      message: import.meta.env.DEV
+        ? `Failed to send email: ${detail}`
+        : "Failed to send email. Please try again or contact us directly.",
     };
   }
 };

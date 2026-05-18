@@ -38,6 +38,16 @@ Never commit the EmailJS private key. Restrict API usage to your domain in the E
 
 Email template HTML for the dashboard: [docs/emailjs-template.md](docs/emailjs-template.md).
 
+### Vercel / production notes
+
+Vite embeds `VITE_*` variables **at build time**. After adding or changing env vars in Vercel:
+
+1. Open **Deployments** → **Redeploy** the latest production deployment (enable “Use existing build cache” **off** if the error persists).
+2. Confirm variables are enabled for **Production** (not only Preview).
+3. Values must be plain IDs only — no quotes, e.g. `template_7umuavj` not `"template_7umuavj"`.
+
+If you see **“template ID not found”**, the template does not exist under the same EmailJS account as your public key. Open [EmailJS Templates](https://dashboard.emailjs.com/admin/templates), create or open the template, copy its **Template ID**, and either update `VITE_EMAILJS_TEMPLATE_ID` or ensure it matches `template_7umuavj`.
+
 ## Scripts
 
 | Command | Description |

@@ -42,3 +42,10 @@ Use **triple braces** for `rows_html` so table markup is not escaped.
 ## Security
 
 Account → Security: allow requests only from `europecalling.co` and `localhost`.
+
+## Troubleshooting “template ID not found”
+
+1. Log in to the **same** EmailJS account that owns public key `lrCyBzm0RH8baNYAC`.
+2. Go to [Templates](https://dashboard.emailjs.com/admin/templates) and confirm a template exists. If you just created one, use the ID shown there (it may differ from `template_7umuavj`).
+3. Open the template → ensure it is linked to service `service_hcwj5si`.
+4. On Vercel, set `VITE_EMAILJS_TEMPLATE_ID` to that exact ID and **redeploy** production.
