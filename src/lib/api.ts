@@ -37,11 +37,24 @@ async function deliverLeadEmail(payload: LeadSubmissionData): Promise<APIRespons
       templateId: emailJsConfig.templateId,
     });
 
-    if (detail.toLowerCase().includes("template id not found")) {
+    const detailLower = detail.toLowerCase();
+
+    if (detailLower.includes("template id not found")) {
+      return {
+        status: "error",
+        message: `Email template is missing in EmailJS. Create or restore ${emailJsConfig.templateId} in your EmailJS dashboard, then redeploy.`,
+      };
+    }
+
+    if (
+      detailLower.includes("invalid grant") ||
+      detailLower.includes("reconnect your gmail") ||
+      detailLower.includes("insufficient authentication scopes")
+    ) {
       return {
         status: "error",
         message:
-          "Email template is missing in EmailJS. Create or restore template_7umuavj in your EmailJS dashboard, then redeploy.",
+          'Gmail permissions expired in EmailJS. Go to dashboard.emailjs.com → Email Services → disconnect and reconnect Gmail. When Google asks for permissions, enable "Send email on your behalf", then click Update Service.',
       };
     }
 
@@ -82,8 +95,8 @@ function enqueueLeadEmail(payload: LeadSubmissionData): void {
 }
 
 /**
- * Validates input, returns success immediately, and sends email in the background.
- * Pass `{ awaitDelivery: true }` to wait for EmailJS (slower UX).
+ * Validates input, sends via EmailJS, and returns the real result.
+ * Pass `{ awaitDelivery: false }` to return success immediately and send in the background.
  */
 export const submitLead = async (
   data: LeadSubmissionData,
@@ -103,7 +116,9 @@ export const submitLead = async (
     Object.entries(data).filter(([, value]) => value !== undefined)
   ) as LeadSubmissionData;
 
-  if (options?.awaitDelivery) {
+  const awaitDelivery = options?.awaitDelivery ?? true;
+
+  if (awaitDelivery) {
     return deliverLeadEmail(payload);
   }
 

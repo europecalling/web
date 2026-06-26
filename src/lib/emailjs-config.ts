@@ -1,7 +1,7 @@
 /** Public EmailJS IDs — safe to ship in the client bundle. Env vars override these at build time. */
 const DEFAULTS = {
   serviceId: "service_hcwj5si",
-  templateId: "template_7umuavj",
+  templateId: "template_7zm006y",
   publicKey: "lrCyBzm0RH8baNYAC",
 } as const;
 
