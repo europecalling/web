@@ -3,6 +3,7 @@ const DEFAULTS = {
   serviceId: "service_s3iqvqc",
   templateId: "template_7zm006y",
   publicKey: "lrCyBzm0RH8baNYAC",
+  recipientEmails: ["mail.europecalling@gmail.com", "sales@europecalling.co"],
 } as const;
 
 function readEnv(value: string | undefined, fallback: string): string {
@@ -12,15 +13,33 @@ function readEnv(value: string | undefined, fallback: string): string {
     : fallback;
 }
 
+function readRecipientEmails(value: string | undefined): readonly string[] {
+  const trimmed = value?.trim();
+  if (!trimmed) {
+    return DEFAULTS.recipientEmails;
+  }
+
+  const emails = trimmed
+    .split(",")
+    .map((email) => email.trim())
+    .filter(Boolean);
+
+  return emails.length > 0 ? emails : DEFAULTS.recipientEmails;
+}
+
 export const emailJsConfig = {
   serviceId: readEnv(import.meta.env.VITE_EMAILJS_SERVICE_ID, DEFAULTS.serviceId),
   templateId: readEnv(import.meta.env.VITE_EMAILJS_TEMPLATE_ID, DEFAULTS.templateId),
   publicKey: readEnv(import.meta.env.VITE_EMAILJS_PUBLIC_KEY, DEFAULTS.publicKey),
+  recipientEmails: readRecipientEmails(import.meta.env.VITE_EMAILJS_RECIPIENT_EMAILS),
 };
 
 export function getEmailJsConfigError(): string | null {
   if (!emailJsConfig.serviceId || !emailJsConfig.templateId || !emailJsConfig.publicKey) {
     return "Email service is not configured";
+  }
+  if (emailJsConfig.recipientEmails.length === 0) {
+    return "Email recipients are not configured";
   }
   return null;
 }

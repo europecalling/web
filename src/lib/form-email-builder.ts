@@ -220,6 +220,7 @@ export interface EmailJsTemplateParams extends Record<string, unknown> {
   subject: string;
   form_type: string;
   rows_html: string;
+  to_email?: string;
   reply_to?: string;
 }
 

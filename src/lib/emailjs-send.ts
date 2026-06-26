@@ -40,10 +40,14 @@ export function isRetryableEmailJsError(error: unknown): boolean {
 
 export async function sendEmailJsTemplate(templateParams: EmailJsTemplateParams): Promise<void> {
   let lastError: unknown;
+  const params = {
+    ...templateParams,
+    to_email: emailJsConfig.recipientEmails.join(", "),
+  };
 
   for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
     try {
-      await emailjs.send(emailJsConfig.serviceId, emailJsConfig.templateId, templateParams);
+      await emailjs.send(emailJsConfig.serviceId, emailJsConfig.templateId, params);
       return;
     } catch (error) {
       lastError = error;
