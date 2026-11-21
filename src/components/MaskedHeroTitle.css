@@ -1,0 +1,51 @@
+.masked-hero-title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 15vw;
+    line-height: 0.8;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    width: 100%;
+    text-align: center;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mask-letter {
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* Fallback color if image fails */
+    background-color: rgba(255, 255, 255, 0.8);
+
+    /* 
+       Zoom setting:
+       The reliable image is a wide landscape (16:9). 
+       The tower is a thin vertical slice in the center.
+       To make the tower fill the 'O', we effectively crop/zoom massively.
+       1200% width ensures the vertical tower slice fills the letter width.
+    */
+    background-size: 1200%;
+    background-position: center 45%;
+    background-repeat: no-repeat;
+
+    width: auto;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+    .masked-hero-title {
+        font-size: 18vw;
+    }
+
+    .mask-letter {
+        /* Mobile adjustment */
+        background-size: 1500%;
+    }
+}
