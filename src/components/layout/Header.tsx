@@ -266,7 +266,7 @@ export function Header() {
                         <Mail className="w-4 h-4" />
                       </div>
                     </a>
-                    <a href="https://www.instagram.com/europe__calling/" target="_blank" rel="noopener noreferrer" className="group" aria-label="Instagram">
+                    <a href="https://www.instagram.com/najath.europecalling/" target="_blank" rel="noopener noreferrer" className="group" aria-label="Instagram">
                       <div className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center group-hover:bg-gold group-hover:text-white transition-all duration-300 border border-primary/10">
                         <Instagram className="w-4 h-4" />
                       </div>

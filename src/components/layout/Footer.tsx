@@ -52,9 +52,9 @@ export function Footer() {
           <div className="flex flex-wrap justify-center gap-2 mb-4">
             {[
               { icon: <Facebook className="w-4 h-4" />, href: "https://www.facebook.com/share/19qGz8sdbi/?mibextid=wwXIfr" },
-              { icon: <Instagram className="w-4 h-4" />, href: "https://www.instagram.com/europe__calling/" },
+              { icon: <Instagram className="w-4 h-4" />, href: "https://www.instagram.com/najath.europecalling/" },
               { icon: <Twitter className="w-4 h-4" />, href: "https://x.com/europe__calling?s=21" },
-              { icon: <Linkedin className="w-4 h-4" />, href: "https://www.linkedin.com/in/europe-calling-494b7b3a7/" },
+              { icon: <Linkedin className="w-4 h-4" />, href: "https://www.linkedin.com/company/europecalling" },
               { icon: <Youtube className="w-4 h-4" />, href: "https://www.youtube.com/@europe_calling" },
             ].map((social, i) => (
               <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 flex items-center justify-center rounded-full bg-[#FF7700] text-[#faf4e5] hover:bg-black hover:text-[#FF7700] transition-all">
@@ -125,9 +125,9 @@ export function Footer() {
             <div className="flex flex-wrap gap-3">
               {[
                 { icon: <Facebook className="w-4 h-4" />, href: "https://www.facebook.com/share/19qGz8sdbi/?mibextid=wwXIfr" },
-                { icon: <Instagram className="w-4 h-4" />, href: "https://www.instagram.com/europe__calling/" },
+                { icon: <Instagram className="w-4 h-4" />, href: "https://www.instagram.com/najath.europecalling/" },
                 { icon: <Twitter className="w-4 h-4" />, href: "https://x.com/europe__calling?s=21" },
-                { icon: <Linkedin className="w-4 h-4" />, href: "https://www.linkedin.com/in/europe-calling-494b7b3a7/" },
+                { icon: <Linkedin className="w-4 h-4" />, href: "https://www.linkedin.com/company/europecalling" },
                 { icon: <Youtube className="w-4 h-4" />, href: "https://www.youtube.com/@europe_calling" },
               ].map((social, width) => (
                 <a

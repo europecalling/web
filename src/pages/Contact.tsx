@@ -326,32 +326,32 @@ const Contact = () => {
               <p className="text-muted-foreground text-sm mb-6">
                 We welcome clients for personal consultations. Please schedule an appointment in advance.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* India Office - Malappuram Map */}
-                <RevealOnScroll animation="fade-up" delay={100}>
-                  <div className="bg-primary text-primary-foreground p-6 sm:p-8 rounded-3xl shadow-xl relative overflow-hidden group h-full">
-                    <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-white/15 transition-colors" />
-                    <h4 className="font-heading text-lg font-bold mb-4 relative z-10 text-gold">India Office — Malappuram</h4>
-                    <div className="relative block h-56 sm:h-64 rounded-2xl overflow-hidden shadow-inner border border-white/10 hover:border-gold/50 transition-colors group/map">
-                      <iframe
-                        width="100%"
-                        height="100%"
-                        src="https://maps.google.com/maps?q=2nd+Floor,+Paravath+Arcade,+opp.+Budget+Hypermarket,+Varangode,+Down+Hill,+Malappuram,+Kerala+676519&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                        frameBorder="0"
-                        scrolling="no"
-                        marginHeight={0}
-                        marginWidth={0}
-                        title="Europe Calling India Office - Malappuram"
-                        className="w-full h-full grayscale-[0.5] hover:grayscale-0 transition-all duration-500"
-                      />
-                    </div>
-                    <a
-                      href="https://maps.app.goo.gl/kDggstPX7apT1ZsB6"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-4 items-center gap-2 text-sm text-gold font-medium cursor-pointer hover:underline inline-flex"
-                    >
-                      Get Directions <ArrowRight className="w-4 h-4" />
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {/* India Office - Malappuram Map */}
+  <RevealOnScroll animation="fade-up" delay={100}>
+    <div className="bg-primary text-primary-foreground p-6 sm:p-8 rounded-3xl shadow-xl relative overflow-hidden group h-full">
+      <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-white/15 transition-colors" />     <h4 className="font-heading text-lg font-bold mb-4 relative z-10 text-gold">India Office — Malappuram
+</h4>
+      <div className="relative block h-56 sm:h-64 rounded-2xl overflow-hidden shadow-inner border border-white/10 hover:border-gold/50 transition-colors group/map">
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://maps.google.com/maps?q=Europe+calling,+Down+Hill-Varangode+Rd,+opposite+budget+hyper+market,+Varangode,+Down+Hill,+Malappuram,+Keralam+676505&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          frameBorder="0"
+          scrolling="no"
+          marginHeight={0}
+          marginWidth={0}
+          title="Europe Calling India Office - Malappuram"
+          className="w-full h-full grayscale-[0.5] hover:grayscale-0 transition-all duration-500"
+        />
+      </div>
+      <a
+        href="https://www.google.com/maps/dir//Europe+calling,+Down+Hill-Varangode+Rd,+opposite+budget+hyper+market,+Varangode,+Down+Hill,+Malappuram,+Keralam+676505/@11.0526464,76.070912,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3ba64b5a00c9657b:0x68d46bc496e400fa!2m2!1d76.081559!2d11.0553092?hl=en&authuser=0&entry=ttu&g_ep=EgoyMDI2MTExOC4xIKXMDSoASAFQAw%3D%3D"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-4 items-center gap-2 text-sm text-gold font-medium cursor-pointer hover:underline inline-flex"
+      >
+        Get Directions <ArrowRight className="w-4 h-4" />
                     </a>
                   </div>
                 </RevealOnScroll>

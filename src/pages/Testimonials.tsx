@@ -36,8 +36,9 @@ const VerifiedBadge = () => (
   </svg>
 );
 
-// Enhanced Mock Data to support the Carousel effect (need ~7+ items for full effect)
+// Real Google reviews — video items keep their files, text items use the pasted reviews
 const testimonials = [
+  // ---------- VIDEO TESTIMONIALS (unchanged) ----------
   {
     id: 1,
     name: "Amit Sharma",
@@ -168,95 +169,129 @@ const testimonials = [
     thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800&h=800",
     videoDuration: ""
   },
-  // Text only reviews
-  {
-    id: 8,
-    name: "Rustam Hasanov",
-    location: "Azerbaijan",
-    destination: "Czech Republic",
-    role: "IT Specialist",
-    content: "Europe Calling helped reunite my family in Prague. Their expertise in family reunification cases is unparalleled.",
-    rating: 5,
-    hasVideo: false,
-    image: null
-  },
-  {
-    id: 9,
-    name: "Sarah Johnson",
-    location: "UK",
-    destination: "Spain",
-    role: "Retiree",
-    content: "Excellent service for retirement visa processing. They handled all the Spanish bureaucracy effortlessly.",
-    rating: 4,
-    hasVideo: false,
-    image: null
-  },
-  {
-    id: 10,
-    name: "Michael Chen",
-    location: "China",
-    destination: "Portugal",
-    role: "Business Owner",
-    content: "The Golden Visa assistance was top-notch. Highly professional team.",
-    rating: 5,
-    hasVideo: false,
-    image: null
-  },
-  {
-    id: 11,
-    name: "James Wilson",
-    location: "UK",
-    destination: "Italy",
-    role: "Designer",
-    content: "The visa process was incredibly smooth. Professional guidance throughout made it easy.",
-    rating: 5,
-    hasVideo: false,
-    image: null
-  },
-  {
-    id: 12,
-    name: "Anita Desai",
-    location: "India",
-    destination: "Sweden",
-    role: "Developer",
-    content: "Highly recommended! They helped me navigate the complex requirements effortlessly.",
-    rating: 5,
-    hasVideo: false,
-    image: null
-  },
+
+  // ---------- REAL GOOGLE TEXT REVIEWS ----------
   {
     id: 13,
-    name: "Robert Chang",
-    location: "Singapore",
-    destination: "Netherlands",
-    role: "Analyst",
-    content: "Efficiency at its best. Europe Calling knows their stuff inside out.",
+    name: "keerthana reghu",
+    location: "Armenia Guest",
+    destination: "Armenia",
+    role: "Armenia Guest",
+    content: "We had a wonderful trip to Armenia with Europe Calling, and we highly recommend them to everyone planning to visit! A special thanks to Bilal, who picked us up from the airport and was our driver and guide throughout the trip. He made our entire experience so smooth and comfortable. Since he spoke the local language, everything became much easier for us, from ordering food to communicating with local people. Bilal explained each place we visited clearly and patiently, making our sightseeing experience even more enjoyable. His politeness, punctuality, helpful nature, and professionalism truly made a difference to our trip. We are very happy with the service provided by Europe Calling and grateful to Bilal for taking such good care of us throughout our journey. If you are planning a trip to Armenia, we definitely recommend Europe Calling and Bilal for a hassle-free and memorable experience! Thank you for making our Armenia trip so special! ❤️",
     rating: 5,
     hasVideo: false,
     image: null
   },
   {
     id: 14,
-    name: "Maria Garcia",
-    location: "Spain",
-    destination: "Ireland",
-    role: "Consultant",
-    content: "Thanks to the team for their support. My move was hassle-free.",
-    rating: 4,
+    name: "MOHAMED ASIF",
+    location: "Thailand Guest",
+    destination: "Thailand",
+    role: "Thailand Guest",
+    content: "The arrangement done by EUROPE CALLING Team was very nice. We never face any issues in Thailand. Everything was on time. The hotel they arranged in Pataya was super. The car and drivers are very good. Thanks to Europe calling",
+    rating: 5,
     hasVideo: false,
     image: null
   },
   {
     id: 15,
-    name: "Ahmed Al-Fayed",
-    location: "UAE",
-    destination: "Germany",
-    role: "Engineer",
-    content: "From Dubai to Berlin, the journey was simplified by their experts.",
+    name: "Reju Nair",
+    location: "Kazakhstan Guest",
+    destination: "Kazakhstan",
+    role: "Kazakhstan Guest",
+    content: "Just returned from an unforgettable 6-night trip to Almaty, Kazakhstan, perfectly organized by Europe Calling! The backend team, led by Aysha and Mohammed, tailored our itinerary around our love for mountains, lakes, canyons, and adventure, complete with a comfortable MUV for our road journeys. From the moment we landed, Shibin from operations team took incredible care of us, creating a warm, welcoming atmosphere. The team continuously checked in throughout the journey, showing true customer-centricity. Thank you, Europe Calling, for making our trip epic! Highly recommended.",
     rating: 5,
     hasVideo: false,
     image: null
-  }
+  },
+  {
+    id: 16,
+    name: "Amna Beevi",
+    location: "Azerbaijan Guest",
+    destination: "Azerbaijan",
+    role: "Azerbaijan Guest",
+    content: "We had a wonderful experience travelling to Baku with Europe Calling! Everything was well organised, from the travel arrangements to the overall coordination throughout the trip. A special thanks to Nasrin, Aflah, and the entire team for being so helpful and responsive whenever we needed them. Their support and coordination made our holiday smooth and enjoyable.✨ Thank you for making our trip a lovely experience. Highly recommended! 😊✨",
+    rating: 5,
+    hasVideo: false,
+    image: null
+  },
+  {
+    id: 17,
+    name: "Ramees Saleem",
+    location: "Georgia Guest",
+    destination: "Georgia",
+    role: "Georgia Guest",
+    content: "We booked our honeymoon package to Georgia through Europe Calling, and it was an absolutely incredible experience! From start to finish, everything was perfectly organized and tailored to our preferences. The team was professional, attentive, went above and beyond to ensure we had a safe and memorable trip. The itinerary was a perfect blend of relaxation and adventure, with stunning accommodations and thoughtful surprises along the way. They truly understood what we were looking for and made our honeymoon magical. We would like to extend our sincere gratitude to Mr. Najath and Mrs. Shirin Najath, founders of Europe Calling and wish them all the best for their expansion journey. If you're looking for a reliable and exceptional tour company, I highly recommend Europe Calling. They made our dream honeymoon come true!",
+    rating: 5,
+    hasVideo: false,
+    image: null
+  },
+  {
+    id: 18,
+    name: "Hana Nasser",
+    location: "Georgia Guest",
+    destination: "Georgia",
+    role: "Georgia Guest",
+    content: "Our recent trip to Georgia is truly one that will never be forgotten. Arranged by Europe Calling, the experience was filled with exquisite food, luxurious hotels, and exceptional service. We didn’t miss out on any of the famous landmarks, and the guide provided was incredibly friendly and knowledgeable. With fresh air and a change in scenery, it was a great stress relief. Along with great entertainment and a well-curated itinerary, this trip was truly memorable.",
+    rating: 5,
+    hasVideo: false,
+    image: null
+  },
+  {
+    id: 19,
+    name: "Sajid Shajahan",
+    location: "Russia Guest",
+    destination: "Russia",
+    role: "Russia Guest",
+    content: "We had an incredible experience with Europe Calling, who planned the perfect trip for me and my wife to Russia. The itinerary was meticulously crafted, balancing cultural exploration, breathtaking scenery and moments of relaxation. Every detail was seamlessly managed, from the smooth transfers to top-notch accommodations and guided tours that showcased Russia’s rich history and beauty. Their personalized approach ensured we had unforgettable experiences, whether it was walking through the grandeur of Moscow or marveling at the charm of St. Petersburg. This was, without doubt, one of the best trips we’ve ever had. Thank you for exceeding our expectations!",
+    rating: 5,
+    hasVideo: false,
+    image: null
+  },
+  {
+    id: 20,
+    name: "Mini Sharafudeen",
+    location: "Kazakhstan Guest",
+    destination: "Kazakhstan",
+    role: "Kazakhstan Guest",
+    content: "Our trip to Kazakhstan with Europe Calling Travel & Tourism was fantastic! Everything was perfectly organized — from flights and hotels to daily tours. The itinerary covered beautiful spots like Big Almaty Lake and Charyn Canyon, and the guide was friendly and knowledgeable. A smooth, memorable experience overall. Highly recommended! ⭐️⭐️⭐️⭐️⭐️",
+    rating: 5,
+    hasVideo: false,
+    image: null
+  },
+  {
+    id: 21,
+    name: "Pretheeksha Gopinath",
+    location: "Azerbaijan Guest",
+    destination: "Azerbaijan",
+    role: "Azerbaijan Guest",
+    content: "I wanted to thank your entire europe calling team for organizing such a wonderful week-long trip. From comfortable accommodations and great facilities to seamless transportation, everything was handled with care. Because every detail was taken care of, we could truly relax and enjoy the experience. We will gladly recommend your company to others and reach out for future trips. Hi, We would like to say a few nice words about our guide cum driver. A huge thanks to our amazing driver Ozal. Dear Ozal, you started the journey with us as a driver, but somewhere along the way you became much more than that - a brother, a friend, a guide and a wonderful companion. Thank you for your kindness, patience, care, laughter and for making sure we were safe and comfortable throughout the journey. You didnt just show us beautiful places but you made us feel at home, like travelling with our own family and makes this trip unforgettable. We came to Azerbaijan as travellers but we leave with a beaitiful friendship and a brother like bond. Dear Thank you once again for everything and we will never forget you and you will always be a beautiful part of our Azerbaijan memories. Wishing you a great carrier and safe travels ahead. brother !",
+    rating: 5,
+    hasVideo: false,
+    image: null
+  },
+  {
+    id: 22,
+    name: "dinu devarajan",
+    location: "Thailand Guest",
+    destination: "Thailand",
+    role: "Thailand Guest",
+    content: "Our trip was truly memorable! The way the Europe Calling team organized and managed everything was exceptional. The hotel selection, accommodation, and amenities provided were outstanding. Everything was very well planned and professionally managed, allowing us to enjoy all six days of our international trip without any hassle. We had a wonderful experience from start to finish. A big thank you to the entire Europe Calling team for making this trip so special! I would 100% recommend Europe Calling to anyone planning an international trip. You can travel with complete confidence and peace of mind. Highly recommended! 💯👏",
+    rating: 5,
+    hasVideo: false,
+    image: null
+  },
+  {
+    id: 23,
+    name: "Dr Mariyam Nishana",
+    location: "Azerbaijan Guest",
+    destination: "Azerbaijan",
+    role: "Azerbaijan Guest",
+    content: "We had a wonderful experience with Europe Calling during our Azerbaijan trip. As busy professionals, we wanted a hassle-free holiday where everything was taken care of, and choosing their services was definitely the right decision. Our experience was excellent right from the initial package enquiry until the completion of our trip. A special mention to Aysha Nasrin and Aflah from their team for their support, coordination, and assistance throughout the process. They were helpful in ensuring everything was well organised and that the entire trip went smoothly. The arrangements, transportation, and overall coordination were seamless, allowing us to enjoy our vacation without having to worry about anything. A very special thanks to Mr. Farhad, our driver, who made our journeys even more comfortable and enjoyable. He was extremely friendly, professional, punctual, and accommodating throughout. His excellent service and warm approach made a real difference to our overall experience. We returned with beautiful memories and complete satisfaction with the service. We would highly recommend Europe Calling to our friends and we would love to travel with u again in future.",
+    rating: 5,
+    hasVideo: false,
+    image: null
+  },
 ];
 
 const filters = ["All", "India Clients", "Azerbaijan Clients", "Other Countries"];
@@ -266,10 +301,7 @@ const VideoCarousel = ({ items }: { items: typeof testimonials }) => {
   const [playingVideoId, setPlayingVideoId] = useState<number | null>(null);
   const videoRefs = useRef<Map<number, HTMLVideoElement>>(new Map());
 
-  // Auto-rotation logic
-  // Auto-rotation logic
   useEffect(() => {
-    // Don't auto-rotate if a video is playing
     if (playingVideoId !== null || items.length < 2) return;
 
     const interval = setInterval(() => {
@@ -279,20 +311,17 @@ const VideoCarousel = ({ items }: { items: typeof testimonials }) => {
     return () => clearInterval(interval);
   }, [items.length, playingVideoId]);
 
-  // Reset active index when items array changes
   useEffect(() => {
     setActiveIndex(0);
     setPlayingVideoId(null);
   }, [items.length]);
 
-  // Stop video when slide changes
   useEffect(() => {
     setPlayingVideoId(null);
   }, [activeIndex]);
 
   if (items.length === 0) return null;
 
-  // Helper to determine the "visual distance" in a circular array
   const getCircularOffset = (index: number, activeIndex: number, length: number) => {
     let offset = index - activeIndex;
     const half = Math.floor(length / 2);
@@ -320,14 +349,13 @@ const VideoCarousel = ({ items }: { items: typeof testimonials }) => {
       if (vid) vid.pause();
       setPlayingVideoId(null);
     } else {
-      // Call play() synchronously within the user gesture to avoid browser blocking
       const vid = videoRefs.current.get(id);
       if (vid) {
         vid.muted = false;
         vid.controls = true;
         const playPromise = vid.play();
         if (playPromise !== undefined) {
-          playPromise.catch(() => {}); // Ignore autoplay errors
+          playPromise.catch(() => {});
         }
       }
       setPlayingVideoId(id);
@@ -335,9 +363,7 @@ const VideoCarousel = ({ items }: { items: typeof testimonials }) => {
   };
 
   return (
-    <div
-      className="relative w-full py-4 md:py-8 overflow-hidden flex flex-col justify-center items-center bg-transparent min-h-[600px]"
-    >
+    <div className="relative w-full py-4 md:py-8 overflow-hidden flex flex-col justify-center items-center bg-transparent min-h-[600px]">
       <div className="relative h-[400px] sm:h-[450px] w-full max-w-7xl mx-auto flex justify-center items-center perspective-[1000px]">
         {items.map((item, index) => {
           const offset = getCircularOffset(index, activeIndex, items.length);
@@ -372,17 +398,12 @@ const VideoCarousel = ({ items }: { items: typeof testimonials }) => {
                 "bg-black"
               )}
               style={{
-                transform: `
-                   translate(-50%, -50%) 
-                   translateX(${xTranslation}px)
-                   scale(${scale})
-                 `,
+                transform: `translate(-50%, -50%) translateX(${xTranslation}px) scale(${scale})`,
                 zIndex: zIndex,
                 opacity: opacity,
               }}
             >
               <div className={cn("w-full h-full relative transition-[filter] duration-500", brightness)}>
-
                 {item.videoSrc ? (
                   <video
                     ref={(el) => {
@@ -405,13 +426,11 @@ const VideoCarousel = ({ items }: { items: typeof testimonials }) => {
                   <div className="w-full h-full bg-gradient-to-br from-primary via-primary/90 to-black" />
                 )}
 
-                {/* Overlay only if not playing */}
                 {!isPlaying && (
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/90 pointer-events-none" />
                 )}
 
                 {isActive && !isPlaying ? (
-                  /* Active Card Content */
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <div className="transform transition-transform duration-300 hover:scale-110 pointer-events-auto">
                       <button
@@ -424,7 +443,6 @@ const VideoCarousel = ({ items }: { items: typeof testimonials }) => {
                   </div>
                 ) : null}
 
-                {/* Close/Reset Button if playing */}
                 {isActive && isPlaying && (
                   <button
                     onClick={(e) => { e.stopPropagation(); setPlayingVideoId(null); }}
@@ -439,7 +457,6 @@ const VideoCarousel = ({ items }: { items: typeof testimonials }) => {
         })}
       </div>
 
-      {/* Navigation Controls */}
       <div className="flex gap-6 mt-8 relative z-50">
         <button
           onClick={handlePrev}
@@ -454,7 +471,6 @@ const VideoCarousel = ({ items }: { items: typeof testimonials }) => {
           <ChevronRight className="w-6 h-6" />
         </button>
       </div>
-
     </div>
   );
 };
@@ -462,8 +478,6 @@ const VideoCarousel = ({ items }: { items: typeof testimonials }) => {
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 
 const Testimonials = () => {
-
-  // For the video carousel, we specifically want items with videos
   const videoTestimonials = useMemo(() => {
     return testimonials.filter((t) => t.hasVideo);
   }, []);
@@ -485,14 +499,9 @@ const Testimonials = () => {
     <>
       <Header />
       <main className="bg-[#faf4e5] min-h-screen pt-20">
-
-
         <div className="relative bg-[linear-gradient(180deg,#ffffff_0%,#faf4e5_150px,#faf4e5_100%)]">
-
-
           <div className="pb-20 pt-10">
-
-            {/* New Video Carousel Section */}
+            {/* Video Carousel Section */}
             {videoTestimonials.length > 0 && (
               <RevealOnScroll className="w-full mb-20 relative">
                 <section className="w-full">
@@ -518,7 +527,6 @@ const Testimonials = () => {
                       <p className="text-muted-foreground max-w-xl mx-auto text-base sm:text-lg leading-relaxed mb-4">
                         Hear directly from our clients as they share their journey to success in Europe.
                       </p>
-
                     </div>
                   </div>
 
@@ -556,7 +564,6 @@ const Testimonials = () => {
                             {group.map((t) => (
                               <div key={t.id} className="h-full">
                                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-full flex flex-col hover:shadow-md transition-all duration-300 font-sans min-h-[250px]">
-
                                   {/* Header */}
                                   <div className="flex items-start justify-between mb-4">
                                     <div className="flex items-center gap-4">
@@ -609,7 +616,7 @@ const Testimonials = () => {
             )}
           </div>
         </div>
-      </main >
+      </main>
       <Footer />
       <WhatsAppButton />
       <StickyEnquireButton />
