@@ -92,40 +92,59 @@ const Contact = () => {
     }
   }, [fireConfetti]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    try {
-      if (activeTab === 'feedback') {
-        // Feedback Submission using Lead API
-        const result = await submitLead({
+  const isFeedback = activeTab === "feedback";
+
+  // Build the WhatsApp message
+  const whatsappMessage = isFeedback
+    ? `New Feedback - Europe Calling
+
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Rating: ${formData.rating || 5}/5 Stars
+
+Comments:
+${formData.message}
+
+Source: Website Feedback Form`
+    : `New Customer Enquiry - Europe Calling
+
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Country of Interest: ${formData.country}
+
+Message:
+${formData.message}
+
+Source: Website Contact Form`;
+
+  const whatsappNumber = "994519737056";
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    whatsappMessage
+  )}`;
+
+  try {
+    // ✅ Open blank WhatsApp window SYNCHRONOUSLY (during the click gesture)
+    //    so popup blockers allow it. We navigate it later.
+    const waWindow = window.open("", "_blank");
+
+    // 1) Send email via existing EmailJS pipeline
+    const result = isFeedback
+      ? await submitLead({
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
           message: formData.message,
           rating: formData.rating === 0 ? 5 : formData.rating,
           form_type: "Feedback Form",
-          source: "Website Form"
-        });
-
-        if (result.status === "success") {
-          toast({
-            title: "Thank You!",
-            description: "Your feedback has been successfully submitted.",
-          });
-        } else {
-          toast({
-            variant: "destructive",
-            title: "Submission Failed",
-            description: result.message || "Failed to submit feedback",
-          });
-          setIsSubmitting(false);
-          return;
-        }
-      } else {
-        // Contact Form Submission
-        const result = await submitLead({
+          source: "Website Form",
+        })
+      : await submitLead({
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
@@ -134,44 +153,59 @@ const Contact = () => {
           form_type: "Contact Us Form",
         });
 
-        if (result.status === "success") {
-          toast({
-            title: "Message Sent Successfully!",
-            description: "Our team will review your inquiry and respond within 24 hours.",
-          });
-        } else {
-          toast({
-            variant: "destructive",
-            title: "Submission Failed",
-            description: result.message || "There was a problem sending your message.",
-          });
-          // Don't throw here to avoid generic catch block overriding specific error
-          setIsSubmitting(false);
-          return;
-        }
-      }
+    // 2) If email failed, still navigate the WhatsApp window so lead isn't lost
+    if (result.status !== "success") {
+      if (waWindow) waWindow.location.href = whatsappURL;
+      else window.open(whatsappURL, "_blank");
 
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        country: "",
-        message: "",
-        rating: 0,
-      });
-
-    } catch (error) {
-      console.error("Form submission error:", error);
       toast({
         variant: "destructive",
-        title: "Submission Failed",
-        description: "There was a problem sending your message. Please try again later.",
+        title: "Email Failed — WhatsApp Opened",
+        description:
+          (result.message || "Email could not be sent.") +
+          " Please press Send in WhatsApp so we still receive your enquiry.",
+        duration: 8000,
       });
-    } finally {
       setIsSubmitting(false);
+      return;
     }
-  };
+
+    // 3) Email succeeded — navigate the WhatsApp window
+    if (waWindow) waWindow.location.href = whatsappURL;
+    else window.open(whatsappURL, "_blank");
+
+    toast({
+      title: isFeedback ? "Thank You!" : "Message Sent Successfully!",
+      description: isFeedback
+        ? "Your feedback has been emailed. WhatsApp is open — press Send to also notify us there."
+        : "Your enquiry has been emailed. WhatsApp is open — press Send to also notify us there.",
+      duration: 6000,
+    });
+
+    // 4) Reset form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      country: "",
+      message: "",
+      rating: 0,
+    });
+  } catch (error) {
+    console.error("Form submission error:", error);
+    // Fallback: still try WhatsApp
+    window.open(whatsappURL, "_blank");
+    toast({
+      variant: "destructive",
+      title: "Submission Issue — WhatsApp Opened",
+      description:
+        "There was a problem sending your message. Please press Send in WhatsApp so we still receive your enquiry.",
+      duration: 8000,
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   const contactInfo = [
     {
