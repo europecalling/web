@@ -98,29 +98,31 @@ const handleSubmit = async (e: React.FormEvent) => {
 
   const isFeedback = activeTab === "feedback";
 
-  // Build the WhatsApp message
+  // Build the WhatsApp message (improved formatting)
   const whatsappMessage = isFeedback
-    ? `New Feedback - Europe Calling
-
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Rating: ${formData.rating || 5}/5 Stars
+    ? `NEW FEEDBACK — Europe Calling
+────────────────────
+Name:     ${formData.name}
+Email:    ${formData.email}
+Phone:    ${formData.phone}
+Rating:   ${"★".repeat(formData.rating || 5)}${"☆".repeat(5 - (formData.rating || 5))}  (${formData.rating || 5}/5)
 
 Comments:
 ${formData.message}
 
+────────────────────
 Source: Website Feedback Form`
-    : `New Customer Enquiry - Europe Calling
-
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Country of Interest: ${formData.country}
+    : `NEW CUSTOMER ENQUIRY — Europe Calling
+────────────────────
+Name:     ${formData.name}
+Email:    ${formData.email}
+Phone:    ${formData.phone}
+Country:  ${formData.country || "Not specified"}
 
 Message:
 ${formData.message}
 
+────────────────────
 Source: Website Contact Form`;
 
   const whatsappNumber = "994519737056";
@@ -130,7 +132,6 @@ Source: Website Contact Form`;
 
   try {
     // ✅ Open blank WhatsApp window SYNCHRONOUSLY (during the click gesture)
-    //    so popup blockers allow it. We navigate it later.
     const waWindow = window.open("", "_blank");
 
     // 1) Send email via existing EmailJS pipeline
