@@ -125,7 +125,7 @@ ${formData.message}
 ────────────────────
 Source: Website Contact Form`;
 
-  const whatsappNumber = "994519737056";
+  const whatsappNumber = "994775941828";
   const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     whatsappMessage
   )}`;
